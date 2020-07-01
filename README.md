@@ -1,2 +1,2 @@
 Zaat main site 
-https:\\zaat.dev
+https:\\\\zaat.dev
