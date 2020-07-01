@@ -22,7 +22,7 @@ export const RectButton = styled.button`
     top: 0;
     left: 0;
     transition: transform 0.5s ease;
-    mix-blend-mode: multiply;
+    mix-blend-mode: screen;
     transform: scale(0);
     border-radius: 100%;
     transform-origin: center;
