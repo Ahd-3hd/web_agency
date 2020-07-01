@@ -46,4 +46,6 @@ export const ButtonText = styled.p`
   font-weight: 600;
   text-transform: uppercase;
   margin: 0;
+  z-index: 2;
+  position: relative;
 `
