@@ -73,8 +73,8 @@ const ExamplePage = () => {
       <RectButton>
         <ButtonText>Click</ButtonText>
       </RectButton>
-      <RoundButton>
-        <ButtonText>Click</ButtonText>
+      <RoundButton width="100" iconColor="#ffffff">
+        <UserIcon width="30" />
       </RoundButton>
     </Layout>
   )
