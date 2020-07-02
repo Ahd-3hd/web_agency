@@ -18,7 +18,7 @@ import {
   InputLabel,
   Input,
 } from '../components/InputFields'
-import { RectButton } from '../components/Buttons'
+import { RectButton, RoundButton } from '../components/Buttons'
 
 const UserIcon = ({ width }) => (
   <svg
@@ -73,6 +73,9 @@ const ExamplePage = () => {
       <RectButton>
         <ButtonText>Click</ButtonText>
       </RectButton>
+      <RoundButton>
+        <ButtonText>Click</ButtonText>
+      </RoundButton>
     </Layout>
   )
 }
