@@ -1,5 +1,6 @@
-import React, { useState } from "react"
-import Layout from "../components/layout"
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import Layout from '../components/layout'
 import {
   H1,
   H2,
@@ -10,10 +11,15 @@ import {
   Body2,
   Subtitle,
   ButtonText,
-} from "../components/typography"
-import { Card } from "../components/Card"
-import { InputContainer, InputLabel, Input } from "../components/InputFields"
-import { RectButton } from "../components/Buttons"
+} from '../components/typography'
+import { Card } from '../components/Card'
+import {
+  InputContainer,
+  InputLabel,
+  Input,
+} from '../components/InputFields'
+import { RectButton } from '../components/Buttons'
+
 const UserIcon = ({ width }) => (
   <svg
     width={`${width}px`}
@@ -40,7 +46,8 @@ const ExamplePage = () => {
       <ButtonText color="#333333">Button Text</ButtonText>
       <InputContainer>
         <InputLabel focused={isFocused} htmlFor="username">
-          <UserIcon width="10" /> Name
+          <UserIcon width="10" />
+          Name
         </InputLabel>
         <Input
           name="username"
@@ -55,10 +62,11 @@ const ExamplePage = () => {
       <Card>
         <H4 color="#333333">Heading 4 </H4>
         <Body2>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
+          Lorem Ipsum is simply dummy text of the printing and
+          typesetting industry. Lorem Ipsum has been the
+          industry&apos;s standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled
+          it to make a type specimen book. It has survived not only
           five centuries
         </Body2>
       </Card>
@@ -67,6 +75,14 @@ const ExamplePage = () => {
       </RectButton>
     </Layout>
   )
+}
+
+UserIcon.defaultProps = {
+  width: '10',
+}
+
+UserIcon.propTypes = {
+  width: PropTypes.string,
 }
 
 export default ExamplePage

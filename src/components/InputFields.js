@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const InputContainer = styled.div`
   display: flex;
@@ -31,12 +31,14 @@ export const InputLabel = styled.label`
   padding: 0 4px;
   font-size: 0.75rem;
   font-weight: 600;
-  color: ${({ focused }) => (focused ? "#26c0b7" : "rgba(84,207,97,0.7)")};
+  color: ${({ focused }) =>
+    focused ? '#26c0b7' : 'rgba(84,207,97,0.7)'};
   background: #ffffff;
   position: relative;
   top: 10px;
   left: 1rem;
   > svg {
-    fill: ${({ focused }) => (focused ? "#26c0b7" : "rgba(84,207,97,0.7)")};
+    fill: ${({ focused }) =>
+      focused ? '#26c0b7' : 'rgba(84,207,97,0.7)'};
   }
 `

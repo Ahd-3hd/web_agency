@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled from 'styled-components'
+
 export const RectButton = styled.button`
   padding: 0.5rem 2rem;
   margin: 2rem;
@@ -14,7 +15,7 @@ export const RectButton = styled.button`
   }
   position: relative;
   &::after {
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     background: #26c0b722;
@@ -31,3 +32,5 @@ export const RectButton = styled.button`
     transform: scale(2);
   }
 `
+
+export const RoundButton = styled.button``

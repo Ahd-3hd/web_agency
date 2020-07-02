@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import Header from "./header"
-import "./layout.css"
-import GlobalStyles from "./global"
+import Header from './header'
+import './layout.css'
+import GlobalStyles from './global'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -37,8 +37,7 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
+          {`© ${new Date().getFullYear()}, Built with`}
           <a href="https://zaat.dev">Zaat</a>
         </footer>
       </div>
