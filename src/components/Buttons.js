@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const RectButton = styled.button`
-  display: flex;
   padding: 0.5rem 2rem;
   margin: 2rem;
   border: none;
