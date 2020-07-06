@@ -98,6 +98,7 @@ export const Form = styled.form`
 
 export const ExtendedSubtitle = styled(Subtitle)`
   padding-left: 1rem;
+  font-size: 1.5rem;
 `
 export const FormSection = styled.div`
   flex: 1;
