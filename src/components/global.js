@@ -1,9 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
+import { fonts } from '../utils'
+import './fonts.css'
 
 export default createGlobalStyle`
 
   body{
-    font-family:"Poppins","Sans-Serif";
+    font-family:${fonts.primary};
   }
 
 `
