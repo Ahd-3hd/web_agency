@@ -40,6 +40,11 @@ export const Subtitle = styled.p`
   color: ${({ color }) => color};
   font-weight: 600;
 `
+export const Span = styled.p`
+  font-size: 0.85rem;
+  color: ${({ color }) => color};
+  font-weight: 500;
+`
 export const ButtonText = styled.p`
   font-size: 1rem;
   color: ${({ color }) => color};
