@@ -6,7 +6,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useEffect, useState } from 'react'
 import { useSprings, animated, useSpring, config } from 'react-spring'
-import { useWheel } from 'react-use-gesture'
+import { useWheel, useGesture } from 'react-use-gesture'
 import styled from 'styled-components'
 import clamp from 'lodash-es/clamp'
 
@@ -16,119 +16,61 @@ import SEO from '../components/seo'
 import Contact from '../components/Contact'
 import Header from '../components/Header'
 
+const FixedContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+`
+const AnimatedContainer = styled(animated.div)`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`
+
 const IndexPage = () => {
-  const [y, setY] = useSpring(() => ({ y: 0 }))
-  const [docHeight, setDocHeight] = useState(0)
-  const layoutRef = useRef(null)
-  const bind = useWheel(state => {
-    // console.log(state.first)
-    // console.log(state.direction[1])
-    console.log(state.event.pageY)
-    if (state.first) {
-      if (
-        state.direction[1] > 0 &&
-        state.event.pageY > window.innerHeight / 5
-      ) {
-        setY({
-          y: y.y.lastPosition + window.innerHeight,
-          reset: true,
-          from: { y: window.scrollY },
-          config: config.wobbly,
-          onFrame: ({ y }) => {
-            window.scroll(0, y)
-          },
-        })
-      } else if (
-        state.direction[1] < 0 &&
-        state.event.pageY >
-          window.innerHeight - window.innerHeight / 2
-      ) {
-        setY({
-          y: y.y.lastPosition - window.innerHeight,
-          reset: true,
-          from: { y: window.scrollY },
-          config: config.wobbly,
-          onFrame: ({ y }) => {
-            window.scroll(0, y)
-          },
-        })
-      }
-    }
+  const [y, setY] = useState(window.innerHeight)
+
+  const scrollUp = useSpring({
+    from: {
+      transform: `translateY(${y}px)`,
+    },
+    to: {
+      transform: `translateY(${y - window.innerHeight}px)`,
+    },
+    config: config.wobbly,
   })
-  useEffect(() => {
-    const { body } = document
-    const html = document.documentElement
-    const height = Math.max(
-      body.scrollHeight,
-      body.offsetHeight,
-      html.clientHeight,
-      html.scrollHeight,
-      html.offsetHeight,
-    )
-    setDocHeight(height)
-    console.log(height)
+
+  const scrollDown = useSpring({
+    from: {
+      transform: `translateY(${y}px)`,
+    },
+    to: {
+      transform: `translateY(${y + window.innerHeight}px)`,
+    },
+    config: config.wobbly,
   })
+
+  const scrollBind = useGesture({
+    onScroll: state => console.log(state),
+  })
+
   return (
-    <div ref={layoutRef} {...bind()}>
-      <Layout
-        style={{
-          height: '100vh',
-          overflow: 'scroll',
-        }}
-      >
+    <div>
+      <Layout>
         <SEO title="Home" />
-        <Header />
-        <Contact />
-        <div
-          style={{
-            height: '100vh',
-            background: 'red',
-          }}
-        />
-        <div
-          style={{
-            height: '100vh',
-            background: 'blue',
-          }}
-        />
-        <button
-          onClick={() => {
-            setY({
-              y: y.y.lastPosition - window.innerHeight,
-              reset: true,
-              from: { y: window.scrollY },
-              config: config.wobbly,
-              onFrame: ({ y }) => window.scroll(0, y),
-            })
-          }}
-          style={{
-            position: 'fixed',
-            top: 0,
-            right: '10rem',
-            zIndex: 1000,
-          }}
+        <FixedContainer
+          {...scrollBind()}
+          // y - window.innerHeight for scrolling down, window + window.innerHeight for scrolling up
+          onClick={() => setY(y - window.innerHeight)}
         >
-          Scroll up
-        </button>
-        <button
-          onClick={() => {
-            setY({
-              y: y.y.lastPosition + window.innerHeight,
-              reset: true,
-              from: { y: window.scrollY },
-              config: config.wobbly,
-              onFrame: ({ y }) => window.scroll(0, y),
-            })
-          }}
-          style={{
-            position: 'fixed',
-            top: 0,
-            right: 0,
-            zIndex: 1000,
-          }}
-        >
-          Scroll down
-        </button>
+          <AnimatedContainer style={scrollUp}>
+            <Header />
+            <Contact />
+          </AnimatedContainer>
+        </FixedContainer>
       </Layout>
     </div>
   )
