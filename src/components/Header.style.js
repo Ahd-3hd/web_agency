@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { animated } from 'react-spring'
 import { H1 } from './typography'
 
-export const Wrapper = styled.header`
+export const Wrapper = styled(animated.div)`
   min-height: 100vh;
   display: flex;
   flex-direction: column;

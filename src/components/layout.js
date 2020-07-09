@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Layout component that queries for data
  * with Gatsby's useStaticQuery component
@@ -8,8 +9,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-
-import Header from './Header'
 import './layout.css'
 import GlobalStyles from './global'
 import Navbar from './Navbar'
@@ -29,7 +28,6 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyles />
       <Navbar />
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
         <footer>
