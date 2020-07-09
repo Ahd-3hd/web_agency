@@ -1,10 +1,11 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
 /* eslint-disable arrow-body-style */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useRef, useEffect } from 'react'
-import { useSprings, animated, useSpring } from 'react-spring'
+import React, { useRef, useEffect, useState } from 'react'
+import { useSprings, animated, useSpring, config } from 'react-spring'
 import { useDrag, useWheel } from 'react-use-gesture'
 import styled from 'styled-components'
 import clamp from 'lodash-es/clamp'
@@ -15,124 +16,73 @@ import SEO from '../components/seo'
 import Contact from '../components/Contact'
 import Header from '../components/Header'
 
-const pages = [Header, Contact]
-
-function Viewpager() {
-  const index = useRef(0)
-  const [props, set] = useSprings(pages.length, i => ({
-    y: i * window.innerHeight,
-    sc: 1,
-    display: 'block',
-  }))
-  const bind = useDrag(
-    ({
-      down,
-      delta: [yDelta],
-      direction: [yDir],
-      distance,
-      cancel,
-    }) => {
-      if (down && distance > window.innerHeight / 3)
-        cancel(
-          (index.current = clamp(
-            index.current + (yDir > 0 ? -1 : 1),
-            0,
-            pages.length - 1,
-          )),
-        )
-      set(i => {
-        if (i < index.current - 1 || i > index.current + 1)
-          return { display: 'none' }
-        const y =
-          (i - index.current) * window.innerHeight +
-          (down ? yDelta : 0)
-        const sc = down ? 1 - distance / window.innerHeight / 2 : 1
-        return { y, sc, display: 'block' }
-      })
-    },
-  )
-  const bind2 = useWheel(
-    ({
-      down,
-      delta: [yDelta],
-      direction: [yDir],
-      distance,
-      cancel,
-      offset: [ox, oy],
-    }) => {
-      if (down && distance > window.innerHeight / 3) {
-        cancel(
-          (index.current = clamp(
-            index.current + (yDir > 0 ? -1 : 1),
-            0,
-            pages.length - 1,
-          )),
-        )
-      }
-      set(i => {
-        if (i < index.current - 1 || i > index.current + 1)
-          return { display: 'none' }
-        const y =
-          (i - index.current) * window.innerHeight +
-          (down ? yDelta : 0)
-        const sc = down ? 1 - distance / window.innerHeight / 2 : 1
-        return { y, sc, display: 'block' }
-      })
-    },
-  )
-  return props.map(({ y, display, sc }, i) => (
-    <animated.div
-      {...bind()}
-      {...bind2()}
-      key={i}
-      style={{
-        display,
-        transform: y.interpolate(y => `translate3d(0,${y}px,0)`),
-      }}
-    >
-      <animated.div
+const IndexPage = () => {
+  const [y, setY] = useSpring(() => ({ y: 0 }))
+  const layoutRef = useRef(null)
+  useEffect(() => {})
+  return (
+    <div ref={layoutRef}>
+      <Layout
         style={{
-          transform: sc.interpolate(s => `scale(${s})`),
+          height: '100vh',
+          overflow: 'scroll',
         }}
       >
-        {pages[i]()}
-      </animated.div>
-    </animated.div>
-  ))
-}
-const Root = styled.div`
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png')
-      39 39,
-    auto;
-  > div {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    will-change: transform;
-    > div {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      width: 100%;
-      height: 100%;
-      will-change: transform;
-      box-shadow: 0 62.5px 125px -25px rgba(50, 50, 73, 0.5),
-        0 37.5px 75px -37.5px rgba(0, 0, 0, 0.6);
-    }
-  }
-`
-const IndexPage = () => {
-  return (
-    <Layout>
-      <SEO title="Home" />
-      <Root>
-        <Viewpager />
-      </Root>
-    </Layout>
+        <SEO title="Home" />
+        <Header />
+        <Contact />
+        <div
+          style={{
+            height: '100vh',
+            background: 'red',
+          }}
+        />
+        <div
+          style={{
+            height: '100vh',
+            background: 'blue',
+          }}
+        />
+        <button
+          onClick={() => {
+            setY({
+              y: y.y.lastPosition - window.innerHeight,
+              reset: true,
+              from: { y: window.scrollY },
+              config: config.wobbly,
+              onFrame: ({ y }) => window.scroll(0, y),
+            })
+          }}
+          style={{
+            position: 'fixed',
+            top: 0,
+            right: '10rem',
+            zIndex: 1000,
+          }}
+        >
+          Scroll up
+        </button>
+        <button
+          onClick={() => {
+            setY({
+              y: y.y.lastPosition + window.innerHeight,
+              reset: true,
+              from: { y: window.scrollY },
+              config: config.wobbly,
+              onFrame: ({ y }) => window.scroll(0, y),
+            })
+          }}
+          style={{
+            position: 'fixed',
+            top: 0,
+            right: 0,
+            zIndex: 1000,
+          }}
+        >
+          Scroll down
+        </button>
+      </Layout>
+    </div>
   )
 }
 
