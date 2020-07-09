@@ -18,40 +18,56 @@ import Header from '../components/Header'
 
 const IndexPage = () => {
   const [y, setY] = useSpring(() => ({ y: 0 }))
+  const [docHeight, setDocHeight] = useState(0)
   const layoutRef = useRef(null)
   const bind = useWheel(state => {
     // console.log(state.first)
     // console.log(state.direction[1])
-
+    console.log(state.event.pageY)
     if (state.first) {
-      if (state.direction[1] > 0) {
+      if (
+        state.direction[1] > 0 &&
+        state.event.pageY > window.innerHeight / 5
+      ) {
         setY({
           y: y.y.lastPosition + window.innerHeight,
           reset: true,
           from: { y: window.scrollY },
           config: config.wobbly,
           onFrame: ({ y }) => {
-            console.log(y, 'hi')
-            console.log(window.innerHeight, 'bye')
             window.scroll(0, y)
           },
         })
-      } else if (state.direction[1] < 0) {
+      } else if (
+        state.direction[1] < 0 &&
+        state.event.pageY >
+          window.innerHeight - window.innerHeight / 2
+      ) {
         setY({
           y: y.y.lastPosition - window.innerHeight,
           reset: true,
           from: { y: window.scrollY },
           config: config.wobbly,
           onFrame: ({ y }) => {
-            console.log(y, 'hi')
-            console.log(window.innerHeight, 'bye')
             window.scroll(0, y)
           },
         })
       }
     }
   })
-  useEffect(() => {})
+  useEffect(() => {
+    const { body } = document
+    const html = document.documentElement
+    const height = Math.max(
+      body.scrollHeight,
+      body.offsetHeight,
+      html.clientHeight,
+      html.scrollHeight,
+      html.offsetHeight,
+    )
+    setDocHeight(height)
+    console.log(height)
+  })
   return (
     <div ref={layoutRef} {...bind()}>
       <Layout

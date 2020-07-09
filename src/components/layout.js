@@ -30,10 +30,10 @@ const Layout = ({ children }) => {
       <Navbar />
       <div>
         <main>{children}</main>
-        <footer>
+        {/* <footer>
           {`© ${new Date().getFullYear()}, Built with`}
           <a href="https://zaat.dev">Zaat</a>
-        </footer>
+        </footer> */}
       </div>
     </>
   )
