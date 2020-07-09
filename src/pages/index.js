@@ -33,22 +33,12 @@ const AnimatedContainer = styled(animated.div)`
 const IndexPage = () => {
   const [y, setY] = useState(window.innerHeight)
 
-  const scrollUp = useSpring({
+  const scrollEffect = useSpring({
     from: {
       transform: `translateY(${y}px)`,
     },
     to: {
       transform: `translateY(${y - window.innerHeight}px)`,
-    },
-    config: config.wobbly,
-  })
-
-  const scrollDown = useSpring({
-    from: {
-      transform: `translateY(${y}px)`,
-    },
-    to: {
-      transform: `translateY(${y + window.innerHeight}px)`,
     },
     config: config.wobbly,
   })
@@ -72,7 +62,7 @@ const IndexPage = () => {
           // y - window.innerHeight for scrolling down, window + window.innerHeight for scrolling up
           // onClick={() => setY(y - window.innerHeight)}
         >
-          <AnimatedContainer style={scrollUp}>
+          <AnimatedContainer style={scrollEffect}>
             <Header />
             <Contact />
           </AnimatedContainer>
