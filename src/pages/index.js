@@ -54,7 +54,13 @@ const IndexPage = () => {
   })
 
   const scrollBind = useGesture({
-    onScroll: state => console.log(state),
+    onWheel: ({ direction, first }) => {
+      if (direction[1] > 0 && first) {
+        setY(y - window.innerHeight)
+      } else if (direction[1] < 0 && first) {
+        setY(y + window.innerHeight)
+      }
+    },
   })
 
   return (
@@ -64,7 +70,7 @@ const IndexPage = () => {
         <FixedContainer
           {...scrollBind()}
           // y - window.innerHeight for scrolling down, window + window.innerHeight for scrolling up
-          onClick={() => setY(y - window.innerHeight)}
+          // onClick={() => setY(y - window.innerHeight)}
         >
           <AnimatedContainer style={scrollUp}>
             <Header />
