@@ -40,7 +40,7 @@ const IndexPage = () => {
     to: {
       transform: `translateY(${y - window.innerHeight}px)`,
     },
-    config: config.wobbly,
+    config: { mass: 1, tension: 210, friction: 20 },
   })
 
   const scrollBind = useGesture({
