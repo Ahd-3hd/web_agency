@@ -6,7 +6,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useEffect, useState } from 'react'
 import { useSprings, animated, useSpring, config } from 'react-spring'
-import { useDrag, useWheel } from 'react-use-gesture'
+import { useWheel } from 'react-use-gesture'
 import styled from 'styled-components'
 import clamp from 'lodash-es/clamp'
 
@@ -19,9 +19,41 @@ import Header from '../components/Header'
 const IndexPage = () => {
   const [y, setY] = useSpring(() => ({ y: 0 }))
   const layoutRef = useRef(null)
+  const bind = useWheel(state => {
+    // console.log(state.first)
+    // console.log(state.direction[1])
+
+    if (state.first) {
+      if (state.direction[1] > 0) {
+        setY({
+          y: y.y.lastPosition + window.innerHeight,
+          reset: true,
+          from: { y: window.scrollY },
+          config: config.wobbly,
+          onFrame: ({ y }) => {
+            console.log(y, 'hi')
+            console.log(window.innerHeight, 'bye')
+            window.scroll(0, y)
+          },
+        })
+      } else if (state.direction[1] < 0) {
+        setY({
+          y: y.y.lastPosition - window.innerHeight,
+          reset: true,
+          from: { y: window.scrollY },
+          config: config.wobbly,
+          onFrame: ({ y }) => {
+            console.log(y, 'hi')
+            console.log(window.innerHeight, 'bye')
+            window.scroll(0, y)
+          },
+        })
+      }
+    }
+  })
   useEffect(() => {})
   return (
-    <div ref={layoutRef}>
+    <div ref={layoutRef} {...bind()}>
       <Layout
         style={{
           height: '100vh',
