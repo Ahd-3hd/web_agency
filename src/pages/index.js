@@ -15,6 +15,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Contact from '../components/Contact'
 import Header from '../components/Header'
+import Chat from '../components/Chat'
 
 const FixedContainer = styled.div`
   width: 100%;
@@ -30,7 +31,14 @@ const AnimatedContainer = styled(animated.div)`
   right: 0;
 `
 
+const ChatButton = styled.button`
+  position: fixed;
+  right: 0;
+  bottom: 0;
+`
+
 const IndexPage = () => {
+  const [toggleChat, setToggleChat] = useState(false)
   const [y, setY] = useState(window.innerHeight)
   const scrollEffect = useSpring({
     from: {
@@ -52,7 +60,7 @@ const IndexPage = () => {
         setY(y + window.innerHeight)
       }
     },
-    onDrag: ({ direction, first }) => {
+    onDrag: ({ direction }) => {
       if (direction[1] < 0 && y - window.innerHeight >= 0) {
         // scroll down
         setY(y - window.innerHeight)
@@ -73,6 +81,10 @@ const IndexPage = () => {
             <Contact />
           </AnimatedContainer>
         </FixedContainer>
+        <ChatButton onClick={() => setToggleChat(!toggleChat)}>
+          Toggle Chat
+        </ChatButton>
+        {toggleChat && <Chat />}
       </Layout>
     </div>
   )
