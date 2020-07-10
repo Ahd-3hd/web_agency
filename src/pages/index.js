@@ -32,7 +32,8 @@ const AnimatedContainer = styled(animated.div)`
 
 const IndexPage = () => {
   const [y, setY] = useState(window.innerHeight)
-
+  const [maxHeight, setMaxHeight] = useState(0)
+  const animatedContainerRef = useRef(null)
   const scrollEffect = useSpring({
     from: {
       transform: `translateY(${y}px)`,
@@ -45,24 +46,33 @@ const IndexPage = () => {
 
   const scrollBind = useGesture({
     onWheel: ({ direction, first }) => {
-      if (direction[1] > 0 && first) {
+      if (direction[1] > 0 && first && y - window.innerHeight >= 0) {
+        console.log(y)
+        //scroll down
         setY(y - window.innerHeight)
-      } else if (direction[1] < 0 && first) {
+      } else if (direction[1] < 0 && first && y <= 0) {
+        console.log(y)
+        //scroll up
         setY(y + window.innerHeight)
       }
     },
   })
 
+  useEffect(() => {
+    const numberOfChildren =
+      animatedContainerRef.current.childNodes.length
+    setMaxHeight(window.innerHeight * numberOfChildren)
+  }, [])
+
   return (
     <div>
       <Layout>
         <SEO title="Home" />
-        <FixedContainer
-          {...scrollBind()}
-          // y - window.innerHeight for scrolling down, window + window.innerHeight for scrolling up
-          // onClick={() => setY(y - window.innerHeight)}
-        >
-          <AnimatedContainer style={scrollEffect}>
+        <FixedContainer {...scrollBind()}>
+          <AnimatedContainer
+            style={scrollEffect}
+            ref={animatedContainerRef}
+          >
             <Header />
             <Contact />
           </AnimatedContainer>
