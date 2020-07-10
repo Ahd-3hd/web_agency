@@ -1,24 +1,32 @@
 import styled from 'styled-components'
 
+export const PortfolioSection = styled.section`
+  width: 100%;
+  height: 100vh;
+`
+
+export const CardWrapper = styled.div`
+  width: 80%;
+  margin: 0 auto;
+`
+
 export const Wrapper = styled.div`
-  padding: 75px 32px;
+  padding: 20px 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 `
 
 export const Logo = styled.div`
-  width: 40%;
+  width: 30%;
   position: relative;
-  height: 315px;
+  justify-self: flex-end;
 
   .icon {
     position: absolute;
-    right: 13px;
-    bottom: 18px;
-  }
-
-  .gatsby-image-wrapper {
-    width: 100%;
+    right: 10px;
+    bottom: 10px;
+    width: 20%;
   }
 `
 
