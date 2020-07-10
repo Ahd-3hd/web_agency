@@ -52,6 +52,15 @@ const IndexPage = () => {
         setY(y + window.innerHeight)
       }
     },
+    onDrag: ({ direction, first }) => {
+      if (direction[1] < 0 && y - window.innerHeight >= 0) {
+        // scroll down
+        setY(y - window.innerHeight)
+      } else if (direction[1] > 0 && y <= 0) {
+        // scroll up
+        setY(y + window.innerHeight)
+      }
+    },
   })
 
   return (
