@@ -40,35 +40,56 @@ const ChatButton = styled(RoundButton)`
 `
 
 const IndexPage = () => {
+  let defaultHeight
+  if (typeof window !== `undefined`) {
+    defaultHeight = window.innerHeight
+  }
+  const useWindowSize = () => {
+    const [dimensions, setDimensions] = useState({
+      windowHeight: defaultHeight,
+    })
+
+    useEffect(() => {
+      const handler = () =>
+        setDimensions({
+          windowHeight: window.innerHeight,
+        })
+
+      window.addEventListener(`resize`, handler)
+      return () => window.removeEventListener(`resize`, handler)
+    }, [])
+
+    return dimensions
+  }
   const [toggleChat, setToggleChat] = useState(false)
-  const [y, setY] = useState(window.innerHeight)
+  const [y, setY] = useState(defaultHeight)
   const scrollEffect = useSpring({
     from: {
       transform: `translateY(${y}px)`,
     },
     to: {
-      transform: `translateY(${y - window.innerHeight}px)`,
+      transform: `translateY(${y - defaultHeight}px)`,
     },
     config: { mass: 1, tension: 210, friction: 20 },
   })
 
   const scrollBind = useGesture({
     onWheel: ({ direction, first }) => {
-      if (direction[1] > 0 && first && y - window.innerHeight >= 0) {
+      if (direction[1] > 0 && first && y - defaultHeight >= 0) {
         // scroll down
-        setY(y - window.innerHeight)
+        setY(y - defaultHeight)
       } else if (direction[1] < 0 && first && y <= 0) {
         // scroll up
-        setY(y + window.innerHeight)
+        setY(y + defaultHeight)
       }
     },
     onDrag: ({ direction }) => {
-      if (direction[1] < 0 && y - window.innerHeight >= 0) {
+      if (direction[1] < 0 && y - defaultHeight >= 0) {
         // scroll down
-        setY(y - window.innerHeight)
+        setY(y - defaultHeight)
       } else if (direction[1] > 0 && y <= 0) {
         // scroll up
-        setY(y + window.innerHeight)
+        setY(y + defaultHeight)
       }
     },
   })
