@@ -82,7 +82,6 @@ const Header = () => {
     to: {
       transform: 'translateX(0vw)',
     },
-    delay: 1000,
     config: config.gentle,
   })
   const titleTwoAnimation = useSpring({
@@ -92,7 +91,6 @@ const Header = () => {
     to: {
       transform: 'translateX(0vw)',
     },
-    delay: 1500,
     config: config.gentle,
   })
   const titleThreeAnimation = useSpring({
@@ -102,7 +100,6 @@ const Header = () => {
     to: {
       transform: 'translateX(0vw)',
     },
-    delay: 2000,
     config: config.gentle,
   })
   return (
