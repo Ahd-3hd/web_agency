@@ -1,18 +1,10 @@
 // import { Link } from 'gatsby'
 // import PropTypes from 'prop-types'
-import React, {
-  useRef,
-  useState,
-  useEffect,
-  useCallback,
-} from 'react'
-import { useTransition } from 'react-spring'
+import React from 'react'
+import { useSpring, animated, config } from 'react-spring'
+import styled from 'styled-components'
 import {
   Wrapper,
-  TitleContainer,
-  FixedTitle,
-  AnimatedTitleContainer,
-  AnimatedTitle,
   AnimatedCircle1,
   AnimatedCircle2,
   AnimatedCircle3,
@@ -20,80 +12,116 @@ import {
   AnimatedCircle5,
 } from './Header.style'
 import { RectButton } from './Buttons'
-import { ButtonText } from './typography'
+import { ButtonText, H2 } from './typography'
 import { colors } from '../utils'
 
+import HeartsEmoji from '../static/HeartsEmoji.svg'
+import WowEmoji from '../static/WowEmoji.svg'
+import StarEmoji from '../static/StarEmoji.svg'
+
+const TitlesContainer = styled.div`
+  z-index: 99;
+`
+const SingleTitleContainer = styled(animated.div)`
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  > svg {
+    margin: 0 1rem;
+    #hearts {
+      animation: heartsAnim 1s infinite alternate-reverse;
+      transform-origin: top left;
+      @keyframes heartsAnim {
+        from {
+          transform: scale(0.5);
+        }
+        to {
+          transform: scale(1.3);
+        }
+      }
+    }
+    #mouth {
+      animation: mouthAnim 3s infinite alternate-reverse;
+      transform-origin: center;
+      @keyframes mouthAnim {
+        from {
+          transform: scale(0.5);
+        }
+        to {
+          transform: scale(1.3);
+        }
+      }
+    }
+    #stars {
+      animation: starAnim 1s infinite alternate-reverse;
+      transform-origin: 50% 50%;
+      @keyframes starAnim {
+        from {
+          transform: scale(0.5);
+          fill: #dd2e44;
+        }
+        to {
+          transform: scale(1);
+          fill: #ff8859;
+        }
+      }
+    }
+  }
+`
+const TitleText = styled(H2)`
+  color: ${colors.primary};
+  margin: 0;
+`
+
 const Header = () => {
-  const [toggleBg, setToggleBg] = useState(false)
-  const ref = useRef([])
-  const [items, set] = useState([])
-  const transitions = useTransition(items, null, {
+  const titleOneAnimation = useSpring({
     from: {
-      opacity: 0,
-      height: 0,
-      innerHeight: 0,
-      transform: 'perspective(600px) rotateX(0deg)',
-      color: colors.secondary,
+      transform: 'translateX(110vw)',
     },
-    enter: [
-      { opacity: 1, height: 80, innerHeight: 80 },
-      {
-        transform: 'perspective(600px) rotateX(180deg)',
-        color: colors.blue,
-      },
-      { transform: 'perspective(600px) rotateX(0deg)' },
-    ],
-    leave: [
-      { color: colors.red },
-      { innerHeight: 0 },
-      { opacity: 0, height: 0 },
-    ],
-    update: { color: colors.primary },
+    to: {
+      transform: 'translateX(0vw)',
+    },
+    delay: 1000,
+    config: config.gentle,
   })
-
-  const reset = useCallback(() => {
-    ref.current.map(clearTimeout)
-    ref.current = []
-    set([])
-    ref.current.push(
-      setTimeout(() => set(['GREAT', 'UNIQUE', 'AMAZING']), 2000),
-    )
-    ref.current.push(
-      setTimeout(() => set(['GREAT', 'AMAZING']), 5000),
-    )
-    ref.current.push(
-      setTimeout(() => set(['GREAT', 'UNIQUE', 'AMAZING']), 8000),
-    )
-    setTimeout(() => reset(), 13000)
-  }, [])
-
-  useEffect(() => reset(), [])
+  const titleTwoAnimation = useSpring({
+    from: {
+      transform: 'translateX(110vw)',
+    },
+    to: {
+      transform: 'translateX(0vw)',
+    },
+    delay: 1500,
+    config: config.gentle,
+  })
+  const titleThreeAnimation = useSpring({
+    from: {
+      transform: 'translateX(110vw)',
+    },
+    to: {
+      transform: 'translateX(0vw)',
+    },
+    delay: 2000,
+    config: config.gentle,
+  })
   return (
-    <Wrapper bg={toggleBg}>
-      <TitleContainer>
-        <FixedTitle color={colors.primary}>
-          LET&apos;S MAKE SOMETHING
-        </FixedTitle>
-        {transitions.map(
-          ({ item, props: { innerHeight, ...rest }, key }) => (
-            <AnimatedTitleContainer
-              className="transitions-item"
-              key={key}
-              style={rest}
-            >
-              <AnimatedTitle
-                style={{ overflow: 'hidden', height: innerHeight }}
-              >
-                {item}
-              </AnimatedTitle>
-            </AnimatedTitleContainer>
-          ),
-        )}
-      </TitleContainer>
+    <Wrapper>
+      <TitlesContainer>
+        <SingleTitleContainer style={titleOneAnimation}>
+          <TitleText>This is a text</TitleText>
+          <HeartsEmoji />
+        </SingleTitleContainer>
+        <SingleTitleContainer style={titleTwoAnimation}>
+          <WowEmoji />
+          <TitleText>This is a text</TitleText>
+        </SingleTitleContainer>
+        <SingleTitleContainer style={titleThreeAnimation}>
+          <TitleText>This is a text</TitleText>
+          <StarEmoji />
+        </SingleTitleContainer>
+      </TitlesContainer>
       <RectButton>
-        <ButtonText onClick={() => setToggleBg(!toggleBg)}>
-          Change Colors
-        </ButtonText>
+        <ButtonText>Contact</ButtonText>
       </RectButton>
       <AnimatedCircle1 />
       <AnimatedCircle2 />

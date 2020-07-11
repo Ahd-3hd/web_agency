@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { animated } from 'react-spring'
-import { H1 } from './typography'
 
 export const Wrapper = styled(animated.div)`
   min-height: 100vh;
@@ -15,38 +14,6 @@ export const Wrapper = styled(animated.div)`
     bg
       ? ' radial-gradient(50% 98.88% at 50% 50%, rgba(84, 207, 97, 0.56) 0%, #2AB640 100%);'
       : '#ffffff'};
-`
-
-export const TitleContainer = styled.div`
-  z-index: 2;
-`
-export const FixedTitle = styled(H1)`
-  font-size: 2.5rem;
-  @media (max-width: 1024px) {
-    font-size: 3rem;
-    text-align: center;
-  }
-`
-export const AnimatedTitleContainer = styled(animated.div)`
-  overflow: hidden;
-  color: white;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 2rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  will-change: transform, opacity, height;
-  white-space: nowrap;
-  line-height: 80px;
-  margin: 0;
-  @media (max-width: 700px) {
-    justify-content: center;
-    font-size: 2rem;
-  }
-`
-export const AnimatedTitle = styled(animated.div)`
-  z-index: 10;
 `
 
 export const AnimatedSVG = styled(animated.svg)`
