@@ -4,7 +4,7 @@ const HeartsEmoji = () => (
   <svg
     height="128"
     width="128"
-    viewBox="-20 -20 128 128"
+    viewBox="-20 -20 100 100"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >

@@ -28,6 +28,7 @@ const SingleTitleContainer = styled(animated.div)`
   margin: 2rem 0;
   > svg {
     margin: 0 1rem;
+    width: 50px;
     #hearts {
       animation: heartsAnim 1s infinite alternate-reverse;
       transform-origin: top left;
