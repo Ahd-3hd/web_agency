@@ -16,6 +16,8 @@ import SEO from '../components/seo'
 import Contact from '../components/Contact'
 import Header from '../components/Header'
 import Chat from '../components/Chat'
+import { RoundButton } from '../components/Buttons'
+import CallIcon from '../static/CallIcon.svg'
 
 const FixedContainer = styled.div`
   width: 100%;
@@ -31,7 +33,7 @@ const AnimatedContainer = styled(animated.div)`
   right: 0;
 `
 
-const ChatButton = styled.button`
+const ChatButton = styled(RoundButton)`
   position: fixed;
   right: 0;
   bottom: 0;
@@ -81,8 +83,12 @@ const IndexPage = () => {
             <Contact />
           </AnimatedContainer>
         </FixedContainer>
-        <ChatButton onClick={() => setToggleChat(!toggleChat)}>
-          Toggle Chat
+        <ChatButton
+          width="50"
+          iconColor="#ffffff"
+          onClick={() => setToggleChat(!toggleChat)}
+        >
+          <CallIcon />
         </ChatButton>
         {toggleChat && <Chat />}
       </Layout>
