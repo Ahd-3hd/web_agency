@@ -34,9 +34,7 @@ export const ContactDetails = styled.div`
   justify-content: space-between;
   margin-top: 1rem;
   max-width: 500px;
-  @media (max-width: 360px) {
-    flex-direction: column;
-  }
+
   @media (min-width: 1024px) {
     flex-direction: column;
   }
@@ -48,9 +46,13 @@ export const ContactDetails = styled.div`
 export const ContactDetailsSection = styled.div``
 
 export const Logo = styled.img`
+  display: none;
   max-width: 150px;
   padding-bottom: 1rem;
   border-bottom: 4px solid ${colors.secondary};
+  @media (min-height: 900px) {
+    display: block;
+  }
 `
 
 export const DividerContainer = styled.div`
@@ -100,6 +102,7 @@ export const Form = styled.form`
 export const ExtendedSubtitle = styled(Subtitle)`
   padding-left: 1rem;
   font-size: 1.5rem;
+  margin: 0;
 `
 export const FormSection = styled.div`
   flex: 1;
@@ -112,8 +115,17 @@ export const FormSection = styled.div`
   }
 `
 
-export const ExtendedH2 = styled(H2)``
+export const ExtendedH2 = styled(H2)`
+  display: none;
+  @media (min-height: 700px) and (min-width: 500px) {
+    display: block;
+  }
+`
 export const ExtendedBody2 = styled(Body2)`
+  display: none;
+  @media (min-height: 700px) and (min-width: 500px) {
+    display: block;
+  }
   @media (min-width: 1280px) {
     max-width: 500px;
   }
