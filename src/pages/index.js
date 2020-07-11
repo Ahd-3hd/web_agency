@@ -93,17 +93,37 @@ const IndexPage = () => {
       }
     },
   })
+  const components = [Header, Contact]
+  const [newY, setNewY] = useState(0)
+  const newScroll = useSprings(
+    components.length,
+    components.map((component, i) => ({
+      transform: `translateY(${newY * i})`,
+    })),
+  )
+  const testScroll = useGesture({
+    onDrag: state => {
+      setNewY(5000)
+    },
+  })
 
   return (
     <div>
       <Layout>
         <SEO title="Home" />
-        <FixedContainer {...scrollBind()}>
+        <div {...testScroll()} style={{}}>
+          {newScroll.map((item, i) => (
+            <animated.div style={item}>
+              {React.createElement(components[i])}
+            </animated.div>
+          ))}
+        </div>
+        {/* <FixedContainer {...scrollBind()}>
           <AnimatedContainer style={scrollEffect}>
             <Header />
             <Contact />
           </AnimatedContainer>
-        </FixedContainer>
+        </FixedContainer> */}
         <ChatButton
           width="50"
           iconColor="#ffffff"
