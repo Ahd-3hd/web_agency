@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 // import { Link } from 'gatsby'
 // import PropTypes from 'prop-types'
 import React from 'react'
-import { useSpring, animated, config } from 'react-spring'
+import { useSpring, animated, config, useSprings } from 'react-spring'
 import styled from 'styled-components'
 import {
   Wrapper,
@@ -75,48 +76,66 @@ const TitleText = styled(H2)`
 `
 
 const Header = () => {
-  const titleOneAnimation = useSpring({
-    from: {
-      transform: 'translateX(110vw)',
-    },
-    to: {
-      transform: 'translateX(0vw)',
-    },
-    config: config.gentle,
-  })
-  const titleTwoAnimation = useSpring({
-    from: {
-      transform: 'translateX(110vw)',
-    },
-    to: {
-      transform: 'translateX(0vw)',
-    },
-    config: config.gentle,
-  })
-  const titleThreeAnimation = useSpring({
-    from: {
-      transform: 'translateX(110vw)',
-    },
-    to: {
-      transform: 'translateX(0vw)',
-    },
-    config: config.gentle,
-  })
+  const titles = [
+    'This is First Text',
+    'This is Second Text',
+    'This is Third Text',
+  ]
+  // animating each title individually. leaving it a comment just in case we decided to go back
+  // const titleOneAnimation = useSpring({
+  //   from: {
+  //     transform: 'translateX(110vw)',
+  //   },
+  //   to: {
+  //     transform: 'translateX(0vw)',
+  //   },
+  //   config: config.gentle,
+  // })
+  // const titleTwoAnimation = useSpring({
+  //   from: {
+  //     transform: 'translateX(110vw)',
+  //   },
+  //   to: {
+  //     transform: 'translateX(0vw)',
+  //   },
+  //   config: config.gentle,
+  // })
+  // const titleThreeAnimation = useSpring({
+  //   from: {
+  //     transform: 'translateX(110vw)',
+  //   },
+  //   to: {
+  //     transform: 'translateX(0vw)',
+  //   },
+  //   config: config.gentle,
+  // })
+
+  // remove the delay if you want a better score
+  const springs = useSprings(
+    titles.length,
+    titles.map((item, i) => ({
+      from: {
+        transform: 'translateX(110vw)',
+      },
+      to: {
+        transform: 'translateX(0vw)',
+      },
+      config: config.gentle,
+      delay: 1000 * i + 1,
+    })),
+  )
   return (
     <Wrapper>
       <TitlesContainer>
-        <SingleTitleContainer style={titleOneAnimation}>
-          <TitleText>This is a text</TitleText>
-          <HeartsEmoji />
-        </SingleTitleContainer>
-        <SingleTitleContainer style={titleTwoAnimation}>
-          <WowEmoji />
-          <TitleText>This is a text</TitleText>
-        </SingleTitleContainer>
-        <SingleTitleContainer style={titleThreeAnimation}>
-          <TitleText>This is a text</TitleText>
-          <StarEmoji />
-        </SingleTitleContainer>
+        {springs.map((props, i) => (
+          <SingleTitleContainer
+            style={props}
+            onClick={() => console.log(props)}
+          >
+            <TitleText>{titles[i]}</TitleText>
+            {/* TODO: insert Emojis back */}
+          </SingleTitleContainer>
+        ))}
       </TitlesContainer>
       <RectButton>
         <ButtonText>Contact</ButtonText>
