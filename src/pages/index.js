@@ -94,16 +94,17 @@ const IndexPage = () => {
     },
   })
   const components = [Header, Contact]
-  const [newY, setNewY] = useState(0)
+  const [newY, setNewY] = useState(100)
   const newScroll = useSprings(
     components.length,
     components.map((component, i) => ({
-      transform: `translateY(${newY * i})`,
+      transform: `translateY(${newY * -i}px)`,
     })),
   )
   const testScroll = useGesture({
-    onDrag: state => {
-      setNewY(5000)
+    onWheel: state => {
+      console.log(state)
+      setNewY(200)
     },
   })
 
