@@ -98,13 +98,17 @@ const IndexPage = () => {
   const newScroll = useSprings(
     components.length,
     components.map((component, i) => ({
-      transform: `translateY(${newY * -i}px)`,
+      transform: `translateY(${newY * -(i + 1)}px)`,
     })),
   )
   const testScroll = useGesture({
-    onWheel: state => {
+    onDrag: state => {
       console.log(state)
-      setNewY(200)
+      if (state.direction[1] > 0) {
+        setNewY(-state.values[1])
+      } else {
+        setNewY(state.values[1])
+      }
     },
   })
 
@@ -112,7 +116,15 @@ const IndexPage = () => {
     <div>
       <Layout>
         <SEO title="Home" />
-        <div {...testScroll()} style={{}}>
+        <div
+          {...testScroll()}
+          style={{
+            position: 'fixed',
+            height: '100vh',
+            width: '100vw',
+            overflow: 'hidden',
+          }}
+        >
           {newScroll.map((item, i) => (
             <animated.div style={item}>
               {React.createElement(components[i])}
