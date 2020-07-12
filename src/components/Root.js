@@ -74,11 +74,7 @@ const Root = () => {
     sc: 1,
     display: 'block',
     zIndex: -i,
-    config: {
-      mass: 1,
-      tension: 170,
-      friction: 50,
-    },
+    duration: 1000,
   }))
   const bind = useGesture({
     onDrag: ({
