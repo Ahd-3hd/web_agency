@@ -84,6 +84,28 @@ function Viewpager() {
         return { y, sc, display: 'block' }
       })
     },
+    onWheel: ({
+      delta: [, yDelta],
+      direction: [, yDir],
+      distance,
+      cancel,
+    }) => {
+      if (distance > window.innerHeight / 10)
+        cancel(
+          (index.current = clamp(
+            index.current + (yDir > 0 ? -1 : 1),
+            0,
+            pages.length - 1,
+          )),
+        )
+      set(i => {
+        if (i < index.current - 1 || i > index.current + 1)
+          return { display: 'none' }
+        const y = (i - index.current) * window.innerHeight + yDelta
+        const sc = 1 - distance / window.innerHeight / 2
+        return { y, sc, display: 'block' }
+      })
+    },
   })
   return props.map(({ y, display, sc }, i) => (
     <Root {...bind()}>
