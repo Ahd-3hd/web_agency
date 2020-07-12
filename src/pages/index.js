@@ -6,7 +6,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useEffect, useState } from 'react'
 import { useSprings, animated, useSpring, config } from 'react-spring'
-import { useWheel, useGesture } from 'react-use-gesture'
+import { useWheel, useGesture, useDrag } from 'react-use-gesture'
 import styled from 'styled-components'
 import clamp from 'lodash-es/clamp'
 
@@ -18,7 +18,88 @@ import Header from '../components/Header'
 import Chat from '../components/Chat'
 import { RoundButton } from '../components/Buttons'
 import CallIcon from '../static/CallIcon.svg'
+const pages = [Header, Contact]
 
+const Root = styled(animated.div)`
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png')
+      39 39,
+    auto;
+  > div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    will-change: transform;
+    > div {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 100%;
+      height: 100%;
+      will-change: transform;
+      box-shadow: 0 62.5px 125px -25px rgba(50, 50, 73, 0.5),
+        0 37.5px 75px -37.5px rgba(0, 0, 0, 0.6);
+    }
+  }
+`
+function Viewpager() {
+  const index = useRef(0)
+  const [props, set] = useSprings(pages.length, i => ({
+    x: i * window.innerWidth,
+    sc: 1,
+    display: 'block',
+  }))
+  const bind = useGesture({
+    onDrag: ({
+      down,
+      delta: [xDelta],
+      direction: [xDir],
+      distance,
+      cancel,
+    }) => {
+      if (down && distance > window.innerWidth / 2)
+        cancel(
+          (index.current = clamp(
+            index.current + (xDir > 0 ? -1 : 1),
+            0,
+            pages.length - 1,
+          )),
+        )
+      set(i => {
+        if (i < index.current - 1 || i > index.current + 1)
+          return { display: 'none' }
+        const x =
+          (i - index.current) * window.innerWidth +
+          (down ? xDelta : 0)
+        const sc = down ? 1 - distance / window.innerWidth / 2 : 1
+        return { x, sc, display: 'block' }
+      })
+    },
+  })
+  return props.map(({ x, display, sc }, i) => (
+    <Root {...bind()}>
+      <animated.div
+        key={i}
+        style={{
+          display,
+          transform: x.interpolate(x => `translate3d(${x}px,0,0)`),
+        }}
+      >
+        <animated.div
+          style={{
+            transform: sc.interpolate(s => `scale(${s})`),
+            backgroundImage: `url(${pages[i]})`,
+          }}
+        >
+          {React.createElement(pages[i])}
+        </animated.div>
+      </animated.div>
+    </Root>
+  ))
+}
 const FixedContainer = styled.div`
   width: 100%;
   height: 100vh;
@@ -102,7 +183,7 @@ const IndexPage = () => {
     })),
   )
   const testScroll = useGesture({
-    onDrag: state => {
+    onWheel: state => {
       console.log(state)
       if (state.direction[1] > 0) {
         setNewY(-state.values[1])
@@ -116,21 +197,7 @@ const IndexPage = () => {
     <div>
       <Layout>
         <SEO title="Home" />
-        <div
-          {...testScroll()}
-          style={{
-            position: 'fixed',
-            height: '100vh',
-            width: '100vw',
-            overflow: 'hidden',
-          }}
-        >
-          {newScroll.map((item, i) => (
-            <animated.div style={item}>
-              {React.createElement(components[i])}
-            </animated.div>
-          ))}
-        </div>
+        <Viewpager />
         {/* <FixedContainer {...scrollBind()}>
           <AnimatedContainer style={scrollEffect}>
             <Header />
