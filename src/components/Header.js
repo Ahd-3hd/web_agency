@@ -20,12 +20,13 @@ import HeartsEmoji from '../static/HeartsEmoji.svg'
 import WowEmoji from '../static/WowEmoji.svg'
 import StarEmoji from '../static/StarEmoji.svg'
 
-const TitlesContainer = styled.div`
-  z-index: 99;
-`
+const emojis = [HeartsEmoji, WowEmoji, StarEmoji]
+
+const TitlesContainer = styled.div``
 const SingleTitleContainer = styled(animated.div)`
   display: flex;
   align-items: center;
+  flex-direction: ${({ odd }) => (odd ? 'row' : 'row-reverse')};
   margin: 2rem 0;
   > svg {
     margin: 0 1rem;
@@ -128,12 +129,9 @@ const Header = () => {
     <Wrapper>
       <TitlesContainer>
         {springs.map((props, i) => (
-          <SingleTitleContainer
-            style={props}
-            onClick={() => console.log(props)}
-          >
+          <SingleTitleContainer style={props} odd={i % 2 === 0}>
             <TitleText>{titles[i]}</TitleText>
-            {/* TODO: insert Emojis back */}
+            {React.createElement(emojis[i])}
           </SingleTitleContainer>
         ))}
       </TitlesContainer>
