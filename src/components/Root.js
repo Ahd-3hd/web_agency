@@ -112,7 +112,7 @@ const Root = () => {
       if (first && distance > defaultHeight / 20)
         cancel(
           (index.current = clamp(
-            index.current + (yDir > 0 ? -1 : 1),
+            index.current + (yDir > 0 ? 1 : -1),
             0,
             pages.length - 1,
           )),
