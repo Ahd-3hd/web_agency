@@ -10,7 +10,18 @@ import clamp from 'lodash-es/clamp'
 import Contact from './Contact'
 import Header from './Header'
 
-const pages = [Header, Contact]
+const TestDiv1 = styled.div`
+  background: red;
+  width: 100vw;
+  height: 100vh;
+`
+const TestDiv2 = styled.div`
+  background: green;
+  width: 100vw;
+  height: 100vh;
+`
+
+const pages = [Header, Contact, TestDiv1, TestDiv2]
 const Wrapper = styled(animated.div)`
   left: 0;
   position: fixed;
@@ -62,6 +73,7 @@ const Root = () => {
     y: i * defaultHeight,
     sc: 1,
     display: 'block',
+    zIndex: -i,
     config: {
       mass: 1,
       tension: 170,
@@ -90,7 +102,8 @@ const Root = () => {
         const y =
           (i - index.current) * defaultHeight + (down ? yDelta : 0)
         const sc = down ? 1 - distance / defaultHeight / 2 : 1
-        return { y, sc, display: 'block' }
+        const zIndex = i === index.current ? 1 : -1
+        return { y, sc, display: 'block', zIndex }
       })
     },
     onWheel: ({
@@ -108,18 +121,24 @@ const Root = () => {
           )),
         )
       set(i => {
-        if (i < index.current - 1 || i > index.current + 1)
+        if (i < index.current - 1 || i > index.current + 1) {
           return { display: 'none' }
+        }
         const y = (i - index.current) * defaultHeight + yDelta
         const sc = 1
-        return { y, sc, display: 'block' }
+        const zIndex = i === index.current ? 1 : -1
+        return {
+          y,
+          sc,
+          display: 'block',
+          zIndex,
+        }
       })
     },
   })
-  return props.map(({ y, display, sc }, i) => (
-    <Wrapper {...bind()}>
+  return props.map(({ y, display, sc, zIndex }, i) => (
+    <Wrapper {...bind()} key={i} style={{ zIndex }}>
       <animated.div
-        key={i}
         style={{
           display,
           transform: y.interpolate(y => `translate3d(0,${y}px,0)`),
