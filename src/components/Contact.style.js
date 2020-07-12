@@ -27,6 +27,9 @@ export const InfoSection = styled.div`
   @media (min-width: 1024px) {
     flex: 2;
   }
+  @media (min-width: 1920px) {
+    margin-left: 10rem;
+  }
 `
 
 export const ContactDetails = styled.div`
@@ -112,6 +115,9 @@ export const FormSection = styled.div`
   @media (min-width: 1280px) {
     flex: 2;
     max-width: 500px;
+  }
+  @media (min-width: 1920px) {
+    margin-right: 10rem;
   }
 `
 
