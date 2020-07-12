@@ -9,7 +9,6 @@ export default createGlobalStyle`
     font-display:swap;
     max-width:1980px;
     margin:0 auto;
-    user-select: none;
   }
 
 `
