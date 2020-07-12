@@ -12,6 +12,23 @@ const ChatButton = styled(RoundButton)`
   position: fixed;
   right: 0;
   bottom: 0;
+  z-index: 999;
+`
+
+const WhatsAppButton = styled(RoundButton)`
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0px;
+  z-index: 999;
+  animation: animatewa 0.3s ease forwards;
+  @keyframes animatewa {
+    from {
+      bottom: 0px;
+    }
+    to {
+      bottom: 60px;
+    }
+  }
 `
 
 const IndexPage = () => {
@@ -22,6 +39,11 @@ const IndexPage = () => {
       <Layout>
         <SEO title="Home" />
         <Root />
+        {toggleChat && (
+          <WhatsAppButton width="30" iconColor="#ffffff" toggleChat>
+            <CallIcon />
+          </WhatsAppButton>
+        )}
         <ChatButton
           width="50"
           iconColor="#ffffff"
