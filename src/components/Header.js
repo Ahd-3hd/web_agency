@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable no-unused-vars */
 // import { Link } from 'gatsby'
 // import PropTypes from 'prop-types'
@@ -129,20 +130,24 @@ const Header = () => {
     <Wrapper>
       <TitlesContainer>
         {springs.map((props, i) => (
-          <SingleTitleContainer style={props} odd={i % 2 === 0}>
+          <SingleTitleContainer
+            style={props}
+            odd={i % 2 === 0}
+            key={i}
+          >
             <TitleText>{titles[i]}</TitleText>
             {React.createElement(emojis[i])}
           </SingleTitleContainer>
         ))}
       </TitlesContainer>
-      <RectButton>
-        <ButtonText>Contact</ButtonText>
-      </RectButton>
       <AnimatedCircle1 />
       <AnimatedCircle2 />
       <AnimatedCircle3 />
       <AnimatedCircle4 />
       <AnimatedCircle5 />
+      <RectButton>
+        <ButtonText>Contact</ButtonText>
+      </RectButton>
     </Wrapper>
   )
 }
