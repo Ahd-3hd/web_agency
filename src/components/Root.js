@@ -111,8 +111,9 @@ const Root = () => {
       direction: [, yDir],
       distance,
       cancel,
+      first,
     }) => {
-      if (distance > defaultHeight / 7)
+      if (first && distance > defaultHeight / 20)
         cancel(
           (index.current = clamp(
             index.current + (yDir > 0 ? -1 : 1),
