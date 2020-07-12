@@ -75,6 +75,10 @@ const SingleTitleContainer = styled(animated.div)`
 const TitleText = styled(H2)`
   color: ${colors.primary};
   margin: 0;
+  font-size: 1.4rem;
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
 `
 
 const Header = () => {
