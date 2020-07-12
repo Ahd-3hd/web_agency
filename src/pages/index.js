@@ -22,10 +22,12 @@ import CallIcon from '../static/CallIcon.svg'
 const pages = [Header, Contact]
 
 const Root = styled(animated.div)`
+  left: 0;
   position: fixed;
   overflow: hidden;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png')
       39 39,
     auto;
