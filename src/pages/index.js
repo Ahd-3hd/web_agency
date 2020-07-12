@@ -90,7 +90,7 @@ function Viewpager() {
       distance,
       cancel,
     }) => {
-      if (distance > window.innerHeight / 10)
+      if (distance > window.innerHeight / 7)
         cancel(
           (index.current = clamp(
             index.current + (yDir > 0 ? -1 : 1),
@@ -102,7 +102,7 @@ function Viewpager() {
         if (i < index.current - 1 || i > index.current + 1)
           return { display: 'none' }
         const y = (i - index.current) * window.innerHeight + yDelta
-        const sc = 1 - distance / window.innerHeight / 2
+        const sc = 1
         return { y, sc, display: 'block' }
       })
     },
