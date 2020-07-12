@@ -18,6 +18,7 @@ import Header from '../components/Header'
 import Chat from '../components/Chat'
 import { RoundButton } from '../components/Buttons'
 import CallIcon from '../static/CallIcon.svg'
+
 const pages = [Header, Contact]
 
 const Root = styled(animated.div)`
@@ -48,22 +49,22 @@ const Root = styled(animated.div)`
 function Viewpager() {
   const index = useRef(0)
   const [props, set] = useSprings(pages.length, i => ({
-    x: i * window.innerWidth,
+    y: i * window.innerHeight,
     sc: 1,
     display: 'block',
   }))
   const bind = useGesture({
     onDrag: ({
       down,
-      delta: [xDelta],
-      direction: [xDir],
+      delta: [yDelta],
+      direction: [yDir],
       distance,
       cancel,
     }) => {
-      if (down && distance > window.innerWidth / 2)
+      if (down && distance > window.innerHeight / 2)
         cancel(
           (index.current = clamp(
-            index.current + (xDir > 0 ? -1 : 1),
+            index.current + (yDir > 0 ? -1 : 1),
             0,
             pages.length - 1,
           )),
@@ -71,21 +72,21 @@ function Viewpager() {
       set(i => {
         if (i < index.current - 1 || i > index.current + 1)
           return { display: 'none' }
-        const x =
-          (i - index.current) * window.innerWidth +
-          (down ? xDelta : 0)
-        const sc = down ? 1 - distance / window.innerWidth / 2 : 1
-        return { x, sc, display: 'block' }
+        const y =
+          (i - index.current) * window.innerHeight +
+          (down ? yDelta : 0)
+        const sc = down ? 1 - distance / window.innerHeight / 2 : 1
+        return { y, sc, display: 'block' }
       })
     },
   })
-  return props.map(({ x, display, sc }, i) => (
+  return props.map(({ y, display, sc }, i) => (
     <Root {...bind()}>
       <animated.div
         key={i}
         style={{
           display,
-          transform: x.interpolate(x => `translate3d(${x}px,0,0)`),
+          transform: y.interpolate(y => `translate3d(0,${y}px,0)`),
         }}
       >
         <animated.div
