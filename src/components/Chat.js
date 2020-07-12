@@ -8,6 +8,7 @@ const ChatContainer = styled(ChatBot)`
   bottom: 0;
   right: 10rem;
   animation: toggle 0.1s ease-out forwards;
+  z-index: 999;
   @keyframes toggle {
     from {
       transform: scale(0);
