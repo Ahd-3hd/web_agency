@@ -61,8 +61,8 @@ function Viewpager() {
   const bind = useGesture({
     onDrag: ({
       down,
-      delta: [yDelta],
-      direction: [yDir],
+      delta: [, yDelta],
+      direction: [, yDir],
       distance,
       cancel,
     }) => {
