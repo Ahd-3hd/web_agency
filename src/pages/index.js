@@ -41,8 +41,8 @@ const Root = styled(animated.div)`
       width: 100%;
       height: 100%;
       will-change: transform;
-      box-shadow: 0 62.5px 125px -25px rgba(50, 50, 73, 0.5),
-        0 37.5px 75px -37.5px rgba(0, 0, 0, 0.6);
+      /* box-shadow: 0 62.5px 125px -25px rgba(50, 50, 73, 0.5),
+        0 37.5px 75px -37.5px rgba(0, 0, 0, 0.6); */
     }
   }
 `
@@ -52,6 +52,11 @@ function Viewpager() {
     y: i * window.innerHeight,
     sc: 1,
     display: 'block',
+    config: {
+      mass: 1,
+      tension: 170,
+      friction: 50,
+    },
   }))
   const bind = useGesture({
     onDrag: ({
