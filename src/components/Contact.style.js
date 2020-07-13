@@ -27,8 +27,8 @@ export const InfoSection = styled.div`
   @media (min-width: 1024px) {
     flex: 2;
   }
-  @media (min-width: 1920px) {
-    margin-left: 10rem;
+  @media (min-width: 1366px) {
+    margin-left: 7vw;
   }
 `
 
@@ -116,8 +116,8 @@ export const FormSection = styled.div`
     flex: 2;
     max-width: 500px;
   }
-  @media (min-width: 1920px) {
-    margin-right: 10rem;
+  @media (max-width: 1366px) {
+    margin-right: 7vw;
   }
 `
 
