@@ -36,6 +36,7 @@ export const AnimatedCircle1 = styled.div`
   background: rgba(79, 204, 93, 0.15);
   animation: animCircle1 30s ease-in infinite alternate-reverse;
   transform-origin: top;
+  z-index: 0;
 
   @keyframes animCircle1 {
     from {
@@ -57,6 +58,7 @@ export const AnimatedCircle2 = styled.div`
   background: rgba(79, 204, 93, 0.15);
   animation: animCircle2 30s ease-in infinite alternate-reverse;
   transform-origin: top;
+  z-index: 0;
 
   @keyframes animCircle2 {
     from {
@@ -79,6 +81,7 @@ export const AnimatedCircle2 = styled.div`
     background: rgba(79, 204, 93, 0.15);
     animation: animCircle2after 70s ease-in infinite alternate-reverse;
     transform-origin: top;
+    z-index: 0;
 
     @keyframes animCircle2after {
       from {
@@ -105,6 +108,7 @@ export const AnimatedCircle3 = styled.div`
   top: 50%;
   left: 50%;
   position: absolute;
+  z-index: 0;
   @keyframes animCircle3 {
     from {
       transform: rotateZ(-180deg);
@@ -124,6 +128,7 @@ export const AnimatedCircle4 = styled.div`
   top: 80%;
   left: 70%;
   position: absolute;
+  z-index: 0;
   @keyframes animCircle4 {
     from {
       transform: rotateZ(180deg);
@@ -144,6 +149,7 @@ export const AnimatedCircle5 = styled.div`
   top: 10%;
   left: 40%;
   position: absolute;
+  z-index: 0;
   @keyframes animCircle5 {
     from {
       transform: rotateZ(180deg);
