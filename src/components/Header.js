@@ -23,7 +23,9 @@ import StarEmoji from '../static/StarEmoji.svg'
 
 const emojis = [HeartsEmoji, WowEmoji, StarEmoji]
 
-const TitlesContainer = styled.div``
+const TitlesContainer = styled.div`
+  z-index: 4;
+`
 const SingleTitleContainer = styled(animated.div)`
   display: flex;
   align-items: center;
