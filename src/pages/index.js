@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 import Chat from '../components/Chat'
 import { RoundButton } from '../components/Buttons'
 import CallIcon from '../static/CallIcon.svg'
-import Root from '../components/Root'
+import Scroller from '../components/Scroller'
 
 const ChatButton = styled(RoundButton)`
   position: fixed;
@@ -38,7 +38,7 @@ const IndexPage = () => {
     <div>
       <Layout>
         <SEO title="Home" />
-        <Root />
+        <Scroller />
         {toggleChat && (
           <WhatsAppButton width="30" iconColor="#ffffff" toggleChat>
             <CallIcon />
