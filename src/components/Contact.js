@@ -14,6 +14,8 @@ import {
   ExtendedSubtitle,
   ExtendedH2,
   ExtendedBody2,
+  SocialButtonsSection,
+  SocialButtonsContainer,
 } from './Contact.style'
 import { Span, ButtonText } from './typography'
 import {
@@ -50,45 +52,43 @@ const Contact = () => {
           sollicitudin luctus pellentesque.
         </ExtendedBody2>
         <Logo src={logo} alt="logo" />
-
         <ContactDetails>
           <ContactDetailsSection>
             <DetailContainer to="/">
               <MapMarker />
               <Span color={colors.gray}>
-                Palestine - Westbank 1234st.
+                Jerusalem, Sheikh Jarrah, Esaaf Alnashashibi St
               </Span>
             </DetailContainer>
-
-            <DetailContainer to="/">
+            <DetailContainer to="mailto:info@zaat.dev">
               <EmailSVG />
-              <Span color={colors.gray}>Example@example.com</Span>
+              <Span color={colors.gray}>info@zaat.dev</Span>
             </DetailContainer>
-
-            <DetailContainer to="/">
+            <DetailContainer to="tel:00972528072551">
               <CallSVG />
-              <Span color={colors.gray}>( 970 ) 599 123 45</Span>
+              <Span color={colors.gray}>(972) 52 807 2551</Span>
             </DetailContainer>
           </ContactDetailsSection>
           <DividerContainer>
             <Divider shift />
             <Divider />
           </DividerContainer>
-          <ContactDetailsSection>
-            <DetailContainer to="/">
-              <FacebookIcon />
-              <Span color={colors.gray}>Zaat.Dev</Span>
-            </DetailContainer>
-
-            <DetailContainer to="/">
-              <TwitterIcon />
-              <Span color={colors.gray}>@Zaat.Dev</Span>
-            </DetailContainer>
-            <DetailContainer to="/">
-              <InstagramIcon />
-              <Span color={colors.gray}>@Zaat.Dev</Span>
-            </DetailContainer>
-          </ContactDetailsSection>
+          <SocialButtonsSection>
+            <SocialButtonsContainer>
+              <DetailContainer to="https://www.facebook.com/zaatdev">
+                <FacebookIcon />
+              </DetailContainer>
+              <DetailContainer to="https://twitter.com/zaatdev">
+                <TwitterIcon />
+              </DetailContainer>
+              <DetailContainer to="https://www.instagram.com/zaatdev/">
+                <InstagramIcon />
+              </DetailContainer>
+            </SocialButtonsContainer>
+            <Span style={{ textAlign: 'center' }} color={colors.gray}>
+              @zaatdev
+            </Span>
+          </SocialButtonsSection>
         </ContactDetails>
       </InfoSection>
       <FormSection>
