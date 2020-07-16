@@ -43,7 +43,7 @@ export const Subtitle = styled.p`
 export const Span = styled.p`
   font-size: 0.85rem;
   color: ${({ color }) => color};
-  font-weight: 500;
+  font-weight: 600;
 `
 export const ButtonText = styled.p`
   font-size: 1rem;
