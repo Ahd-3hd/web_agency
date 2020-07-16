@@ -45,7 +45,16 @@ export const ContactDetails = styled.div`
   }
 `
 
-export const ContactDetailsSection = styled.div``
+export const ContactDetailsSection = styled.div`
+  flex: 2;
+`
+export const SocialButtonsSection = styled.div`
+  flex: 1;
+`
+export const SocialButtonsContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`
 
 export const Logo = styled.img`
   display: none;
@@ -82,10 +91,14 @@ export const DetailContainer = styled(Link)`
   > p {
     margin: 0;
     margin-left: 0.5rem;
+    transition: color 0.3s;
   }
   > svg {
     width: 1.1rem;
     height: 1.1rem;
+  }
+  :hover p {
+    color: ${colors.primary};
   }
 `
 
