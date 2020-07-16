@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { animated } from 'react-spring'
 import backgroundImage from '../images/background.png'
 
-export const Wrapper = styled(animated.div)`
+export const Wrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,6 @@ export const Wrapper = styled(animated.div)`
   justify-content: center;
   overflow: hidden;
   position: relative;
-  transition: 2s;
   background:url(${backgroundImage}) no-repeat;
   background-size:cover;
   /* background: ${({ bg }) =>
