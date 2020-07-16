@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import { animated } from 'react-spring'
 import { Card } from './Card'
 import { Subtitle, H2, Body2 } from './typography'
-import contactBackground from '../images/contact_background2.png'
+// import contactBackground from '../images/contact_background2.png'
+import backgroundImage from '../images/background.png'
 import { colors } from '../utils'
 
 export const Wrapper = styled(animated.div)`
@@ -12,14 +13,12 @@ export const Wrapper = styled(animated.div)`
     display: flex;
     min-height: 100vh;
     align-items: center;
-    background: url(${contactBackground}) no-repeat;
-    background-size: 55%;
-    background-position-x: right;
-    background-position-y: top;
+    background: url(${backgroundImage}) no-repeat;
+    background-size: cover;
   }
-  @media (min-width: 1280px) {
+  /* @media (min-width: 1280px) {
     background-size: contain;
-  }
+  } */
 `
 
 export const InfoSection = styled.div`

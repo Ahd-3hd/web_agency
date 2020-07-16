@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { animated } from 'react-spring'
+import backgroundImage from '../images/background.png'
 
 export const Wrapper = styled(animated.div)`
   min-height: 100vh;
@@ -10,10 +11,12 @@ export const Wrapper = styled(animated.div)`
   overflow: hidden;
   position: relative;
   transition: 2s;
-  background: ${({ bg }) =>
+  background:url(${backgroundImage}) no-repeat;
+  background-size:cover;
+  /* background: ${({ bg }) =>
     bg
       ? ' radial-gradient(50% 98.88% at 50% 50%, rgba(84, 207, 97, 0.56) 0%, #2AB640 100%);'
-      : '#ffffff'};
+      : '#ffffff'}; */
 `
 
 export const AnimatedSVG = styled(animated.svg)`
