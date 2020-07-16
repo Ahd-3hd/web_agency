@@ -140,7 +140,7 @@ const Header = () => {
           <SingleTitleContainer
             style={props}
             // the reason i turned boolean to string is to stop reacts warning for passing boolean values as props..
-            odd={(i % 2 === 0).toString()}
+            odd={(i % 2 !== 0).toString()}
             key={i}
           >
             <TitleText>{titles[i]}</TitleText>
