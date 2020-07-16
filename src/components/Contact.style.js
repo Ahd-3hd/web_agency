@@ -1,4 +1,3 @@
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { animated } from 'react-spring'
 import { Card } from './Card'
@@ -82,12 +81,13 @@ export const Divider = styled.div`
   transform: translateY(${({ shift }) => (shift ? '10px' : '-10px')});
 `
 
-export const DetailContainer = styled(Link)`
+export const DetailContainer = styled.a`
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin: 0.5rem 0;
   text-decoration: none;
+  cursor: pointer;
   > p {
     margin: 0;
     margin-left: 0.5rem;
