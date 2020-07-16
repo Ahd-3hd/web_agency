@@ -9,12 +9,12 @@ import { colors } from '../utils'
 
 export const Wrapper = styled(animated.div)`
   padding: 1rem;
+  background: url(${backgroundImage}) no-repeat;
+  background-size: cover;
   @media (min-width: 1024px) {
     display: flex;
     min-height: 100vh;
     align-items: center;
-    background: url(${backgroundImage}) no-repeat;
-    background-size: cover;
   }
   /* @media (min-width: 1280px) {
     background-size: contain;
