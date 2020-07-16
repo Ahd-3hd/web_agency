@@ -29,7 +29,8 @@ const TitlesContainer = styled.div`
 const SingleTitleContainer = styled(animated.div)`
   display: flex;
   align-items: center;
-  flex-direction: ${({ odd }) => (odd ? 'row' : 'row-reverse')};
+  flex-direction: ${({ odd }) =>
+    odd === 'true' ? 'row' : 'row-reverse'};
   margin: 2rem 0;
   > svg {
     margin: 0 1rem;
@@ -138,7 +139,8 @@ const Header = () => {
         {springs.map((props, i) => (
           <SingleTitleContainer
             style={props}
-            odd={i % 2 === 0}
+            // the reason i turned boolean to string is to stop reacts warning for passing boolean values as props..
+            odd={(i % 2 === 0).toString()}
             key={i}
           >
             <TitleText>{titles[i]}</TitleText>
