@@ -11,24 +11,6 @@ const Scroller = () => (
     <Slide>
       <Contact />
     </Slide>
-    <Slide>
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          background: 'red',
-        }}
-      />
-    </Slide>
-    <Slide>
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          background: 'blue',
-        }}
-      />
-    </Slide>
   </FullPage>
 )
 
