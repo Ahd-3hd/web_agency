@@ -146,11 +146,11 @@ const Header = () => {
           </SingleTitleContainer>
         ))}
       </TitlesContainer>
-      <AnimatedCircle1 />
+      {/* <AnimatedCircle1 />
       <AnimatedCircle2 />
       <AnimatedCircle3 />
       <AnimatedCircle4 />
-      <AnimatedCircle5 />
+      <AnimatedCircle5 /> */}
       <RectButton>
         <ButtonText>Contact</ButtonText>
       </RectButton>
