@@ -4,7 +4,7 @@ import ChatBot from 'react-simple-chatbot'
 import { colors } from '../utils/index'
 
 const ChatContainer = styled(ChatBot)`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 10rem;
   animation: toggle 0.1s ease-out forwards;
