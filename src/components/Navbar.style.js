@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 import { colors } from '../utils'
 
 export const Nav = styled.nav`
@@ -70,10 +69,30 @@ export const Overlay = styled.div`
   justify-content: center;
 `
 
-export const MenuLink = styled(Link)`
+export const MenuLink = styled.button`
+  padding: 0;
+  background: transparent;
+  border: none;
   margin: 1rem 0;
   font-weight: 700;
   font-size: 1.5rem;
   text-decoration: none;
   color: ${colors.white};
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  ::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    border: 2px solid ${colors.white};
+    position: absolute;
+    bottom: -2px;
+    left: -70%;
+    transition: left 0.4s;
+    z-index: -1;
+  }
+  :hover ::after {
+    left: 0;
+  }
 `
