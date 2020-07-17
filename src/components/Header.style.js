@@ -23,9 +23,8 @@ export const TitlesContainer = styled.div`
   justify-content: center;
   padding: 0 5vw;
   @media (min-width: 900px) {
-    align-items: center;
+    /* align-items: center; */
     padding: 0 0.5rem;
-    text-align: center;
   }
 `
 export const SingleTitleContainer = styled(animated.div)`
