@@ -63,6 +63,18 @@ const SingleTitleContainer = styled(animated.div)`
         }
       }
     }
+    #eyebrows {
+      position: relative;
+      animation: eyebrowsAnim 2s infinite alternate-reverse;
+      @keyframes eyebrowsAnim {
+        from {
+          transform: translateY(-9px);
+        }
+        to {
+          transform: translateY(0px);
+        }
+      }
+    }
     #stars {
       animation: starAnim 1s infinite alternate-reverse;
       transform-origin: 50% 50%;
