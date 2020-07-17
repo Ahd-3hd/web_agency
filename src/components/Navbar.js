@@ -10,7 +10,8 @@ import {
 } from './Navbar.style'
 import logo from '../images/logo_zaat_orignal.png'
 
-const Navbar = () => {
+// eslint-disable-next-line react/prop-types
+const Navbar = ({ scrollFunc }) => {
   const [isMenuActive, setMenuActive] = useState(false)
   return (
     <Nav>
@@ -23,10 +24,24 @@ const Navbar = () => {
         <MenuButtonBar isActive={isMenuActive} />
       </MenuButton>
       <Overlay isActive={isMenuActive}>
-        <MenuLink to="/">Link 1</MenuLink>
-        <MenuLink to="/">Link 2</MenuLink>
-        <MenuLink to="/">Link 3</MenuLink>
-        <MenuLink to="/">Link 4</MenuLink>
+        <MenuLink
+          onClick={() => {
+            scrollFunc(0)
+            setMenuActive(false)
+          }}
+        >
+          Home
+        </MenuLink>
+        <MenuLink
+          onClick={() => {
+            scrollFunc(1)
+            setMenuActive(false)
+          }}
+        >
+          Contact
+        </MenuLink>
+        <MenuLink>Link 3</MenuLink>
+        <MenuLink>Link 4</MenuLink>
       </Overlay>
     </Nav>
   )
