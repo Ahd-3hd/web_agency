@@ -18,11 +18,17 @@ import GearsEmoji from '../static/GearsEmoji.svg'
 import RocketEmoji from '../static/RocketEmoji.svg'
 import PlaceholderEmoji from '../static/PlaceholderEmoji.svg'
 
-const emojis = [RocketEmoji, GearsEmoji, PlaceholderEmoji]
+const emojis = [
+  RocketEmoji,
+  RocketEmoji,
+  GearsEmoji,
+  PlaceholderEmoji,
+]
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ scrollFunc }) => {
   const titles = [
+    'Z is for Zaat and Zaat is for:',
     'Building blazingly fast, smart apps',
     'Task automation so you focus on what matters',
     'Keeping your customers engaged and happier than they ever been',
