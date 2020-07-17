@@ -76,13 +76,22 @@ const Contact = () => {
           </DividerContainer>
           <SocialButtonsSection>
             <SocialButtonsContainer>
-              <DetailContainer to="https://www.facebook.com/zaatdev">
+              <DetailContainer
+                target="_blank"
+                href="https://www.facebook.com/zaatdev"
+              >
                 <FacebookIcon />
               </DetailContainer>
-              <DetailContainer to="https://twitter.com/zaatdev">
+              <DetailContainer
+                target="_blank"
+                href="https://twitter.com/zaatdev"
+              >
                 <TwitterIcon />
               </DetailContainer>
-              <DetailContainer to="https://www.instagram.com/zaatdev/">
+              <DetailContainer
+                target="_blank"
+                href="https://www.instagram.com/zaatdev/"
+              >
                 <InstagramIcon />
               </DetailContainer>
             </SocialButtonsContainer>
