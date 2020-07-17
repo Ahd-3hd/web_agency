@@ -96,6 +96,7 @@ export const DetailContainer = styled.a`
   > svg {
     width: 1.1rem;
     height: 1.1rem;
+    fill: ${colors.gray};
   }
   :hover p {
     color: ${colors.primary};
