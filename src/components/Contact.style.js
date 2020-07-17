@@ -7,6 +7,7 @@ import { colors } from '../utils'
 
 export const Wrapper = styled(animated.div)`
   padding: 1rem;
+  padding-bottom: 0;
   background: url(${backgroundImage}) no-repeat;
   background-size: cover;
   min-height: 100vh;
