@@ -35,6 +35,7 @@ import FacebookIcon from '../static/FacebookIcon.svg'
 import TwitterIcon from '../static/TwitterIcon.svg'
 import InstagramIcon from '../static/InstagramIcon.svg'
 import UserIcon from '../static/UserIcon.svg'
+import InterestIcon from '../static/InterestIcon.svg'
 
 const Contact = () => {
   // keep track of whether a field is focused or not
@@ -115,7 +116,7 @@ const Contact = () => {
 
             <InputContainer>
               <InputLabel focused={isEmailFocused} htmlFor="email">
-                <UserIcon width="10" />
+                <EmailSVG width="10" />
                 Email
               </InputLabel>
               <Input
@@ -134,7 +135,7 @@ const Contact = () => {
                 focused={isInterestFocused}
                 htmlFor="interest"
               >
-                <UserIcon width="10" />
+                <InterestIcon width="15" />
                 Interest
               </InputLabel>
               <Input
@@ -153,7 +154,6 @@ const Contact = () => {
                 focused={isMessageFocused}
                 htmlFor="message"
               >
-                <UserIcon width="10" />
                 Message
               </InputLabel>
               <TextField
