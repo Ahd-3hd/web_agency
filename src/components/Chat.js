@@ -135,7 +135,7 @@ const steps = [
 
 const Chat = () => (
   <ThemeProvider theme={theme}>
-    <ChatContainer steps={steps} />
+    <ChatContainer steps={steps} botDelay={500} userDelay={500} />
   </ThemeProvider>
 )
 
