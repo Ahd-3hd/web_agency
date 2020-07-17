@@ -21,21 +21,26 @@ export const TitlesContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 0 0.5rem;
-  @media (min-width: 700px) {
+  padding: 0 5vw;
+  @media (min-width: 900px) {
     align-items: center;
+    padding: 0 0.5rem;
+    text-align: center;
   }
 `
 export const SingleTitleContainer = styled(animated.div)`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin: 1rem 0;
+  > svg {
+    margin-right: 0.5rem;
+  }
 `
 export const TitleText = styled(H4)`
   color: ${colors.primary};
   margin: 0;
   font-size: 2.5rem;
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     font-size: 1rem;
   }
 `
