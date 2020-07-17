@@ -2,8 +2,8 @@ import React from 'react'
 
 const HeartsEmoji = () => (
   <svg
-    width="111"
-    height="97"
+    width="64"
+    height="64"
     viewBox="0 0 111 97"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
