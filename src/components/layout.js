@@ -27,7 +27,6 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
-      <Navbar />
       <div>
         <main>{children}</main>
         {/* <footer>
