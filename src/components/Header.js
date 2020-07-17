@@ -33,11 +33,9 @@ const TitlesContainer = styled.div`
 const SingleTitleContainer = styled(animated.div)`
   display: flex;
   align-items: center;
-  text-align: center;
-  flex-direction: ${({ odd }) =>
-    odd === 'true' ? 'row' : 'row-reverse'};
   margin: 1rem 0;
-  > svg {
+  text-align: center;
+  /* > svg {
     #hearts {
       animation: heartsAnim 1s infinite alternate-reverse;
       transform-origin: 70%;
@@ -88,12 +86,15 @@ const SingleTitleContainer = styled(animated.div)`
         }
       }
     }
-  }
+  } */
 `
 const TitleText = styled(H4)`
   color: ${colors.primary};
   margin: 0;
-  font-size: 3ch;
+  font-size: 1.5rem;
+  @media (max-width: 700px) {
+    font-size: 1rem;
+  }
 `
 
 const Header = () => {
@@ -156,7 +157,7 @@ const Header = () => {
             key={i}
           >
             <TitleText>{titles[i]}</TitleText>
-            {React.createElement(emojis[i])}
+            {/* {React.createElement(emojis[i])} */}
           </SingleTitleContainer>
         ))}
       </TitlesContainer>
