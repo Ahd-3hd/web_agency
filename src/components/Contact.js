@@ -23,6 +23,7 @@ import {
   InputLabel,
   Input,
   TextField,
+  SelectInput,
 } from './InputFields'
 import { RectButton } from './Buttons'
 import logo from '../images/logo_zaat_orignal.png'
@@ -147,15 +148,21 @@ const Contact = () => {
                 <InterestIcon width="15" />
                 Interest
               </InputLabel>
-              <Input
+              <SelectInput
                 name="interest"
                 id="interest"
-                placeholder="interest"
                 borderColor={colors.secondary}
                 onFocus={() => setIsInterestFocused(true)}
                 onBlur={() => setIsInterestFocused(false)}
                 autoComplete="off"
-              />
+                focused={isInterestFocused}
+              >
+                <option defaultValue>Choose</option>
+                <option value="webapp">Build Webapp</option>
+                <option value="automation">Automate tasks</option>
+                <option value="inquiry">General inquiry</option>
+                <option value="consultation">Consultation</option>
+              </SelectInput>
             </InputContainer>
 
             <InputContainer>
