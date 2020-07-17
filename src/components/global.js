@@ -11,4 +11,11 @@ export default createGlobalStyle`
     margin:0 auto;
   }
 
+  .rsc{
+    @media (max-width:600px){
+      left:0;
+      width:80%;
+    }
+  }
+
 `
