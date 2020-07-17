@@ -14,7 +14,7 @@ import {
   AnimatedCircle5,
 } from './Header.style'
 import { RectButton } from './Buttons'
-import { ButtonText, H2 } from './typography'
+import { ButtonText, H4 } from './typography'
 import { colors } from '../utils'
 
 import HeartsEmoji from '../static/HeartsEmoji.svg'
@@ -25,19 +25,23 @@ const emojis = [HeartsEmoji, WowEmoji, StarEmoji]
 
 const TitlesContainer = styled.div`
   z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
 const SingleTitleContainer = styled(animated.div)`
   display: flex;
   align-items: center;
+  text-align: center;
   flex-direction: ${({ odd }) =>
     odd === 'true' ? 'row' : 'row-reverse'};
-  margin: 2rem 0;
+  margin: 0;
   > svg {
     margin: 0 1rem;
-    width: 50px;
     #hearts {
       animation: heartsAnim 1s infinite alternate-reverse;
-      transform-origin: top left;
+      transform-origin: 70%;
       @keyframes heartsAnim {
         from {
           transform: scale(0.5);
@@ -75,20 +79,20 @@ const SingleTitleContainer = styled(animated.div)`
     }
   }
 `
-const TitleText = styled(H2)`
+const TitleText = styled(H4)`
   color: ${colors.primary};
   margin: 0;
   font-size: 1.4rem;
   @media (min-width: 768px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `
 
 const Header = () => {
   const titles = [
-    'This is First Text',
-    'This is Second Text',
-    'This is Third Text',
+    'Building blazingly fast, smart apps',
+    'Task automation so you focus on what matters',
+    'Keeping your community/customers engaged and happier than they ever been',
   ]
   // animating each title individually. leaving it a comment just in case we decided to go back
   // const titleOneAnimation = useSpring({
