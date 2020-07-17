@@ -36,9 +36,8 @@ const SingleTitleContainer = styled(animated.div)`
   text-align: center;
   flex-direction: ${({ odd }) =>
     odd === 'true' ? 'row' : 'row-reverse'};
-  margin: 0;
+  margin: 1rem 0;
   > svg {
-    margin: 0 1rem;
     #hearts {
       animation: heartsAnim 1s infinite alternate-reverse;
       transform-origin: 70%;
@@ -94,17 +93,14 @@ const SingleTitleContainer = styled(animated.div)`
 const TitleText = styled(H4)`
   color: ${colors.primary};
   margin: 0;
-  font-size: 1.4rem;
-  @media (min-width: 768px) {
-    font-size: 2rem;
-  }
+  font-size: 3ch;
 `
 
 const Header = () => {
   const titles = [
     'Building blazingly fast, smart apps',
     'Task automation so you focus on what matters',
-    'Keeping your community/customers engaged and happier than they ever been',
+    'Keeping your customers engaged and happier than they ever been',
   ]
   // animating each title individually. leaving it a comment just in case we decided to go back
   // const titleOneAnimation = useSpring({
