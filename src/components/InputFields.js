@@ -62,8 +62,11 @@ export const InputLabel = styled.label`
   position: relative;
   top: 10px;
   left: 1rem;
+  display: flex;
+  align-items: center;
   > svg {
     fill: ${({ focused }) =>
       focused ? '#26c0b7' : 'rgba(84,207,97,0.7)'};
+    margin-right: 0.3rem;
   }
 `
