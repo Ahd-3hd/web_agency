@@ -4,8 +4,9 @@ import Layout from '../components/layout'
 // import Image from '../components/Zaat_logo'
 import SEO from '../components/seo'
 import Chat from '../components/Chat'
-import { RoundButton } from '../components/Buttons'
+import { RoundAnchorButton, RoundButton } from '../components/Buttons'
 import CallIcon from '../static/CallIcon.svg'
+import WhatsappIcon from '../static/WhatsappIcon.svg'
 import Scroller from '../components/Scroller'
 
 const ChatButton = styled(RoundButton)`
@@ -15,7 +16,7 @@ const ChatButton = styled(RoundButton)`
   z-index: 999;
 `
 
-const WhatsAppButton = styled(RoundButton)`
+const WhatsAppButton = styled(RoundAnchorButton)`
   position: fixed;
   right: 0.5rem;
   bottom: 0px;
@@ -41,7 +42,7 @@ const IndexPage = () => {
         <Scroller />
         {toggleChat && (
           <WhatsAppButton width="30" iconColor="#ffffff" toggleChat>
-            <CallIcon />
+            <WhatsappIcon />
           </WhatsAppButton>
         )}
         <ChatButton
