@@ -55,17 +55,17 @@ const Contact = () => {
         <Logo src={logo} alt="logo" />
         <ContactDetails>
           <ContactDetailsSection>
-            <DetailContainer to="/">
+            <DetailContainer href="/">
               <MapMarker />
               <Span color={colors.gray}>
                 Jerusalem, Sheikh Jarrah, Esaaf Alnashashibi St
               </Span>
             </DetailContainer>
-            <DetailContainer to="mailto:info@zaat.dev">
+            <DetailContainer href="mailto:info@zaat.dev">
               <EmailSVG />
               <Span color={colors.gray}>info@zaat.dev</Span>
             </DetailContainer>
-            <DetailContainer to="tel:00972528072551">
+            <DetailContainer href="tel:00972528072551">
               <CallSVG />
               <Span color={colors.gray}>(972) 52 807 2551</Span>
             </DetailContainer>
