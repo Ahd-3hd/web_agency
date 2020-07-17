@@ -5,8 +5,9 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Chat from '../components/Chat'
 import { RoundAnchorButton, RoundButton } from '../components/Buttons'
-import CallIcon from '../static/CallIcon.svg'
 import WhatsappIcon from '../static/WhatsappIcon.svg'
+import CloseIcon from '../static/CloseIcon.svg'
+import MessageIcon from '../static/MessageIcon.svg'
 import Scroller from '../components/Scroller'
 
 const ChatButton = styled(RoundButton)`
@@ -50,7 +51,11 @@ const IndexPage = () => {
           iconColor="#ffffff"
           onClick={() => setToggleChat(!toggleChat)}
         >
-          <CallIcon />
+          {toggleChat ? (
+            <CloseIcon width="25" />
+          ) : (
+            <MessageIcon width="25" />
+          )}
         </ChatButton>
         {toggleChat && <Chat />}
       </Layout>

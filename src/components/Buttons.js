@@ -61,6 +61,9 @@ export const RoundButton = styled.button`
   transition: box-shadow 0.2s ease;
   overflow: hidden;
   outline: lightgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   > svg {
     fill: ${({ iconColor }) => iconColor};
     z-index: 2;
