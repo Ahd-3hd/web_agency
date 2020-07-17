@@ -18,17 +18,11 @@ import GearsEmoji from '../static/GearsEmoji.svg'
 import RocketEmoji from '../static/RocketEmoji.svg'
 import PlaceholderEmoji from '../static/PlaceholderEmoji.svg'
 
-const emojis = [
-  RocketEmoji,
-  RocketEmoji,
-  GearsEmoji,
-  PlaceholderEmoji,
-]
+const emojis = [RocketEmoji, GearsEmoji, PlaceholderEmoji]
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ scrollFunc }) => {
   const titles = [
-    'Z is for Zaat and Zaat is for:',
     'Building blazingly fast, smart apps',
     'Task automation so you focus on what matters',
     'Keeping your customers engaged and happier than they ever been',
@@ -52,13 +46,12 @@ const Header = ({ scrollFunc }) => {
     <Wrapper>
       <Navbar scrollFunc={scrollFunc} />
       <TitlesContainer>
+        <SingleTitleContainer>
+          <RocketEmoji />
+          <TitleText>Z is for Zaat and Zaat is for:</TitleText>
+        </SingleTitleContainer>
         {springs.map((props, i) => (
-          <SingleTitleContainer
-            style={props}
-            // the reason i turned boolean to string is to stop reacts warning for passing boolean values as props..
-            odd={(i % 2 !== 0).toString()}
-            key={i}
-          >
+          <SingleTitleContainer style={props} key={i}>
             {React.createElement(emojis[i])}
             <TitleText>{titles[i]}</TitleText>
           </SingleTitleContainer>
