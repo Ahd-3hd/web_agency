@@ -163,3 +163,25 @@ export const RoundAnchorButton = styled.a`
     }
   }
 `
+export const ChatButton = styled(RoundButton)`
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+`
+
+export const WhatsAppButton = styled(RoundAnchorButton)`
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0px;
+  z-index: 999;
+  animation: animatewa 0.3s ease forwards;
+  @keyframes animatewa {
+    from {
+      bottom: 0px;
+    }
+    to {
+      bottom: 60px;
+    }
+  }
+`
