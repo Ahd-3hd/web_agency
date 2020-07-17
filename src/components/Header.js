@@ -12,6 +12,7 @@ import {
 } from './Header.style'
 import { RectButton } from './Buttons'
 import { ButtonText } from './typography'
+import Navbar from './Navbar'
 
 import GearsEmoji from '../static/GearsEmoji.svg'
 import RocketEmoji from '../static/RocketEmoji.svg'
@@ -43,6 +44,7 @@ const Header = ({ scrollFunc }) => {
   )
   return (
     <Wrapper>
+      <Navbar scrollFunc={scrollFunc} />
       <TitlesContainer>
         {springs.map((props, i) => (
           <SingleTitleContainer
@@ -56,8 +58,8 @@ const Header = ({ scrollFunc }) => {
           </SingleTitleContainer>
         ))}
       </TitlesContainer>
-      <RectButton>
-        <ButtonText onClick={scrollFunc}>Contact</ButtonText>
+      <RectButton onClick={() => scrollFunc(1)}>
+        <ButtonText>Contact</ButtonText>
       </RectButton>
     </Wrapper>
   )
