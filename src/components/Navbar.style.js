@@ -14,7 +14,8 @@ export const Nav = styled.nav`
 `
 export const MenuButtonBar = styled.div`
   width: 100%;
-  border: 1px solid ${colors.gray};
+  border: 1px solid
+    ${({ isActive }) => (isActive ? colors.white : colors.gray)};
   transition: 0.3s;
   transform: ${({ isActive, shift }) =>
     // eslint-disable-next-line no-nested-ternary
