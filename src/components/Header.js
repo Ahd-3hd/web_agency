@@ -19,7 +19,8 @@ import PlaceholderEmoji from '../static/PlaceholderEmoji.svg'
 
 const emojis = [RocketEmoji, GearsEmoji, PlaceholderEmoji]
 
-const Header = () => {
+// eslint-disable-next-line react/prop-types
+const Header = ({ scrollFunc }) => {
   const titles = [
     'Building blazingly fast, smart apps',
     'Task automation so you focus on what matters',
@@ -56,7 +57,7 @@ const Header = () => {
         ))}
       </TitlesContainer>
       <RectButton>
-        <ButtonText>Contact</ButtonText>
+        <ButtonText onClick={scrollFunc}>Contact</ButtonText>
       </RectButton>
     </Wrapper>
   )
