@@ -10,6 +10,7 @@ export const Wrapper = styled(animated.div)`
   padding: 1rem;
   background: url(${backgroundImage}) no-repeat;
   background-size: cover;
+  min-height: 100vh;
   @media (min-width: 1024px) {
     display: flex;
     min-height: 100vh;
