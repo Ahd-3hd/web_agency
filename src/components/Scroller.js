@@ -5,8 +5,8 @@ import Contact from './Contact'
 
 const Scroller = () => {
   const FPRef = useRef(null)
-  const handleContactScroll = () => {
-    FPRef.current.scrollToSlide(1)
+  const handleContactScroll = i => {
+    FPRef.current.scrollToSlide(i)
   }
 
   return (
