@@ -1,148 +1,134 @@
 import styled from 'styled-components'
 import { Card } from './Card'
-import { Subtitle, H2, Body2 } from './typography'
+import { H2, Body2 } from './typography'
 import backgroundImage from '../images/background.png'
 import { colors } from '../utils'
 
 export const Wrapper = styled.div`
-  padding: 1rem;
-  padding-bottom: 0;
   background: url(${backgroundImage}) no-repeat;
   background-size: cover;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
   @media (min-width: 1024px) {
-    display: flex;
-    min-height: 100vh;
+    flex-direction: row;
     align-items: center;
   }
+  @media (min-width: 1440px) {
+    padding: 5vh 10vw;
+  }
+  color: ${colors.gray};
 `
-
 export const InfoSection = styled.div`
-  flex: 1;
-  @media (min-width: 1024px) {
-    flex: 2;
-  }
-  @media (min-width: 1366px) {
-    margin-left: 7vw;
+  @media (min-width: 1280px) {
+    padding: 0 5vw;
   }
 `
-
-export const ContactDetails = styled.div`
-  display: flex;
-  justify-content: space-between;
+export const Title = styled(H2)`
+  font-size: 1.5rem;
+  margin: 0;
   margin-top: 1rem;
-  max-width: 500px;
-
   @media (min-width: 1024px) {
-    flex-direction: column;
+    font-size: 3rem;
+    margin: 1rem 0;
   }
-  @media (min-width: 1280px) {
+`
+export const ContactParagraph = styled(Body2)`
+  font-size: 0.9rem;
+  margin: 0;
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+  @media (max-height: 568px) {
+    display: none;
+  }
+`
+export const ContactInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 1024px) {
     flex-direction: row;
   }
 `
-
-export const ContactDetailsSection = styled.div`
-  flex: 2;
-`
-export const SocialButtonsSection = styled.div`
-  flex: 1;
-`
-export const SocialButtonsContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-`
-
-export const Logo = styled.img`
-  display: none;
-  max-width: 150px;
-  padding-bottom: 1rem;
-  border-bottom: 4px solid ${colors.secondary};
-  @media (min-height: 900px) {
-    display: block;
-  }
-`
-
-export const DividerContainer = styled.div`
-  display: none;
-
-  @media (min-width: 400px) {
-    display: flex;
-  }
-`
-
-export const Divider = styled.div`
-  border: 1px solid ${colors.gray2};
-  height: 100%;
-  max-height: 90px;
-  margin: 0 0.1rem;
-  transform: translateY(${({ shift }) => (shift ? '10px' : '-10px')});
-`
-
-export const DetailContainer = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 0.5rem 0;
-  text-decoration: none;
-  cursor: pointer;
-  > p {
-    margin: 0;
-    margin-left: 0.5rem;
-    transition: color 0.3s;
-  }
-  > svg {
-    width: 1.1rem;
-    height: 1.1rem;
-    fill: ${colors.gray};
-  }
-  :hover p {
-    color: ${colors.primary};
-  }
-`
-
-export const ExtendedCard = styled(Card)`
-  position: relative;
-  @media (min-width: 1280px) {
-    left: -6rem;
-  }
-`
-export const Form = styled.form`
-  margin: 0;
+export const SocialContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  @media (min-width: 1024px) {
+    flex: 1;
+  }
 `
+export const SocialIconsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  > svg {
+    margin: 0 1rem;
+  }
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid ${colors.primary};
+`
+export const NonSocialContactContainer = styled.div`
+  @media (min-width: 1024px) {
+    flex: 1;
+  }
+`
+export const SingleContactInfo = styled.a`
+  display: flex;
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: ${colors.gray};
+  transition: 0.3s;
+  > svg {
+    margin-right: 0.5rem;
+    fill: ${colors.gray};
+  }
 
-export const ExtendedSubtitle = styled(Subtitle)`
-  padding-left: 1rem;
-  font-size: 1.5rem;
+  :hover {
+    color: ${colors.primary};
+    > svg {
+      fill: ${colors.primary};
+    }
+  }
+  @media (min-width: 768px) {
+    padding: 0.6rem 0;
+  }
+`
+export const SocialLink = styled.a`
+  margin: 0 1rem;
+`
+export const SocialText = styled.p`
   margin: 0;
 `
 export const FormSection = styled.div`
-  flex: 1;
+  @media (min-width: 1280px) {
+    padding: 0 5vw;
+  }
+`
+export const FormContainer = styled(Card)`
+  background: ${colors.white};
+  padding: 0.5rem;
+  margin: 0;
   @media (min-width: 1024px) {
-    flex: 3;
-  }
-  @media (min-width: 1280px) {
-    flex: 2;
-    max-width: 500px;
-  }
-  @media (max-width: 1366px) {
-    margin-right: 7vw;
+    padding: 2rem;
   }
 `
-
-export const ExtendedH2 = styled(H2)`
-  display: none;
-  @media (min-height: 700px) and (min-width: 500px) {
-    display: block;
-  }
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 `
-export const ExtendedBody2 = styled(Body2)`
-  display: none;
-  @media (min-height: 700px) and (min-width: 500px) {
-    display: block;
-  }
-  @media (min-width: 1280px) {
-    max-width: 500px;
+export const NameEmailContainer = styled.div`
+  display: flex;
+`
+export const FormTitle = styled(Body2)`
+  margin: 0 0.3rem;
+  color: ${colors.primary};
+  @media (min-width: 1024px) {
+    font-size: 1.3rem;
   }
 `
