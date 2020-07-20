@@ -59,8 +59,10 @@ export const SocialContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 1rem 0;
   @media (min-width: 1024px) {
     flex: 1;
+    margin: 0;
   }
 `
 export const SocialIconsContainer = styled.div`
