@@ -46,7 +46,7 @@ export const SelectInput = styled.select`
 `
 export const TextField = styled.textarea`
   width: 100%;
-
+  height: 2.5em;
   padding: 0.4rem 0.6rem;
   border: 1px solid ${({ borderColor }) => borderColor};
   border-radius: 0.3rem;
@@ -65,6 +65,9 @@ export const TextField = styled.textarea`
   ::placeholder {
     color: rgba(84, 207, 97, 0.7);
     font-weight: 600;
+  }
+  @media (min-width: 768px) {
+    height: 4em;
   }
 `
 export const InputLabel = styled.label`
