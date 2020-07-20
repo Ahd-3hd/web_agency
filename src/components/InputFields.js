@@ -4,11 +4,11 @@ import { colors } from '../utils'
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 0.2rem;
   align-items: flex-start;
 `
 export const Input = styled.input`
-  padding: 0.6rem 1rem;
+  padding: 0.4rem 0.6rem;
   border: 1px solid ${({ borderColor }) => borderColor};
   border-radius: 0.3rem;
   transition: 0.3s ease;
@@ -30,7 +30,7 @@ export const Input = styled.input`
   }
 `
 export const SelectInput = styled.select`
-  padding: 0.6rem 1rem;
+  padding: 0.4rem 0.6rem;
   border: 1px solid ${({ borderColor }) => borderColor};
   border-radius: 0.3rem;
   transition: 0.3s ease;
@@ -47,7 +47,7 @@ export const SelectInput = styled.select`
 export const TextField = styled.textarea`
   width: 100%;
 
-  padding: 0.6rem 1rem;
+  padding: 0.4rem 0.6rem;
   border: 1px solid ${({ borderColor }) => borderColor};
   border-radius: 0.3rem;
   transition: 0.3s ease;
