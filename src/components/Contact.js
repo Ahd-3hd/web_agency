@@ -1,26 +1,25 @@
 import React, { useState } from 'react'
 import {
   Wrapper,
+  Title,
   InfoSection,
   FormSection,
-  Logo,
-  ContactDetails,
-  DetailContainer,
-  ContactDetailsSection,
-  DividerContainer,
-  Divider,
-  ExtendedCard,
+  ContactParagraph,
+  SocialContainer,
+  SocialIconsContainer,
+  SocialText,
+  ContactInfoContainer,
+  NonSocialContactContainer,
+  SingleContactInfo,
   Form,
-  ExtendedSubtitle,
-  ExtendedH2,
-  ExtendedBody2,
-  SocialButtonsSection,
-  SocialButtonsContainer,
+  NameEmailContainer,
+  FormContainer,
+  FormTitle,
+  SocialLink,
 } from './Contact.style'
-import { Span, ButtonText } from './typography'
+import { ButtonText } from './typography'
 import { InputContainer, InputLabel, Input, TextField, SelectInput } from './InputFields'
 import { RectButton } from './Buttons'
-import logo from '../images/logo_zaat_orignal.png'
 import { colors, formHandler } from '../utils'
 
 import MapMarker from '../static/MapMarker.svg'
@@ -29,8 +28,6 @@ import CallSVG from '../static/CallIcon.svg'
 import FacebookIcon from '../static/FacebookIcon.svg'
 import TwitterIcon from '../static/TwitterIcon.svg'
 import InstagramIcon from '../static/InstagramIcon.svg'
-import UserIcon from '../static/UserIcon.svg'
-import InterestIcon from '../static/InterestIcon.svg'
 
 const Contact = () => {
   // keep track of whether a field is focused or not
@@ -49,7 +46,13 @@ const Contact = () => {
     e.preventDefault()
     if (formState !== 'Send') return
     setFormState('Sending...')
-    const success = await formHandler({ source: 'form', name, interest, email, message })
+    const success = await formHandler({
+      source: 'form',
+      name,
+      interest,
+      email,
+      message,
+    })
     if (success) {
       setFormState('Sent!, We will Contact you Soon')
       inputsSetter.forEach(setInput => setInput(''))
@@ -63,96 +66,86 @@ const Contact = () => {
   return (
     <Wrapper>
       <InfoSection>
-        <ExtendedH2 color={colors.gray}>Let&apos;s Talk</ExtendedH2>
-        <ExtendedBody2 color={colors.gray}>
+        <Title>Let&apos;s Talk</Title>
+        <ContactParagraph>
           Come prepared with your problems, challenges and vison.
           <br />
           We will do whatever it takes to transform your vsion into relaity and your problems into fiction.
-        </ExtendedBody2>
-        <Logo src={logo} alt="logo" />
-        <ContactDetails>
-          <ContactDetailsSection>
-            <DetailContainer href="/">
+        </ContactParagraph>
+        <ContactInfoContainer>
+          <NonSocialContactContainer>
+            <SingleContactInfo href="/">
               <MapMarker />
-              <Span color={colors.gray}>Esaaf Alnashashibi St 2, Sheikh Jarrah, Jerusalem</Span>
-            </DetailContainer>
-            <DetailContainer href="mailto:info@zaat.dev">
+              Esaaf Alnashashibi St 2, Sheikh Jarrah, Jerusalem
+            </SingleContactInfo>
+            <SingleContactInfo href="mailto:info@zaat.dev">
               <EmailSVG />
-              <Span color={colors.gray}>info@zaat.dev</Span>
-            </DetailContainer>
-            <DetailContainer href="tel:00972528072551">
+              info@zaat.dev
+            </SingleContactInfo>
+            <SingleContactInfo href="tel:00972528072551">
               <CallSVG />
-              <Span color={colors.gray}>(972) 52 807 2551</Span>
-            </DetailContainer>
-          </ContactDetailsSection>
-          <DividerContainer>
-            <Divider shift />
-            <Divider />
-          </DividerContainer>
-          <SocialButtonsSection>
-            <SocialButtonsContainer>
-              <DetailContainer target="_blank" href="https://www.facebook.com/zaatdev">
+              (972) 52 807 2551
+            </SingleContactInfo>
+          </NonSocialContactContainer>
+          <SocialContainer>
+            <SocialIconsContainer>
+              <SocialLink target="_blank" href="https://www.facebook.com/zaatdev">
                 <FacebookIcon />
-              </DetailContainer>
-              <DetailContainer target="_blank" href="https://twitter.com/zaatdev">
+              </SocialLink>
+              <SocialLink target="_blank" href="https://twitter.com/zaatdev">
                 <TwitterIcon />
-              </DetailContainer>
-              <DetailContainer target="_blank" href="https://www.instagram.com/zaatdev/">
+              </SocialLink>
+              <SocialLink target="_blank" href="https://www.instagram.com/zaatdev/">
                 <InstagramIcon />
-              </DetailContainer>
-            </SocialButtonsContainer>
-            <Span style={{ textAlign: 'center' }} color={colors.gray}>
-              @zaatdev
-            </Span>
-          </SocialButtonsSection>
-        </ContactDetails>
+              </SocialLink>
+            </SocialIconsContainer>
+            <SocialText>@zaatdev</SocialText>
+          </SocialContainer>
+        </ContactInfoContainer>
       </InfoSection>
       <FormSection>
-        <ExtendedCard>
+        <FormContainer>
+          <FormTitle>Get in touch..</FormTitle>
           <Form onSubmit={HandleSubmit}>
-            <ExtendedSubtitle color={colors.primary}>Get in touch</ExtendedSubtitle>
-            <InputContainer>
-              <InputLabel focused={isNameFocused} htmlFor="name">
-                <UserIcon width="10" />
-                Name
-              </InputLabel>
-              <Input
-                required
-                name="name"
-                id="name"
-                placeholder="name"
-                borderColor={colors.secondary}
-                onFocus={() => setIsNameFocused(true)}
-                onBlur={() => setIsNameFocused(false)}
-                autoComplete="off"
-                value={name}
-                onChange={e => setName(e.target.value)}
-              />
-            </InputContainer>
-
-            <InputContainer>
-              <InputLabel focused={isEmailFocused} htmlFor="email">
-                <EmailSVG width="10" />
-                Email
-              </InputLabel>
-              <Input
-                required
-                name="email"
-                id="email"
-                placeholder="email"
-                type="email"
-                borderColor={colors.secondary}
-                onFocus={() => setIsEmailFocused(true)}
-                onBlur={() => setIsEmailFocused(false)}
-                autoComplete="off"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-              />
-            </InputContainer>
-
+            <NameEmailContainer>
+              <InputContainer>
+                <InputLabel focused={isNameFocused} htmlFor="name">
+                  Name
+                </InputLabel>
+                <Input
+                  required
+                  name="name"
+                  id="name"
+                  placeholder="name"
+                  borderColor={colors.secondary}
+                  onFocus={() => setIsNameFocused(true)}
+                  onBlur={() => setIsNameFocused(false)}
+                  autoComplete="off"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                />
+              </InputContainer>
+              <InputContainer>
+                <InputLabel focused={isEmailFocused} htmlFor="email">
+                  Email
+                </InputLabel>
+                <Input
+                  required
+                  name="email"
+                  id="email"
+                  placeholder="email"
+                  type="email"
+                  borderColor={colors.secondary}
+                  onFocus={() => setIsEmailFocused(true)}
+                  onBlur={() => setIsEmailFocused(false)}
+                  autoComplete="off"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                />
+              </InputContainer>
+            </NameEmailContainer>
             <InputContainer>
               <InputLabel focused={isInterestFocused} htmlFor="interest">
-                <InterestIcon width="15" />
                 Interest
               </InputLabel>
               <SelectInput
@@ -176,7 +169,6 @@ const Contact = () => {
                 <option value="consultation">Consultation</option>
               </SelectInput>
             </InputContainer>
-
             <InputContainer>
               <InputLabel focused={isMessageFocused} htmlFor="message">
                 Message
@@ -198,7 +190,7 @@ const Contact = () => {
               <ButtonText>{formState}</ButtonText>
             </RectButton>
           </Form>
-        </ExtendedCard>
+        </FormContainer>
       </FormSection>
     </Wrapper>
   )

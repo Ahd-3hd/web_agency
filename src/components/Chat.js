@@ -55,8 +55,16 @@ const ChatSteps = [
   {
     id: 'interest',
     options: [
-      { value: 'webapp', label: 'Building a Web App|Site', trigger: 4 },
-      { value: 'automation-ai', label: 'Automation|AI solution', trigger: 4 },
+      {
+        value: 'webapp',
+        label: 'Building a Web App|Site',
+        trigger: 4,
+      },
+      {
+        value: 'automation-ai',
+        label: 'Automation|AI solution',
+        trigger: 4,
+      },
       { value: 'inquiry', label: 'General inquiry', trigger: 4 },
       { value: 'consultation', label: 'Consultation', trigger: 4 },
     ],
@@ -121,9 +129,17 @@ const ChatSteps = [
     id: 'update-fields',
     options: [
       { value: 'name', label: 'Name', trigger: 'update-name' },
-      { value: 'interest', label: 'Interest', trigger: 'update-interest' },
+      {
+        value: 'interest',
+        label: 'Interest',
+        trigger: 'update-interest',
+      },
       { value: 'email', label: 'Email', trigger: 'update-email' },
-      { value: 'message', label: 'Message', trigger: 'update-message' },
+      {
+        value: 'message',
+        label: 'Message',
+        trigger: 'update-message',
+      },
     ],
   },
   {
@@ -155,7 +171,13 @@ const ChatSteps = [
 ]
 
 const handleEnd = ({ steps: { name, interest, email, message = { value: 'NaN' } } }) => {
-  formHandler({ source: 'bot', name: name.value, interest: interest.value, email: email.value, message: message.value })
+  formHandler({
+    source: 'bot',
+    name: name.value,
+    interest: interest.value,
+    email: email.value,
+    message: message.value,
+  })
 }
 const Chat = () => (
   <ThemeProvider theme={theme}>

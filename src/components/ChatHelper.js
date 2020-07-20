@@ -7,7 +7,13 @@ import { H4, Td } from './typography'
 const ReviewAndSubmit = ({ steps }) => {
   const { name, email, interest, message } = steps
   return (
-    <div style={{ width: '100%', padding: '12px', background: '#2ab640' }}>
+    <div
+      style={{
+        width: '100%',
+        padding: '12px',
+        background: '#2ab640',
+      }}
+    >
       <H4 style={{ color: 'white' }}>Summary</H4>
       <table>
         <tbody>
