@@ -18,16 +18,10 @@ import {
   SocialButtonsContainer,
 } from './Contact.style'
 import { Span, ButtonText } from './typography'
-import {
-  InputContainer,
-  InputLabel,
-  Input,
-  TextField,
-  SelectInput,
-} from './InputFields'
+import { InputContainer, InputLabel, Input, TextField, SelectInput } from './InputFields'
 import { RectButton } from './Buttons'
 import logo from '../images/logo_zaat_orignal.png'
-import { colors } from '../utils'
+import { colors, formHandler } from '../utils'
 
 import MapMarker from '../static/MapMarker.svg'
 import EmailSVG from '../static/EmailIcon.svg'
@@ -44,23 +38,43 @@ const Contact = () => {
   const [isEmailFocused, setIsEmailFocused] = useState(false)
   const [isInterestFocused, setIsInterestFocused] = useState(false)
   const [isMessageFocused, setIsMessageFocused] = useState(false)
+  const [formState, setFormState] = useState('Send')
+  const [name, setName] = useState('')
+  const [interest, setInterest] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const inputsSetter = [setName, setInterest, setEmail, setMessage]
+
+  const HandleSubmit = async e => {
+    e.preventDefault()
+    if (formState !== 'Send') return
+    setFormState('Sending...')
+    const success = await formHandler({ source: 'form', name, interest, email, message })
+    if (success) {
+      setFormState('Sent!, We will Contact you Soon')
+      inputsSetter.forEach(setInput => setInput(''))
+      setTimeout(() => {
+        setFormState('Send')
+      }, 2000)
+      return
+    }
+    setFormState('Failed!, try refreshing the page! ')
+  }
   return (
     <Wrapper>
       <InfoSection>
         <ExtendedH2 color={colors.gray}>Let&apos;s Talk</ExtendedH2>
         <ExtendedBody2 color={colors.gray}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Cras a condimentum risus. Vivamus maximus tellus
-          sollicitudin luctus pellentesque.
+          Come prepared with your problems, challenges and vison.
+          <br />
+          We will do whatever it takes to transform your vsion into relaity and your problems into fiction.
         </ExtendedBody2>
         <Logo src={logo} alt="logo" />
         <ContactDetails>
           <ContactDetailsSection>
             <DetailContainer href="/">
               <MapMarker />
-              <Span color={colors.gray}>
-                Jerusalem, Sheikh Jarrah, Esaaf Alnashashibi St
-              </Span>
+              <Span color={colors.gray}>Esaaf Alnashashibi St 2, Sheikh Jarrah, Jerusalem</Span>
             </DetailContainer>
             <DetailContainer href="mailto:info@zaat.dev">
               <EmailSVG />
@@ -77,22 +91,13 @@ const Contact = () => {
           </DividerContainer>
           <SocialButtonsSection>
             <SocialButtonsContainer>
-              <DetailContainer
-                target="_blank"
-                href="https://www.facebook.com/zaatdev"
-              >
+              <DetailContainer target="_blank" href="https://www.facebook.com/zaatdev">
                 <FacebookIcon />
               </DetailContainer>
-              <DetailContainer
-                target="_blank"
-                href="https://twitter.com/zaatdev"
-              >
+              <DetailContainer target="_blank" href="https://twitter.com/zaatdev">
                 <TwitterIcon />
               </DetailContainer>
-              <DetailContainer
-                target="_blank"
-                href="https://www.instagram.com/zaatdev/"
-              >
+              <DetailContainer target="_blank" href="https://www.instagram.com/zaatdev/">
                 <InstagramIcon />
               </DetailContainer>
             </SocialButtonsContainer>
@@ -104,23 +109,24 @@ const Contact = () => {
       </InfoSection>
       <FormSection>
         <ExtendedCard>
-          <Form>
-            <ExtendedSubtitle color={colors.primary}>
-              Get in touch
-            </ExtendedSubtitle>
+          <Form onSubmit={HandleSubmit}>
+            <ExtendedSubtitle color={colors.primary}>Get in touch</ExtendedSubtitle>
             <InputContainer>
-              <InputLabel focused={isNameFocused} htmlFor="username">
+              <InputLabel focused={isNameFocused} htmlFor="name">
                 <UserIcon width="10" />
                 Name
               </InputLabel>
               <Input
-                name="username"
-                id="username"
-                placeholder="Username"
+                required
+                name="name"
+                id="name"
+                placeholder="name"
                 borderColor={colors.secondary}
                 onFocus={() => setIsNameFocused(true)}
                 onBlur={() => setIsNameFocused(false)}
                 autoComplete="off"
+                value={name}
+                onChange={e => setName(e.target.value)}
               />
             </InputContainer>
 
@@ -130,25 +136,27 @@ const Contact = () => {
                 Email
               </InputLabel>
               <Input
+                required
                 name="email"
                 id="email"
                 placeholder="email"
+                type="email"
                 borderColor={colors.secondary}
                 onFocus={() => setIsEmailFocused(true)}
                 onBlur={() => setIsEmailFocused(false)}
                 autoComplete="off"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
               />
             </InputContainer>
 
             <InputContainer>
-              <InputLabel
-                focused={isInterestFocused}
-                htmlFor="interest"
-              >
+              <InputLabel focused={isInterestFocused} htmlFor="interest">
                 <InterestIcon width="15" />
                 Interest
               </InputLabel>
               <SelectInput
+                required
                 name="interest"
                 id="interest"
                 borderColor={colors.secondary}
@@ -156,35 +164,38 @@ const Contact = () => {
                 onBlur={() => setIsInterestFocused(false)}
                 autoComplete="off"
                 focused={isInterestFocused}
+                value={interest}
+                onChange={e => setInterest(e.target.value)}
               >
-                <option defaultValue>Choose</option>
-                <option value="webapp">Build Webapp</option>
-                <option value="automation">Automate tasks</option>
+                <option hidden value="">
+                  Why do you to contact Zaat
+                </option>
+                <option value="webapp">Building a Web App|Site</option>
+                <option value="automation-ai">Automation|AI solution</option>
                 <option value="inquiry">General inquiry</option>
                 <option value="consultation">Consultation</option>
               </SelectInput>
             </InputContainer>
 
             <InputContainer>
-              <InputLabel
-                focused={isMessageFocused}
-                htmlFor="message"
-              >
+              <InputLabel focused={isMessageFocused} htmlFor="message">
                 Message
               </InputLabel>
               <TextField
                 name="message"
                 id="message"
-                placeholder="message"
+                placeholder="message (Optional)"
                 borderColor={colors.secondary}
                 onFocus={() => setIsMessageFocused(true)}
                 onBlur={() => setIsMessageFocused(false)}
                 autoComplete="off"
                 rows="3"
+                value={message}
+                onChange={e => setMessage(e.target.value)}
               />
             </InputContainer>
-            <RectButton onClick={e => e.preventDefault()}>
-              <ButtonText>SEND</ButtonText>
+            <RectButton>
+              <ButtonText>{formState}</ButtonText>
             </RectButton>
           </Form>
         </ExtendedCard>
