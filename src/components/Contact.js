@@ -165,7 +165,6 @@ const Contact = () => {
                 onFocus={() => setIsMessageFocused(true)}
                 onBlur={() => setIsMessageFocused(false)}
                 autoComplete="off"
-                rows="2"
               />
             </InputContainer>
             <RectButton onClick={e => e.preventDefault()}>
