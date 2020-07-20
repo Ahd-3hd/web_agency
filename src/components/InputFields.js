@@ -75,8 +75,7 @@ export const InputLabel = styled.label`
   padding: 0 4px;
   font-size: 0.75rem;
   font-weight: 600;
-  color: ${({ focused }) =>
-    focused ? '#26c0b7' : 'rgba(84,207,97,0.7)'};
+  color: ${({ focused }) => (focused ? '#26c0b7' : 'rgba(84,207,97,0.7)')};
   background: #ffffff;
   position: relative;
   top: 10px;
@@ -84,8 +83,7 @@ export const InputLabel = styled.label`
   display: flex;
   align-items: center;
   > svg {
-    fill: ${({ focused }) =>
-      focused ? '#26c0b7' : 'rgba(84,207,97,0.7)'};
+    fill: ${({ focused }) => (focused ? '#26c0b7' : 'rgba(84,207,97,0.7)')};
     margin-right: 0.3rem;
   }
 `

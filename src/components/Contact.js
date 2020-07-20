@@ -18,13 +18,7 @@ import {
   SocialLink,
 } from './Contact.style'
 import { ButtonText } from './typography'
-import {
-  InputContainer,
-  InputLabel,
-  Input,
-  TextField,
-  SelectInput,
-} from './InputFields'
+import { InputContainer, InputLabel, Input, TextField, SelectInput } from './InputFields'
 import { RectButton } from './Buttons'
 import { colors, formHandler } from '../utils'
 
@@ -76,8 +70,7 @@ const Contact = () => {
         <ContactParagraph>
           Come prepared with your problems, challenges and vison.
           <br />
-          We will do whatever it takes to transform your vsion into
-          relaity and your problems into fiction.
+          We will do whatever it takes to transform your vsion into relaity and your problems into fiction.
         </ContactParagraph>
         <ContactInfoContainer>
           <NonSocialContactContainer>
@@ -96,22 +89,13 @@ const Contact = () => {
           </NonSocialContactContainer>
           <SocialContainer>
             <SocialIconsContainer>
-              <SocialLink
-                target="_blank"
-                href="https://www.facebook.com/zaatdev"
-              >
+              <SocialLink target="_blank" href="https://www.facebook.com/zaatdev">
                 <FacebookIcon />
               </SocialLink>
-              <SocialLink
-                target="_blank"
-                href="https://twitter.com/zaatdev"
-              >
+              <SocialLink target="_blank" href="https://twitter.com/zaatdev">
                 <TwitterIcon />
               </SocialLink>
-              <SocialLink
-                target="_blank"
-                href="https://www.instagram.com/zaatdev/"
-              >
+              <SocialLink target="_blank" href="https://www.instagram.com/zaatdev/">
                 <InstagramIcon />
               </SocialLink>
             </SocialIconsContainer>
@@ -161,10 +145,7 @@ const Contact = () => {
               </InputContainer>
             </NameEmailContainer>
             <InputContainer>
-              <InputLabel
-                focused={isInterestFocused}
-                htmlFor="interest"
-              >
+              <InputLabel focused={isInterestFocused} htmlFor="interest">
                 Interest
               </InputLabel>
               <SelectInput
@@ -182,21 +163,14 @@ const Contact = () => {
                 <option hidden value="">
                   Why do you to contact Zaat
                 </option>
-                <option value="webapp">
-                  Building a Web App|Site
-                </option>
-                <option value="automation-ai">
-                  Automation|AI solution
-                </option>
+                <option value="webapp">Building a Web App|Site</option>
+                <option value="automation-ai">Automation|AI solution</option>
                 <option value="inquiry">General inquiry</option>
                 <option value="consultation">Consultation</option>
               </SelectInput>
             </InputContainer>
             <InputContainer>
-              <InputLabel
-                focused={isMessageFocused}
-                htmlFor="message"
-              >
+              <InputLabel focused={isMessageFocused} htmlFor="message">
                 Message
               </InputLabel>
               <TextField

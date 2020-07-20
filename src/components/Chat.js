@@ -49,8 +49,7 @@ const ChatSteps = [
   },
   {
     id: 3,
-    message:
-      'Nice to e-meet you {previousValue}, Please choose why you are intrested to contact us',
+    message: 'Nice to e-meet you {previousValue}, Please choose why you are intrested to contact us',
     trigger: 'interest',
   },
   {
@@ -72,17 +71,13 @@ const ChatSteps = [
   },
   {
     id: 4,
-    message:
-      'Please type your email address, to be able to reach you.',
+    message: 'Please type your email address, to be able to reach you.',
     trigger: 'email',
   },
   {
     id: 'email',
     user: true,
-    validator: value =>
-      emailReg.test(value)
-        ? true
-        : 'Please insert correct email format',
+    validator: value => (emailReg.test(value) ? true : 'Please insert correct email format'),
     trigger: 5,
   },
   {
@@ -105,8 +100,7 @@ const ChatSteps = [
   { id: 'message', user: true, trigger: 8 },
   {
     id: 8,
-    message:
-      "Awesome, Here is what I am about to send To Zaat's Staff",
+    message: "Awesome, Here is what I am about to send To Zaat's Staff",
     trigger: 'review',
   },
   {
@@ -176,9 +170,7 @@ const ChatSteps = [
   },
 ]
 
-const handleEnd = ({
-  steps: { name, interest, email, message = { value: 'NaN' } },
-}) => {
+const handleEnd = ({ steps: { name, interest, email, message = { value: 'NaN' } } }) => {
   formHandler({
     source: 'bot',
     name: name.value,
