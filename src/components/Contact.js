@@ -26,7 +26,7 @@ import {
   SelectInput,
 } from './InputFields'
 import { RectButton } from './Buttons'
-import { colors } from '../utils'
+import { colors, formHandler } from '../utils'
 
 import MapMarker from '../static/MapMarker.svg'
 import EmailSVG from '../static/EmailIcon.svg'
@@ -41,20 +41,49 @@ const Contact = () => {
   const [isEmailFocused, setIsEmailFocused] = useState(false)
   const [isInterestFocused, setIsInterestFocused] = useState(false)
   const [isMessageFocused, setIsMessageFocused] = useState(false)
+  const [formState, setFormState] = useState('Send')
+  const [name, setName] = useState('')
+  const [interest, setInterest] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const inputsSetter = [setName, setInterest, setEmail, setMessage]
+
+  const HandleSubmit = async e => {
+    e.preventDefault()
+    if (formState !== 'Send') return
+    setFormState('Sending...')
+    const success = await formHandler({
+      source: 'form',
+      name,
+      interest,
+      email,
+      message,
+    })
+    if (success) {
+      setFormState('Sent!, We will Contact you Soon')
+      inputsSetter.forEach(setInput => setInput(''))
+      setTimeout(() => {
+        setFormState('Send')
+      }, 2000)
+      return
+    }
+    setFormState('Failed!, try refreshing the page! ')
+  }
   return (
     <Wrapper>
       <InfoSection>
         <Title>Let&apos;s Talk</Title>
         <ContactParagraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Cras a condimentum risus. Vivamus maximus tellus
-          sollicitudin luctus pellentesque.
+          Come prepared with your problems, challenges and vison.
+          <br />
+          We will do whatever it takes to transform your vsion into
+          relaity and your problems into fiction.
         </ContactParagraph>
         <ContactInfoContainer>
           <NonSocialContactContainer>
             <SingleContactInfo href="/">
               <MapMarker />
-              Jerusalem, Sheikh Jarrah, Esaaf Alnashashibi St
+              Esaaf Alnashashibi St 2, Sheikh Jarrah, Jerusalem
             </SingleContactInfo>
             <SingleContactInfo href="mailto:info@zaat.dev">
               <EmailSVG />
@@ -93,23 +122,23 @@ const Contact = () => {
       <FormSection>
         <FormContainer>
           <FormTitle>Get in touch..</FormTitle>
-          <Form>
+          <Form onSubmit={HandleSubmit}>
             <NameEmailContainer>
               <InputContainer>
-                <InputLabel
-                  focused={isNameFocused}
-                  htmlFor="username"
-                >
+                <InputLabel focused={isNameFocused} htmlFor="name">
                   Name
                 </InputLabel>
                 <Input
-                  name="username"
-                  id="username"
-                  placeholder="Username"
+                  required
+                  name="name"
+                  id="name"
+                  placeholder="name"
                   borderColor={colors.secondary}
                   onFocus={() => setIsNameFocused(true)}
                   onBlur={() => setIsNameFocused(false)}
                   autoComplete="off"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
                 />
               </InputContainer>
               <InputContainer>
@@ -117,13 +146,17 @@ const Contact = () => {
                   Email
                 </InputLabel>
                 <Input
+                  required
                   name="email"
                   id="email"
                   placeholder="email"
+                  type="email"
                   borderColor={colors.secondary}
                   onFocus={() => setIsEmailFocused(true)}
                   onBlur={() => setIsEmailFocused(false)}
                   autoComplete="off"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                 />
               </InputContainer>
             </NameEmailContainer>
@@ -135,6 +168,7 @@ const Contact = () => {
                 Interest
               </InputLabel>
               <SelectInput
+                required
                 name="interest"
                 id="interest"
                 borderColor={colors.secondary}
@@ -142,10 +176,18 @@ const Contact = () => {
                 onBlur={() => setIsInterestFocused(false)}
                 autoComplete="off"
                 focused={isInterestFocused}
+                value={interest}
+                onChange={e => setInterest(e.target.value)}
               >
-                <option defaultValue>Choose</option>
-                <option value="webapp">Build Webapp</option>
-                <option value="automation">Automate tasks</option>
+                <option hidden value="">
+                  Why do you to contact Zaat
+                </option>
+                <option value="webapp">
+                  Building a Web App|Site
+                </option>
+                <option value="automation-ai">
+                  Automation|AI solution
+                </option>
                 <option value="inquiry">General inquiry</option>
                 <option value="consultation">Consultation</option>
               </SelectInput>
@@ -160,15 +202,18 @@ const Contact = () => {
               <TextField
                 name="message"
                 id="message"
-                placeholder="message"
+                placeholder="message (Optional)"
                 borderColor={colors.secondary}
                 onFocus={() => setIsMessageFocused(true)}
                 onBlur={() => setIsMessageFocused(false)}
                 autoComplete="off"
+                rows="3"
+                value={message}
+                onChange={e => setMessage(e.target.value)}
               />
             </InputContainer>
-            <RectButton onClick={e => e.preventDefault()}>
-              <ButtonText>SEND</ButtonText>
+            <RectButton>
+              <ButtonText>{formState}</ButtonText>
             </RectButton>
           </Form>
         </FormContainer>

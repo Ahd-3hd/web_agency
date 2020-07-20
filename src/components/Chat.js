@@ -1,7 +1,9 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import ChatBot from 'react-simple-chatbot'
-import { colors } from '../utils/index'
+import { colors, formHandler } from '../utils'
+import ChatHelper from './ChatHelper'
+import squareLogo from '../images/zaat_logo_square.png'
 
 const ChatContainer = styled(ChatBot)`
   position: fixed;
@@ -30,65 +32,91 @@ const theme = {
   userBubbleColor: '#fff',
   userFontColor: '#4a4a4a',
 }
-const steps = [
+
+const emailReg = new RegExp('[^@]+@[^@]+\\.[^@]+')
+
+const ChatSteps = [
   {
-    id: '1',
-    message: 'What is your name?',
+    id: 1,
+    message: "Hey, I am Zaat's bot, Can you tell me your name",
     trigger: 'name',
   },
   {
     id: 'name',
     user: true,
-    trigger: '3',
+    validator: value => (value ? true : 'please type something'),
+    trigger: 3,
   },
   {
-    id: '3',
-    message: 'Hi {previousValue}! What is your gender?',
-    trigger: 'gender',
+    id: 3,
+    message:
+      'Nice to e-meet you {previousValue}, Please choose why you are intrested to contact us',
+    trigger: 'interest',
   },
   {
-    id: 'gender',
+    id: 'interest',
     options: [
-      { value: 'male', label: 'Male', trigger: '5' },
-      { value: 'female', label: 'Female', trigger: '5' },
+      {
+        value: 'webapp',
+        label: 'Building a Web App|Site',
+        trigger: 4,
+      },
+      {
+        value: 'automation-ai',
+        label: 'Automation|AI solution',
+        trigger: 4,
+      },
+      { value: 'inquiry', label: 'General inquiry', trigger: 4 },
+      { value: 'consultation', label: 'Consultation', trigger: 4 },
     ],
   },
   {
-    id: '5',
-    message: 'How old are you?',
-    trigger: 'age',
+    id: 4,
+    message:
+      'Please type your email address, to be able to reach you.',
+    trigger: 'email',
   },
   {
-    id: 'age',
+    id: 'email',
     user: true,
-    trigger: '7',
-    validator: value => {
-      // eslint-disable-next-line no-restricted-globals
-      if (isNaN(value)) {
-        return 'value must be a number'
-        // eslint-disable-next-line no-else-return
-      } else if (value < 0) {
-        return 'value must be positive'
-      } else if (value > 120) {
-        return `${value}? Come on!`
-      }
-
-      return true
-    },
+    validator: value =>
+      emailReg.test(value)
+        ? true
+        : 'Please insert correct email format',
+    trigger: 5,
   },
   {
-    id: '7',
-    message: 'Great! Check out your summary',
+    id: 5,
+    message: 'Anything else you would like to say',
+    trigger: 6,
+  },
+  {
+    id: 6,
+    options: [
+      { value: 'no', label: 'no', trigger: 8 },
+      { value: '', label: 'yes', trigger: 7 },
+    ],
+  },
+  {
+    id: 7,
+    message: 'please type a message,',
+    trigger: 'message',
+  },
+  { id: 'message', user: true, trigger: 8 },
+  {
+    id: 8,
+    message:
+      "Awesome, Here is what I am about to send To Zaat's Staff",
     trigger: 'review',
   },
   {
     id: 'review',
-    message: 'here should be a custom component',
+    component: <ChatHelper />,
     trigger: 'update',
   },
   {
     id: 'update',
-    message: 'Would you like to update some field?',
+    message: 'Would you like to update anything?',
     trigger: 'update-question',
   },
   {
@@ -107,25 +135,40 @@ const steps = [
     id: 'update-fields',
     options: [
       { value: 'name', label: 'Name', trigger: 'update-name' },
-      { value: 'gender', label: 'Gender', trigger: 'update-gender' },
-      { value: 'age', label: 'Age', trigger: 'update-age' },
+      {
+        value: 'interest',
+        label: 'Interest',
+        trigger: 'update-interest',
+      },
+      { value: 'email', label: 'Email', trigger: 'update-email' },
+      {
+        value: 'message',
+        label: 'Message',
+        trigger: 'update-message',
+      },
     ],
   },
   {
     id: 'update-name',
     update: 'name',
-    trigger: '7',
+    trigger: '8',
   },
   {
-    id: 'update-gender',
-    update: 'gender',
-    trigger: '7',
+    id: 'update-interest',
+    update: 'interest',
+    trigger: '8',
   },
   {
-    id: 'update-age',
-    update: 'age',
-    trigger: '7',
+    id: 'update-email',
+    update: 'email',
+    trigger: '8',
   },
+  {
+    id: 'update-message',
+    update: 'message',
+    trigger: '8',
+  },
+
   {
     id: 'end-message',
     message: 'Thanks! Your data was submitted successfully!',
@@ -133,9 +176,28 @@ const steps = [
   },
 ]
 
+const handleEnd = ({
+  steps: { name, interest, email, message = { value: 'NaN' } },
+}) => {
+  formHandler({
+    source: 'bot',
+    name: name.value,
+    interest: interest.value,
+    email: email.value,
+    message: message.value,
+  })
+}
 const Chat = () => (
   <ThemeProvider theme={theme}>
-    <ChatContainer steps={steps} botDelay={500} userDelay={500} />
+    <ChatContainer
+      steps={ChatSteps}
+      headerTitle="Zaat's Bot"
+      hideUserAvatar
+      handleEnd={handleEnd}
+      botAvatar={squareLogo}
+      botDelay={500}
+      userDelay={500}
+    />
   </ThemeProvider>
 )
 
