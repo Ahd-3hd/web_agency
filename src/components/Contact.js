@@ -16,6 +16,7 @@ import {
   FormContainer,
   FormTitle,
   SocialLink,
+  DesktopOnlyContactParagraph,
 } from './Contact.style'
 import { ButtonText } from './typography'
 import { InputContainer, InputLabel, Input, TextField, SelectInput } from './InputFields'
@@ -72,6 +73,11 @@ const Contact = () => {
           <br />
           We will do whatever it takes to transform your vsion into relaity and your problems into fiction.
         </ContactParagraph>
+        <DesktopOnlyContactParagraph>
+          Come prepared with your problems, challenges and vison.
+          <br />
+          We will do whatever it takes to transform your vsion into relaity and your problems into fiction.
+        </DesktopOnlyContactParagraph>
         <ContactInfoContainer>
           <NonSocialContactContainer>
             <SingleContactInfo href="/">
