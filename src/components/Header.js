@@ -4,7 +4,7 @@
 // import PropTypes from 'prop-types'
 import React from 'react'
 import { config, useSprings } from 'react-spring'
-import { Wrapper, TitlesContainer, SingleTitleContainer, TitleText } from './Header.style'
+import { Wrapper, TitlesContainer, SingleTitleContainer, TitleText, LogoFirstSentence } from './Header.style'
 import { RectButton } from './Buttons'
 import { ButtonText } from './typography'
 import Navbar from './Navbar'
@@ -12,6 +12,7 @@ import Navbar from './Navbar'
 import GearsEmoji from '../static/GearsEmoji.svg'
 import RocketEmoji from '../static/RocketEmoji.svg'
 import PlaceholderEmoji from '../static/PlaceholderEmoji.svg'
+import LogoLetter from '../images/zaat_logo_square.png'
 
 const emojis = [RocketEmoji, GearsEmoji, PlaceholderEmoji]
 
@@ -42,8 +43,10 @@ const Header = ({ scrollFunc }) => {
       <Navbar scrollFunc={scrollFunc} />
       <TitlesContainer>
         <SingleTitleContainer>
-          <RocketEmoji />
-          <TitleText>Z is for Zaat and Zaat is for:</TitleText>
+          <TitleText>
+            <LogoFirstSentence src={LogoLetter} alt="Z" />
+            is for Zaat and Zaat is for:
+          </TitleText>
         </SingleTitleContainer>
         {springs.map((props, i) => (
           <SingleTitleContainer style={props} key={i}>
