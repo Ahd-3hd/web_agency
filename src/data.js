@@ -31,7 +31,7 @@ const data = [
   },
   {
     name: 'Tasks automation',
-    image: 'Responsives',
+    image: 'TA',
     summary:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa elementum, iaculis et, et. Aliquam nisl amet lorem quisque eu commodo leo. Neque ',
   },

@@ -10,17 +10,15 @@ import {
 import { H4, H5, Body2 } from './typography'
 import { ServiceCard } from './Card'
 import { colors } from '../utils'
-/* eslint-disable no-unused-vars */
 import Fast from '../static/Fast.svg'
 import SEO from '../static/SEO.svg'
 import Conunsltation from '../static/Conunsltation.svg'
 import SML from '../static/SML.svg'
 import TA from '../static/TA.svg'
 import Responsives from '../static/Responsives.svg'
-/* eslint-disable no-unused-vars */
-
 import data from '../data'
 
+const images = { Responsives, Conunsltation, TA, SML, SEO, Fast }
 const Service = () => (
   <ServiceSection>
     <H4
@@ -40,7 +38,7 @@ const Service = () => (
 
     <ServiceCards>
       {data.map(({ name, summary, image }, i) => {
-        const ServiceIcon = `images[image]`
+        const ServiceIcon = images[image]
 
         return (
           <ServiceCard>
