@@ -1,13 +1,21 @@
 import styled from 'styled-components'
+import backgroundImage from '../images/background.png'
 
 export const PortfolioSection = styled.section`
-  width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(${backgroundImage}) no-repeat;
+  background-size: cover;
 `
 
 export const CardWrapper = styled.div`
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
+  display: grid;
+  place-items: center;
 `
 
 export const Wrapper = styled.div`
@@ -15,10 +23,12 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  transform: skew(${({ rotation = '-20deg' }) => rotation});
 `
 
 export const Logo = styled.div`
   width: 30%;
+  max-width: 300px;
   position: relative;
   justify-self: flex-end;
 
