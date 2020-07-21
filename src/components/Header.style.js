@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   position: relative;
   background: url(${backgroundImage}) no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 `
 export const TitlesContainer = styled.div`
   z-index: 4;

@@ -7,6 +7,7 @@ import { colors } from '../utils'
 export const Wrapper = styled.div`
   background: url(${backgroundImage}) no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   width: 100%;
   height: 100%;
   padding: 1rem;
