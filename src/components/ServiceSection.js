@@ -1,10 +1,26 @@
 import React from 'react'
 import { css } from 'styled-components'
-import { ServiceSection, Details } from './service'
+import {
+  ServiceSection,
+  Details,
+  ServiceCards,
+  CircleNumber,
+  Line,
+} from './service.style'
 import { H4, H5, Body2 } from './typography'
 import { ServiceCard } from './Card'
-import Conunsltation from '../icons/Conunsltation.svg'
-// import { fonts, colors } from '../../utils'
+import { colors } from '../utils'
+/* eslint-disable no-unused-vars */
+import Fast from '../static/Fast.svg'
+import SEO from '../static/SEO.svg'
+import Conunsltation from '../static/Conunsltation.svg'
+import SML from '../static/SML.svg'
+import TA from '../static/TA.svg'
+import Responsives from '../static/Responsives.svg'
+/* eslint-disable no-unused-vars */
+
+import data from '../data'
+
 const Service = () => (
   <ServiceSection>
     <H4
@@ -21,17 +37,37 @@ const Service = () => (
     >
       Design develop websites and webapps
     </H5>
-    <ServiceCard>
-      <Conunsltation />
-      <Details>
-        <H5>Conunsltation</H5>
-        <Body2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Massa elementum, iaculis et, et. Aliquam nisl amet lorem
-          quisque eu commodo leo. Neque
-        </Body2>
-      </Details>
-    </ServiceCard>
+
+    <ServiceCards>
+      {data.map(({ name, summary, image }, i) => {
+        const ServiceIcon = `images[image]`
+
+        return (
+          <ServiceCard>
+            <ServiceIcon />
+            <Details>
+              <H5
+                css={css`
+                  text-align: center;
+                `}
+              >
+                {name}
+              </H5>
+              <Body2
+                css={css`
+                  font-weight: 400;
+                `}
+                color={colors.gray2}
+              >
+                {summary}
+              </Body2>
+            </Details>
+            <Line />
+            <CircleNumber>{i + 1}</CircleNumber>
+          </ServiceCard>
+        )
+      })}
+    </ServiceCards>
   </ServiceSection>
 )
 
