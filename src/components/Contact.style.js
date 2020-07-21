@@ -48,6 +48,20 @@ export const ContactParagraph = styled(Body2)`
     display: none;
   }
 `
+export const DesktopOnlyContactParagraph = styled(Body2)`
+  font-size: 0.9rem;
+  margin: 0;
+  display: none;
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+    margin: 1rem 0;
+    display: block;
+  }
+  @media (max-height: 568px) {
+    display: none;
+  }
+`
+
 export const ContactInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -126,6 +140,9 @@ export const Form = styled.form`
 `
 export const NameEmailContainer = styled.div`
   display: flex;
+  @media (min-width: 1024px) {
+    flex-direction: column;
+  }
 `
 export const FormTitle = styled(Body2)`
   margin: 0 0.3rem;
