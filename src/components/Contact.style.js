@@ -12,9 +12,9 @@ export const Wrapper = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     flex-direction: row;
     align-items: center;
   }
