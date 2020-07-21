@@ -10,7 +10,7 @@ const Scroller = () => {
   }
 
   return (
-    <FullPage ref={FPRef}>
+    <FullPage ref={FPRef} controls>
       <Slide>
         <Header scrollFunc={handleContactScroll} />
       </Slide>
