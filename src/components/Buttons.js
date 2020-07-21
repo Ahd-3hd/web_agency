@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const RectButton = styled.button`
   padding: 0.5rem 2rem;
-  margin: 1rem;
+  margin: ${({ margin = '1rem' }) => margin};
   border: none;
   background: #2ab640;
   color: #ffffff;

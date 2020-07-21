@@ -5,14 +5,7 @@ import Img from 'gatsby-image'
 import { H3, Body2 } from './typography'
 import { PolygonCard as Card } from './Card'
 import { RectButton } from './Buttons'
-import {
-  PortfolioSection,
-  Wrapper,
-  Logo,
-  Content,
-  Span,
-  CardWrapper,
-} from '../styles/portfolio'
+import { PortfolioSection, Wrapper, Logo, Content, Span, CardWrapper } from '../styles/portfolio'
 
 const Portfolio = () => {
   const data = useStaticQuery(graphql`
@@ -40,29 +33,22 @@ const Portfolio = () => {
         <Card rotation="-20deg">
           <Wrapper rotation="20deg">
             <Logo>
-              <Img
-                fluid={data.placeholderImage.childImageSharp.fluid}
-              />
+              <Img fluid={data.placeholderImage.childImageSharp.fluid} />
             </Logo>
             <Content>
               <H3>Big Site Name</H3>
               <Body2>
-                <Span color="rgba(36, 36, 36, 0.6)">
-                  Technlogies:
-                </Span>
+                <Span color="rgba(36, 36, 36, 0.6)">Technlogies:</Span>
                 <Span>JavaScript</Span>
                 <Span>JavaScript</Span>
                 <Span>JavaScript</Span>
                 <Span>JavaScript</Span>
               </Body2>
               <Body2>
-                Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Massa elementum, iaculis et, et. Aliquam nisl
-                amet lorem quisque eu commodo leo. Neque curabitur
-                scelerisque dignissim ornare. Pellentesque turpis sed
-                magna tempor lorem.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa elementum, iaculis et, et. Aliquam nisl amet lorem quisque eu
+                commodo leo. Neque curabitur scelerisque dignissim ornare. Pellentesque turpis sed magna tempor lorem.
               </Body2>
-              <RectButton>Visit Website</RectButton>
+              <RectButton margin="0">Visit Website</RectButton>
             </Content>
           </Wrapper>
         </Card>
@@ -71,29 +57,22 @@ const Portfolio = () => {
         <Card>
           <Wrapper>
             <Logo>
-              <Img
-                fluid={data.placeholderImage.childImageSharp.fluid}
-              />
+              <Img fluid={data.placeholderImage.childImageSharp.fluid} />
             </Logo>
             <Content>
               <H3>Big Site Name</H3>
               <Body2>
-                <Span color="rgba(36, 36, 36, 0.6)">
-                  Technlogies:
-                </Span>
+                <Span color="rgba(36, 36, 36, 0.6)">Technlogies:</Span>
                 <Span>JavaScript</Span>
                 <Span>JavaScript</Span>
                 <Span>JavaScript</Span>
                 <Span>JavaScript</Span>
               </Body2>
               <Body2>
-                Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Massa elementum, iaculis et, et. Aliquam nisl
-                amet lorem quisque eu commodo leo. Neque curabitur
-                scelerisque dignissim ornare. Pellentesque turpis sed
-                magna tempor lorem.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa elementum, iaculis et, et. Aliquam nisl amet lorem quisque eu
+                commodo leo. Neque curabitur scelerisque dignissim ornare. Pellentesque turpis sed magna tempor lorem.
               </Body2>
-              <RectButton>Visit Website</RectButton>
+              <RectButton margin="0">Visit Website</RectButton>
             </Content>
           </Wrapper>
         </Card>

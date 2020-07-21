@@ -18,4 +18,9 @@ export const PolygonCard = styled.div`
   box-sizing: border-box;
   border-radius: 0.4rem;
   transform: skew(${({ rotation = '20deg' }) => rotation});
+  width: 100%;
+
+  @media (max-width: 900px) {
+    transform: skew(0);
+  }
 `

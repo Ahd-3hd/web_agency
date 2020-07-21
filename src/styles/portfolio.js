@@ -14,8 +14,13 @@ export const PortfolioSection = styled.section`
 export const CardWrapper = styled.div`
   width: 70%;
   margin: 0 auto;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 900px) {
+    width: 90%;
+  }
 `
 
 export const Wrapper = styled.div`
@@ -24,6 +29,12 @@ export const Wrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   transform: skew(${({ rotation = '-20deg' }) => rotation});
+
+  @media (max-width: 900px) {
+    transform: skew(0);
+    flex-direction: column;
+    text-align: center;
+  }
 `
 
 export const Logo = styled.div`
@@ -38,10 +49,20 @@ export const Logo = styled.div`
     bottom: 10px;
     width: 20%;
   }
+
+  @media (max-width: 900px) {
+    width: 80%;
+    order: 2;
+    margin-top: 2rem;
+  }
 `
 
 export const Content = styled.div`
   width: 50%;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `
 
 export const Span = styled.span`
