@@ -137,6 +137,9 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   margin: 0;
+  @media (min-width: 1280px) {
+    min-width: 400px;
+  }
 `
 export const NameEmailContainer = styled.div`
   display: flex;
