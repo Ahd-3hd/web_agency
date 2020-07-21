@@ -33,6 +33,8 @@ export const SingleTitleContainer = styled(animated.div)`
   margin: 1rem 0;
   > svg {
     margin-right: 0.5rem;
+    width: 2.5vw;
+    min-width: 50px;
   }
 `
 export const TitleText = styled(H4)`
@@ -46,7 +48,7 @@ export const TitleText = styled(H4)`
   }
 `
 export const LogoFirstSentence = styled.img`
-  width: 36px;
-  height: 36px;
+  width: 2.5vw;
+  min-width: 50px;
   margin: 0;
 `
