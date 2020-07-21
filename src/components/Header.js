@@ -4,12 +4,7 @@
 // import PropTypes from 'prop-types'
 import React from 'react'
 import { config, useSprings } from 'react-spring'
-import {
-  Wrapper,
-  TitlesContainer,
-  SingleTitleContainer,
-  TitleText,
-} from './Header.style'
+import { Wrapper, TitlesContainer, SingleTitleContainer, TitleText } from './Header.style'
 import { RectButton } from './Buttons'
 import { ButtonText } from './typography'
 import Navbar from './Navbar'

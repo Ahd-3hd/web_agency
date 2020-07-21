@@ -54,3 +54,8 @@ export const ButtonText = styled.p`
   z-index: 2;
   position: relative;
 `
+export const Td = styled.td`
+  font-size: 14px;
+  background: #2ab640;
+  color: #fff;
+`
