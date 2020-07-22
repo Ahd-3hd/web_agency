@@ -17,7 +17,6 @@ const IndexPage = () => {
     <div>
       <Layout>
         <SEO title="Home" />
-        <Service />
         <Scroller />
         {toggleChat && (
           <WhatsAppButton
@@ -41,6 +40,7 @@ const IndexPage = () => {
           )}
         </ChatButton>
         {toggleChat && <Chat />}
+        <Service />
       </Layout>
     </div>
   )

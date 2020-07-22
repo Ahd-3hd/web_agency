@@ -7,7 +7,7 @@ import {
   CircleNumber,
   Line,
 } from './service.style'
-import { H4, H5, Body2 } from './typography'
+import { H4, H5, Body2,Span } from './typography'
 import { ServiceCard } from './Card'
 import { colors } from '../utils'
 import Fast from '../static/Fast.svg'
@@ -24,6 +24,7 @@ const Service = () => (
     <H4
       css={css`
         text-align: center;
+        margin:0;
       `}
     >
       Our Services
@@ -31,6 +32,7 @@ const Service = () => (
     <H5
       css={css`
         text-align: center;
+        margin:0;
       `}
     >
       Design develop websites and webapps
@@ -44,16 +46,19 @@ const Service = () => (
           <ServiceCard>
             <ServiceIcon />
             <Details>
-              <H5
+              <Span
                 css={css`
-                  text-align: center;
+                  margin:0;
                 `}
               >
                 {name}
-              </H5>
+              </Span>
               <Body2
                 css={css`
                   font-weight: 400;
+                  font-size:14px;
+                  line-height: normal;
+                  margin:0;
                 `}
                 color={colors.gray2}
               >

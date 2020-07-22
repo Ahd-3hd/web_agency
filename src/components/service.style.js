@@ -8,8 +8,8 @@ export const ServiceSection = styled.section`
 `
 export const ServiceCards = styled.div`
   @media (min-width: 900px) {
-    margin: 2rem;
-    padding: 2rem;
+    max-width: 80%;
+    margin: 0rem auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -17,11 +17,13 @@ export const ServiceCards = styled.div`
   }
 `
 export const Details = styled.div`
-  margin-left: 0.5rem;
+@media (max-width: 900px) {
+  margin-left: 0.5rem;}
 `
 export const Line = styled.hr`
   @media (min-width: 900px) {
     border-bottom: 4px dashed ${colors.lightGray};
+    margin:0.5rem;
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
   }
