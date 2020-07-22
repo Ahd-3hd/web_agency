@@ -1,46 +1,122 @@
 import React from 'react'
-// import { css } from 'styled-components'
+import { css } from 'styled-components'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-// import { Card } from './Card'
-import { TeamSection } from '../styles/team'
+import { TeamCard } from './Card'
+import { TeamSection, JobTitle, SocialBox, Link } from '../styles/team'
+import { H5 } from './typography'
+import GitHubIcon from '../static/GitHub.svg'
+import LinkedInIcon from '../static/LinkedIn.svg'
 
-const Team = () => (
-  <TeamSection>
-    {/* <CardWrapper>
-      <Card>
-        <div>
-          <div>picture</div>
-          <div>
-            <h5>Aman Shawar</h5>
-            <span>Desinger</span>
-          </div>
-        </div>
-        <div>
-          isi enim ad minim veniam, quis nostrud exerci tation
-          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-          consequat. Duis autem vel eum iriure dolor in hendrerit in
-          vulputate velit esse molestie consequat, vel illum dolore eu
-          feugiat nulla facilisis at vero eros et accumsan et iusto
-          odh euismod tincidunt ut laoreet dolore magna aliquam erat
-          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
-          tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
-          commodo consequat. Lorem ipsum dolor sit amet, consectetuer
-          adipiscing elit, sed diam nonummy nib
-        </div>
-        <div>
-          <div>
-            <span>Github</span>
-            <span>yosefanajjar</span>
-          </div>
-          <div>
-            <span>LinkedIn</span>
-            <span>yosefanajar</span>
-          </div>
-        </div>
-      </Card>
-    </CardWrapper> */}
-    asdsa
-  </TeamSection>
-)
+const Team = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      ghassanImage: file(relativePath: { eq: "ghassan.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      yosefImage: file(relativePath: { eq: "yosef.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <TeamSection>
+      <TeamCard>
+        <Img fluid={data.ghassanImage.childImageSharp.fluid} />
+        <H5
+          css={css`
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+          `}
+        >
+          Ghassan
+        </H5>
+        <JobTitle>Team Lead</JobTitle>
+        <SocialBox>
+          <GitHubIcon />
+          <Link href="github.com">@ghassan</Link>
+        </SocialBox>
+        <SocialBox>
+          <LinkedInIcon />
+          <Link href="github.com">@ghassan</Link>
+        </SocialBox>
+      </TeamCard>
+      <TeamCard>
+        <Img fluid={data.ghassanImage.childImageSharp.fluid} />
+        <H5
+          css={css`
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+          `}
+        >
+          Ghassan
+        </H5>
+        <JobTitle>Team Lead</JobTitle>
+        <SocialBox>
+          <GitHubIcon />
+          <Link href="github.com">@ghassan</Link>
+        </SocialBox>
+        <SocialBox>
+          <LinkedInIcon />
+          <Link href="github.com">@ghassan</Link>
+        </SocialBox>
+      </TeamCard>
+      <TeamCard>
+        <Img fluid={data.ghassanImage.childImageSharp.fluid} />
+        <H5
+          css={css`
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+          `}
+        >
+          Ghassan
+        </H5>
+        <JobTitle>Team Lead</JobTitle>
+        <SocialBox>
+          <GitHubIcon />
+          <Link href="github.com">@ghassan</Link>
+        </SocialBox>
+        <SocialBox>
+          <LinkedInIcon />
+          <Link href="github.com">@ghassan</Link>
+        </SocialBox>
+      </TeamCard>
+      <TeamCard>
+        <Img fluid={data.ghassanImage.childImageSharp.fluid} />
+        <H5
+          css={css`
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+          `}
+        >
+          Ghassan
+        </H5>
+        <JobTitle>Team Lead</JobTitle>
+        <SocialBox>
+          <GitHubIcon />
+          <Link href="github.com">@ghassan</Link>
+        </SocialBox>
+        <SocialBox>
+          <LinkedInIcon />
+          <Link href="github.com">@ghassan</Link>
+        </SocialBox>
+      </TeamCard>
+    </TeamSection>
+  )
+}
 
 export default Team
