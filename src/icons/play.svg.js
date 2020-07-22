@@ -3,13 +3,7 @@ import React from 'react'
 
 function SvgComponent(props) {
   return (
-    <svg
-      width={70}
-      height={70}
-      viewBox="0 0 70 70"
-      fill="none"
-      {...props}
-    >
+    <svg width={70} height={70} viewBox="0 0 70 70" fill="none" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
