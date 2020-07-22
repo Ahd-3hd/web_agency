@@ -7,7 +7,7 @@ import {
   CircleNumber,
   Line,
 } from './service.style'
-import { H4, H5, Body2,Span } from './typography'
+import { H5, Body2, Span } from './typography'
 import { ServiceCard } from './Card'
 import { colors } from '../utils'
 import Fast from '../static/Fast.svg'
@@ -21,22 +21,22 @@ import data from '../data'
 const images = { Responsives, Conunsltation, TA, SML, SEO, Fast }
 const Service = () => (
   <ServiceSection>
-    <H4
-      css={css`
-        text-align: center;
-        margin:0;
-      `}
-    >
-      Our Services
-    </H4>
     <H5
       css={css`
         text-align: center;
-        margin:0;
+        margin: 0;
+      `}
+    >
+      Our Services
+    </H5>
+    <Span
+      css={css`
+        text-align: center;
+        margin: 0;
       `}
     >
       Design develop websites and webapps
-    </H5>
+    </Span>
 
     <ServiceCards>
       {data.map(({ name, summary, image }, i) => {
@@ -48,7 +48,7 @@ const Service = () => (
             <Details>
               <Span
                 css={css`
-                  margin:0;
+                  margin: 0;
                 `}
               >
                 {name}
@@ -56,9 +56,9 @@ const Service = () => (
               <Body2
                 css={css`
                   font-weight: 400;
-                  font-size:14px;
+                  font-size: 14px;
                   line-height: normal;
-                  margin:0;
+                  margin: 0;
                 `}
                 color={colors.gray2}
               >

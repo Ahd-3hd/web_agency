@@ -17,13 +17,14 @@ export const ServiceCards = styled.div`
   }
 `
 export const Details = styled.div`
-@media (max-width: 900px) {
-  margin-left: 0.5rem;}
+  @media (max-width: 900px) {
+    margin-left: 0.5rem;
+  }
 `
 export const Line = styled.hr`
   @media (min-width: 900px) {
     border-bottom: 4px dashed ${colors.lightGray};
-    margin:0.5rem;
+    margin: 0.5rem;
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
   }
@@ -34,9 +35,9 @@ export const CircleNumber = styled.div`
   }
   @media (min-width: 900px) {
     border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    padding-top: 0.2rem;
+    width: 25px;
+    height: 25px;
+    padding-top: 0.01rem;
     background-color: ${colors.primary};
     color: ${colors.white};
     text-align: center;

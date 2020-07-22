@@ -23,16 +23,16 @@ export const ServiceCard = styled.div`
     width: 100px;
     height: auto;
     margin-bottom: 0.5rem;
-}
+  }
   @media (min-width: 900px) {
-    height:42vh;
+    height: 42vh;
     flex: 1 1 29%;
     flex-direction: column;
     > svg {
-      width: 100px;
+      width: 70px;
       height: auto;
       margin-bottom: 0.5rem;
-}
+    }
 
     ::after {
       z-index: 200;
@@ -41,7 +41,7 @@ export const ServiceCard = styled.div`
       height: 25px;
       border-radius: 50%;
       position: absolute;
-      bottom: 50px;
+      bottom: 53px;
       left: -10px;
       background-color: ${colors.gray3};
     }
@@ -52,7 +52,7 @@ export const ServiceCard = styled.div`
       height: 25px;
       border-radius: 50%;
       position: absolute;
-      bottom: 50px;
+      bottom: 53px;
       right: -10px;
       background-color: ${colors.gray3};
     }
