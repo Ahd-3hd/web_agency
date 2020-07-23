@@ -29,7 +29,7 @@ export const ServiceCard = styled.div`
     flex: 1 1 29%;
     flex-direction: column;
     > svg {
-      width: 70px;
+      width: 50px;
       height: auto;
       margin-bottom: 0.5rem;
     }
