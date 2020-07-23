@@ -13,7 +13,7 @@ import GearsEmoji from '../static/GearsEmoji.svg'
 import RocketEmoji from '../static/RocketEmoji.svg'
 import PlaceholderEmoji from '../static/PlaceholderEmoji.svg'
 import LogoLetter from '../images/zaat_logo_square.png'
-
+import ZaatSquareLogo from '../static/ZaatSquareLogo.svg'
 const emojis = [RocketEmoji, GearsEmoji, PlaceholderEmoji]
 
 // eslint-disable-next-line react/prop-types
@@ -44,7 +44,7 @@ const Header = ({ scrollFunc }) => {
       <TitlesContainer>
         <SingleTitleContainer>
           <TitleText>
-            <LogoFirstSentence src={LogoLetter} alt="Z" />
+            <ZaatSquareLogo src={LogoLetter} alt="Z" />
             is for Zaat and Zaat is for:
           </TitleText>
         </SingleTitleContainer>
