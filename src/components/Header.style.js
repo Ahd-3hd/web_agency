@@ -47,6 +47,11 @@ export const TitleText = styled(H4)`
   @media (max-width: 900px) {
     font-size: 1rem;
   }
+  > svg {
+    width: 2.5vw;
+    min-width: 50px;
+    margin-right: 0.5rem;
+  }
 `
 export const LogoFirstSentence = styled.img`
   width: 2.5vw;
