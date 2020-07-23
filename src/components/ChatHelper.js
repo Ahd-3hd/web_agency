@@ -6,11 +6,14 @@ import { colors } from '../utils'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 0.7rem;
+  font-size: 14px;
+  border-style: soild;
+  width: 100%;
   * {
     margin: 0;
   }
   color: ${colors.gray};
+  background: '#f5f8fb';
 `
 const Title = styled.p`
   margin: 0;
@@ -18,7 +21,7 @@ const Title = styled.p`
 const FieldsContainer = styled.div``
 const FieldGroup = styled.div`
   display: flex;
-  border-bottom: 1px solid ${colors.gray};
+  border-bottom: 1px solid ${colors.white};
 `
 const FieldName = styled.p`
   font-weight: bold;
