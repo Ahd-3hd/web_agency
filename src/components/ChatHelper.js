@@ -32,7 +32,10 @@ const FieldValue = styled.p`
 // eslint-disable-next-line react/prop-types
 const ReviewAndSubmit = ({ steps }) => {
   const { name, email, interest, message } = steps
-
+  let displayMessage = 'None'
+  if (message) {
+    displayMessage = message.value.length > 50 ? message.value.slice(0, 50).concat('...') : message.value
+  }
   return (
     <Wrapper>
       <Title>Summary</Title>
@@ -51,7 +54,7 @@ const ReviewAndSubmit = ({ steps }) => {
         </FieldGroup>
         <FieldGroup>
           <FieldName>Message:</FieldName>
-          <FieldValue>{message.value && message.value.length > 50 ? message.value.slice(0, 50).concat('...') : message.value}</FieldValue>
+          <FieldValue>{displayMessage}</FieldValue>
         </FieldGroup>
       </FieldsContainer>
     </Wrapper>
