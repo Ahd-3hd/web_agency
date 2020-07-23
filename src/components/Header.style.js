@@ -34,8 +34,12 @@ export const SingleTitleContainer = styled(animated.div)`
   margin: 1rem 0;
   > svg {
     margin-right: 0.5rem;
-    width: 2.5vw;
-    min-width: 50px;
+    width: 1rem;
+    min-width: 1rem;
+    @media (min-width: 900px) {
+      width: 2.5vw;
+      min-width: 50px;
+    }
   }
 `
 export const TitleText = styled(H4)`
@@ -48,13 +52,12 @@ export const TitleText = styled(H4)`
     font-size: 1rem;
   }
   > svg {
-    width: 2.5vw;
-    min-width: 50px;
+    width: 1rem;
+    min-width: 1rem;
     margin-right: 0.5rem;
+    @media (min-width: 900px) {
+      width: 2.5vw;
+      min-width: 50px;
+    }
   }
-`
-export const LogoFirstSentence = styled.img`
-  width: 2.5vw;
-  min-width: 50px;
-  margin: 0;
 `
