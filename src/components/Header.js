@@ -14,6 +14,7 @@ import RocketEmoji from '../static/RocketEmoji.svg'
 import PlaceholderEmoji from '../static/PlaceholderEmoji.svg'
 import LogoLetter from '../images/zaat_logo_square.png'
 import ZaatSquareLogo from '../static/ZaatSquareLogo.svg'
+
 const emojis = [RocketEmoji, GearsEmoji, PlaceholderEmoji]
 
 // eslint-disable-next-line react/prop-types
