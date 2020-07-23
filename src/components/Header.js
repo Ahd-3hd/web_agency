@@ -11,7 +11,6 @@ import Navbar from './Navbar'
 
 import GearsEmoji from '../static/GearsEmoji.svg'
 import RocketEmoji from '../static/RocketEmoji.svg'
-import PlaceholderEmoji from '../static/PlaceholderEmoji.svg'
 import ZaatSquareLogo from '../static/ZaatSquareLogo.svg'
 import LeafEmoji from '../static/LeafEmoji.svg'
 
