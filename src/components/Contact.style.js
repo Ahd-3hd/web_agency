@@ -7,14 +7,15 @@ import { colors } from '../utils'
 export const Wrapper = styled.div`
   background: url(${backgroundImage}) no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   width: 100%;
   height: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     flex-direction: row;
     align-items: center;
   }
@@ -48,6 +49,20 @@ export const ContactParagraph = styled(Body2)`
     display: none;
   }
 `
+export const DesktopOnlyContactParagraph = styled(Body2)`
+  font-size: 0.9rem;
+  margin: 0;
+  display: none;
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+    margin: 1rem 0;
+    display: block;
+  }
+  @media (max-height: 568px) {
+    display: none;
+  }
+`
+
 export const ContactInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -123,9 +138,15 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   margin: 0;
+  @media (min-width: 1280px) {
+    min-width: 400px;
+  }
 `
 export const NameEmailContainer = styled.div`
   display: flex;
+  @media (min-width: 1024px) {
+    flex-direction: column;
+  }
 `
 export const FormTitle = styled(Body2)`
   margin: 0 0.3rem;
