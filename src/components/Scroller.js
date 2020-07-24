@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { FullPage, Slide } from 'react-full-page'
+import { BrowserView, MobileView } from 'react-device-detect'
 import Header from './Header'
 import Contact from './Contact'
 import Portfolio from './Portfolio'
@@ -12,20 +13,30 @@ const Scroller = () => {
   }
 
   return (
-    <FullPage ref={FPRef}>
-      <Slide>
+    <>
+      <BrowserView>
+        <FullPage ref={FPRef}>
+          <Slide>
+            <Header scrollFunc={handleContactScroll} />
+          </Slide>
+          <Slide>
+            <Portfolio />
+          </Slide>
+          <Slide>
+            <Team />
+          </Slide>
+          <Slide>
+            <Contact />
+          </Slide>
+        </FullPage>
+      </BrowserView>
+      <MobileView>
         <Header scrollFunc={handleContactScroll} />
-      </Slide>
-      <Slide>
         <Portfolio />
-      </Slide>
-      <Slide>
         <Team />
-      </Slide>
-      <Slide>
         <Contact />
-      </Slide>
-    </FullPage>
+      </MobileView>
+    </>
   )
 }
 
