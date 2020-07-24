@@ -1,7 +1,7 @@
 import React from 'react'
 
 const RocketEmoji = () => (
-  <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M1 17L9 10L25 11L26 27L19 35C19 35 19.001 29.001 13 23C6.999 16.999 1 17 1 17Z" fill="#A0041E" />
     <path
       d="M0.973 35C0.973 35 0.937 27.021 3.958 24C6.979 20.979 15 21.187 15 21.187C15 21.187 14.999 29 11.999 32C8.999 35 0.973 35 0.973 35V35Z"
