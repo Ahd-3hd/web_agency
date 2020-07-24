@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { Wrapper, LogoImg, TextContainer, Text, BackLink } from './404.style'
+import { Wrapper, LogoImg, TextContainer, Text, BackLink } from '../components/404.style'
 import logoImg from '../images/logo_zaat_orignal.png'
 
 const Page_404 = () => (

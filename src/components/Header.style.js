@@ -12,8 +12,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   overflow: hidden;
   position: relative;
-  background: url(${backgroundImage}) no-repeat;
-  background-size: cover;
+  background: url(${backgroundImage}) repeat;
+  background-size: 170px;
   background-attachment: fixed;
 `
 export const TitlesContainer = styled.div`
