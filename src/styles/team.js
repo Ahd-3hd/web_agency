@@ -11,6 +11,7 @@ export const TeamSection = styled.section`
 
   @media (max-width: 600px) {
     flex-direction: column;
+    margin: 10rem 0;
   }
 `
 
