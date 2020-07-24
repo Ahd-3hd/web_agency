@@ -69,7 +69,10 @@ ReviewAndSubmit.propTypes = {
     email: PropTypes.object,
     interest: PropTypes.object,
     message: PropTypes.object,
-  }).isRequired,
+  }),
+}
+ReviewAndSubmit.defaultProps = {
+  steps: undefined,
 }
 
 export default ReviewAndSubmit
