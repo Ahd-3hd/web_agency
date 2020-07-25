@@ -1,6 +1,5 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components'
-import { colors } from '../utils'
 
 export const Card = styled.div`
   margin: 1rem;
@@ -10,51 +9,27 @@ export const Card = styled.div`
   border-radius: 0.4rem;
 `
 export const ServiceCard = styled.div`
+  justify-content: center;
+  align-items: center;
+  display: flex;
   margin: 1rem;
   padding: 1rem;
   background: #ffffff;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
   border-radius: 0.8rem;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   position: relative;
-  > svg {
-    width: 100px;
-    height: auto;
-    margin-bottom: 0.5rem;
-  }
-  @media (min-width: 900px) {
-    height: 42vh;
-    flex: 1 1 29%;
-    flex-direction: column;
-    > svg {
-      width: 50px;
-      height: auto;
-      margin-bottom: 0.5rem;
-    }
-
-    ::after {
-      z-index: 200;
-      content: '';
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      position: absolute;
-      bottom: 53px;
-      left: -10px;
-      background-color: ${colors.gray3};
-    }
-    &::before {
-      z-index: 100;
-      content: '';
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      position: absolute;
-      bottom: 53px;
-      right: -10px;
-      background-color: ${colors.gray3};
+  width: 100%;
+  flex: 1 1 29%;
+  flex-direction: column;
+  @media (max-width: 900px) {
+    width: 27%;
+    flex: 1 1 20%;
+    height: 25vh;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    :hover {
+      transform: rotateY(180deg);
     }
   }
 `

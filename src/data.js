@@ -7,7 +7,8 @@ const data = [
   {
     name: 'Fast',
     image: 'Fast',
-    summary: 'Lorem ipsum dolor sit amet, conse ctetur adipiscing  ',
+    summary:
+      'Lorem ipsum dolor sit amet, conse ctetur adipiscing  aman ',
   },
   {
     name: 'SEO',
