@@ -4,7 +4,7 @@ import { BrowserView, MobileView } from 'react-device-detect'
 import Header from './Header'
 import Contact from './Contact'
 import Portfolio from './Portfolio'
-import Team from './Team'
+// import Team from './Team'
 
 const Scroller = () => {
   const FPRef = useRef(null)
@@ -17,23 +17,25 @@ const Scroller = () => {
       <BrowserView>
         <FullPage ref={FPRef}>
           <Slide>
-            <Header scrollFunc={handleContactScroll} />
-          </Slide>
-          <Slide>
             <Portfolio />
           </Slide>
           <Slide>
-            <Team />
+            <Header scrollFunc={handleContactScroll} />
           </Slide>
+
+          {/* <Slide>
+            <Team />
+          </Slide> */}
           <Slide>
             <Contact />
           </Slide>
         </FullPage>
       </BrowserView>
       <MobileView>
-        <Header scrollFunc={handleContactScroll} />
         <Portfolio />
-        <Team />
+
+        <Header scrollFunc={handleContactScroll} />
+        {/* <Team /> */}
         <Contact />
       </MobileView>
     </>
