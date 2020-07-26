@@ -12,7 +12,7 @@ export const Card = styled.div`
 export const TeamCard = styled.div`
   width: 300px;
   padding: 50px 60px;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
   background: #ffffff;
   border: 1px solid #cccccc;
   box-sizing: border-box;
