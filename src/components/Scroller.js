@@ -1,36 +1,22 @@
-import React, { useRef } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+
 import { FullPage, Slide } from 'react-full-page'
 // import { BrowserView, MobileView } from 'react-device-detect'
-import Header from './Header'
-import Contact from './Contact'
-import Portfolio from './Portfolio'
-// import Team from './Team'
 
-const Scroller = () => {
-  const FPRef = useRef(null)
-  const handleContactScroll = i => {
-    FPRef.current.scrollToSlide(i)
-  }
-
-  return (
-    <>
-      <FullPage ref={FPRef}>
-        <Slide>
-          <Portfolio />
-        </Slide>
-        <Slide>
-          <Header scrollFunc={handleContactScroll} />
-        </Slide>
-
-        {/* <Slide>
-            <Team />
-          </Slide> */}
-        <Slide>
-          <Contact />
-        </Slide>
-      </FullPage>
-    </>
-  )
+const Scroller = ({ children }) => (
+  <>
+    <FullPage>
+      {children.map(child => (
+        <Slide>{child}</Slide>
+      ))}
+    </FullPage>
+  </>
+)
+Scroller.propTypes = {
+  children: PropTypes.element,
 }
-
+Scroller.defaultProps = {
+  children: undefined,
+}
 export default Scroller

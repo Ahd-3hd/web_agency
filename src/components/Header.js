@@ -7,7 +7,6 @@ import { config, useSprings } from 'react-spring'
 import { Wrapper, TitlesContainer, SingleTitleContainer, TitleText } from './Header.style'
 import { RectButton } from './Buttons'
 import { ButtonText } from './typography'
-import Navbar from './Navbar'
 
 import GearsEmoji from '../static/GearsEmoji.svg'
 import RocketEmoji from '../static/RocketEmoji.svg'
@@ -40,7 +39,6 @@ const Header = ({ scrollFunc }) => {
   )
   return (
     <Wrapper>
-      <Navbar scrollFunc={scrollFunc} />
       <TitlesContainer>
         <SingleTitleContainer>
           <TitleText>
