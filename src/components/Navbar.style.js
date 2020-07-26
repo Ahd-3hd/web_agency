@@ -9,6 +9,7 @@ export const Nav = styled.nav`
   top: 0;
   width: 100%;
   z-index: 99;
+  padding: 0.3rem 1rem;
 `
 export const MenuButtonBar = styled.div`
   width: 100%;
@@ -32,11 +33,6 @@ export const MenuButton = styled.button`
   margin: 0.5rem 1rem;
   z-index: 98;
   cursor: pointer;
-`
-
-export const Logo = styled.img`
-  max-width: 100px;
-  margin: 0.5rem 1rem;
 `
 
 export const Overlay = styled.div`
@@ -68,6 +64,7 @@ export const MenuLink = styled.button`
   cursor: pointer;
   position: relative;
   overflow: hidden;
+
   ::after {
     content: '';
     width: 100%;

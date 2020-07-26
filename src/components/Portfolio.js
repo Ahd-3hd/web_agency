@@ -18,8 +18,8 @@ import {
   Title,
   SliderNavigatorContainer,
   SliderButton,
+  ExtendedButton,
 } from './Portfolio.style'
-import { RectButton } from './Buttons'
 import exampleImage from '../images/example.jpg'
 import { ButtonText } from './typography'
 import ArrowIcon from '../static/ArrowIcon.svg'
@@ -49,11 +49,11 @@ const AnimatedContainer = ({ distance }) => {
           </TechsContainer>
           <ExtendedBody2>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa elementum, iaculis et, et. Aliquam nisl amet lorem quisque eu
-            commodo leo. Neque curabitur scelerisque dignissim ornare.
+            commodo leo.
           </ExtendedBody2>
-          <RectButton>
+          <ExtendedButton>
             <ButtonText>View</ButtonText>
-          </RectButton>
+          </ExtendedButton>
         </CardContentContainer>
       </ExtendedCard>
     </AnimatedCard>

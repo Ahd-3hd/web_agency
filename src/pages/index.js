@@ -12,7 +12,7 @@ import Scroller from '../components/Scroller'
 import Header from '../components/Header'
 import Contact from '../components/Contact'
 import Portfolio from '../components/Portfolio'
-import Team from '../components/Team'
+// import Team from '../components/Team'
 import Navbar from '../components/Navbar'
 
 const IndexPage = () => {
@@ -24,7 +24,7 @@ const IndexPage = () => {
         <MobileView>
           <Header />
           <Portfolio />
-          <Team />
+          {/* <Team /> */}
           <Contact />
         </MobileView>
       )
@@ -33,7 +33,7 @@ const IndexPage = () => {
       <Scroller>
         <Header />
         <Portfolio />
-        <Team />
+        {/* <Team /> */}
         <Contact />
       </Scroller>
     )
