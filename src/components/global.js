@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import { fonts, colors } from '../utils'
 import './fonts.css'
+import backgroundImage from '../images/background.png'
 
 export default createGlobalStyle`
 
@@ -9,6 +10,13 @@ export default createGlobalStyle`
     font-display:swap;
     max-width:1980px;
     margin:0 auto;
+    background: url(${backgroundImage}) repeat;
+    background-size: 100px;
+    background-attachment: fixed;
+    @media (min-width:600px){
+      background-size: 170px;
+    }
+  
   }
 
   .rsc{
