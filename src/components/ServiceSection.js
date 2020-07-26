@@ -15,29 +15,29 @@ import data from '../data'
 
 const images = { Responsives, Conunsltation, TA, SML, SEO, Fast }
 const Service = () => {
-  const [styles, setStyle] = useState(
-    new Array(6).fill({ flipped: false, style: {} }),
-  )
+  const [styles, setStyle] = useState(new Array(6).fill({ flipped: false, style: {} }))
   const handleClick = i => {
-    setStyle(prevStyle => {
-      const newStyles = [...prevStyle]
-      if (!newStyles[i].flipped) {
+    if (window.innerWidth < 900) {
+      setStyle(prevStyle => {
+        const newStyles = [...prevStyle]
+        if (!newStyles[i].flipped) {
+          newStyles[i] = {
+            style: {
+              transform: 'rotateY(180deg)',
+            },
+            flipped: true,
+          }
+          return newStyles
+        }
         newStyles[i] = {
+          flipped: false,
           style: {
-            transform: 'rotateY(180deg)',
+            transform: 'rotateY(360deg)',
           },
-          flipped: true,
         }
         return newStyles
-      }
-      newStyles[i] = {
-        flipped: false,
-        style: {
-          transform: 'rotateY(360deg)',
-        },
-      }
-      return newStyles
-    })
+      })
+    }
   }
   return (
     <ServiceSection>
@@ -45,6 +45,8 @@ const Service = () => {
         css={css`
           text-align: center;
           margin: 0;
+          padding-bottom: 1rem;
+          color: ${colors.primary};
         `}
       >
         Our Services
@@ -63,10 +65,7 @@ const Service = () => {
           const ServiceIcon = images[image]
 
           return (
-            <ServiceCard
-              style={styles[i].style}
-              onClick={() => handleClick(i)}
-            >
+            <ServiceCard style={styles[i].style} onClick={() => handleClick(i)}>
               <FlipCardFront>
                 <ServiceIcon />
                 <Span
