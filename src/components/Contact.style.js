@@ -14,7 +14,6 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: center;
@@ -25,6 +24,7 @@ export const Wrapper = styled.div`
   color: ${colors.gray};
 `
 export const InfoSection = styled.div`
+  padding: 0 0.8rem;
   @media (min-width: 1280px) {
     padding: 0 5vw;
   }
@@ -41,12 +41,13 @@ export const Title = styled(H2)`
 export const ContactParagraph = styled(Body2)`
   font-size: 0.9rem;
   margin: 0;
+  display: none;
   @media (min-width: 1024px) {
     font-size: 1rem;
     margin: 1rem 0;
   }
-  @media (max-height: 568px) {
-    display: none;
+  @media (min-height: 700px) {
+    display: block;
   }
 `
 export const DesktopOnlyContactParagraph = styled(Body2)`
@@ -100,9 +101,12 @@ export const SingleContactInfo = styled.a`
   text-decoration: none;
   color: ${colors.gray};
   transition: 0.3s;
+  align-items: center;
   > svg {
     margin-right: 0.5rem;
     fill: ${colors.gray};
+    min-width: 15px;
+    width: 0.75rem;
   }
 
   :hover {

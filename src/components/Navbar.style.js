@@ -9,7 +9,6 @@ export const Nav = styled.nav`
   top: 0;
   width: 100%;
   z-index: 99;
-  background: rgba(255, 255, 255, 0.2);
 `
 export const MenuButtonBar = styled.div`
   width: 100%;
