@@ -28,8 +28,5 @@ export const ServiceCard = styled.div`
     height: 25vh;
     transition: transform 1s;
     transform-style: preserve-3d;
-    :hover {
-      transform: rotateY(180deg);
-    }
   }
 `
