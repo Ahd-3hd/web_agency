@@ -18,6 +18,9 @@ export const Wrapper = styled.div`
     padding: 5vh 10vw;
   }
   color: ${colors.gray};
+  @media (max-width: 500px) {
+    padding-bottom: 7rem;
+  }
 `
 export const InfoSection = styled.div`
   padding: 0 0.8rem;
