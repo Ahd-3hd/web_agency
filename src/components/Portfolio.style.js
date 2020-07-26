@@ -3,7 +3,6 @@ import { animated } from 'react-spring'
 import { Card } from './Card'
 import { H4, Body2, Span, H2 } from './typography'
 import { colors } from '../utils'
-import backgroundImage from '../images/background.png'
 
 export const ExtendedH4 = styled(H4)`
   font-size: 1.5rem;
@@ -33,9 +32,6 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url(${backgroundImage}) no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 `
 export const Title = styled(H2)`
   text-align: center;

@@ -1,12 +1,10 @@
 import styled from 'styled-components'
-import backgroundImage from '../images/background.png'
 
 export const TeamSection = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(${backgroundImage}) no-repeat;
   background-size: cover;
 
   @media (max-width: 600px) {
