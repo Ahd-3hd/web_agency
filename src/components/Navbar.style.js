@@ -13,18 +13,11 @@ export const Nav = styled.nav`
 `
 export const MenuButtonBar = styled.div`
   width: 100%;
-  border: 1px solid
-    ${({ isActive }) => (isActive ? colors.white : colors.gray)};
+  border: 1px solid ${({ isActive }) => (isActive ? colors.white : colors.gray)};
   transition: 0.3s;
   transform: ${({ isActive, shift }) =>
     // eslint-disable-next-line no-nested-ternary
-    isActive
-      ? shift
-        ? 'translateX(-20%)'
-        : 'translateX(20%)'
-      : shift
-      ? 'translateX(20%)'
-      : 'translateX(-20%)'};
+    isActive ? (shift ? 'translateX(-20%)' : 'translateX(20%)') : shift ? 'translateX(20%)' : 'translateX(-20%)'};
 `
 export const MenuButton = styled.button`
   width: 25px;
@@ -53,14 +46,9 @@ export const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    150.62deg,
-    ${colors.primary} 5.76%,
-    ${colors.secondary} 71.26%
-  );
+  background: linear-gradient(150.62deg, ${colors.primary} 5.76%, ${colors.secondary} 71.26%);
   transition: 0.4s ease;
-  transform: ${({ isActive }) =>
-    isActive ? 'scale(1)' : 'scale(0)'};
+  transform: ${({ isActive }) => (isActive ? 'scale(1)' : 'scale(0)')};
   opacity: ${({ isActive }) => (isActive ? '1' : '0')};
   transform-origin: top left;
   display: flex;

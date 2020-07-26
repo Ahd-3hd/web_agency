@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 import { css } from 'styled-components'
-import {
-  ServiceSection,
-  Details,
-  ServiceCards,
-  FlipCardFront,
-  FlipCardBack,
-} from './service.style'
+import { ServiceSection, Details, ServiceCards, FlipCardFront, FlipCardBack } from './service.style'
 import { H5, Body2, Span } from './typography'
 import { ServiceCard } from './Card'
 import { colors } from '../utils'
