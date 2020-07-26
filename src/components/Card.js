@@ -22,6 +22,12 @@ export const ServiceCard = styled.div`
   width: 100%;
   flex: 1 1 29%;
   flex-direction: column;
+  @media (min-width: 900px) {
+    margin: 0.8rem;
+    min-height: 34vh;
+
+
+}
   @media (max-width: 900px) {
     width: 27%;
     flex: 1 1 20%;
