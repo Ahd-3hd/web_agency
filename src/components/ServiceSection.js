@@ -1,12 +1,6 @@
 import React from 'react'
 import { css } from 'styled-components'
-import {
-  ServiceSection,
-  Details,
-  ServiceCards,
-  FlipCardFront,
-  FlipCardBack,
-} from './service.style'
+import { ServiceSection, Details, ServiceCards, FlipCardFront, FlipCardBack } from './service.style'
 import { H5, Body2, Span } from './typography'
 import { ServiceCard } from './Card'
 import { colors } from '../utils'
@@ -16,7 +10,6 @@ import Conunsltation from '../static/Conunsltation.svg'
 import SML from '../static/SML.svg'
 import TA from '../static/TA.svg'
 import Responsives from '../static/Responsives.svg'
-
 
 import data from '../data'
 

@@ -10,12 +10,18 @@ const Scroller = () => {
   }
 
   return (
-    <FullPage ref={FPRef}>
+    <FullPage ref={FPRef} controls>
       <Slide>
         <Header scrollFunc={handleContactScroll} />
       </Slide>
       <Slide>
         <Contact />
+      </Slide>
+      <Slide>
+        <div style={{ width: '100%', height: '100%', background: 'red' }} />
+      </Slide>
+      <Slide>
+        <div style={{ width: '100%', height: '100%', background: 'blue' }} />
       </Slide>
     </FullPage>
   )

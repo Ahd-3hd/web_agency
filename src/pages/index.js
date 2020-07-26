@@ -20,25 +20,12 @@ const IndexPage = () => {
         <Service />
         <Scroller />
         {toggleChat && (
-          <WhatsAppButton
-            width="30"
-            iconColor="#ffffff"
-            toggleChat
-            href="https://wa.me/00972528072551"
-          >
+          <WhatsAppButton width="30" iconColor="#ffffff" toggleChat href="https://wa.me/00972528072551">
             <WhatsappIcon />
           </WhatsAppButton>
         )}
-        <ChatButton
-          width="50"
-          iconColor="#ffffff"
-          onClick={() => setToggleChat(!toggleChat)}
-        >
-          {toggleChat ? (
-            <CloseIcon width="25" />
-          ) : (
-            <MessageIcon width="25" />
-          )}
+        <ChatButton width="50" iconColor="#ffffff" onClick={() => setToggleChat(!toggleChat)}>
+          {toggleChat ? <CloseIcon width="25" /> : <MessageIcon width="25" />}
         </ChatButton>
         {toggleChat && <Chat />}
       </Layout>

@@ -1,13 +1,6 @@
 import { Link } from 'gatsby'
 import React, { useState } from 'react'
-import {
-  Nav,
-  MenuButton,
-  MenuButtonBar,
-  Logo,
-  Overlay,
-  MenuLink,
-} from './Navbar.style'
+import { Nav, MenuButton, MenuButtonBar, Logo, Overlay, MenuLink } from './Navbar.style'
 import logo from '../images/logo_zaat_orignal.png'
 
 // eslint-disable-next-line react/prop-types
