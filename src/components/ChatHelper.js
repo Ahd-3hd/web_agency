@@ -75,7 +75,6 @@ ReviewAndSubmit.propTypes = {
     message: PropTypes.object,
   }),
   /* eslint react/forbid-prop-types: 0 */
-
 }
 ReviewAndSubmit.defaultProps = {
   steps: undefined,
