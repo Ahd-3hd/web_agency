@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { animated } from 'react-spring'
-import backgroundImage from '../images/background.png'
 import { H4 } from './typography'
 import { colors } from '../utils'
 
@@ -12,9 +11,6 @@ export const Wrapper = styled.div`
   justify-content: center;
   overflow: hidden;
   position: relative;
-  background: url(${backgroundImage}) no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 `
 export const TitlesContainer = styled.div`
   z-index: 4;

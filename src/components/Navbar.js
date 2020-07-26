@@ -1,16 +1,14 @@
 import { Link } from 'gatsby'
 import React, { useState } from 'react'
-import { Nav, MenuButton, MenuButtonBar, Logo, Overlay, MenuLink } from './Navbar.style'
-import logo from '../images/logo_zaat_orignal.png'
+import { Nav, MenuButton, MenuButtonBar, Overlay, MenuLink } from './Navbar.style'
+import Logo from '../static/ZaatLogo'
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ scrollFunc }) => {
   const [isMenuActive, setMenuActive] = useState(false)
   return (
     <Nav>
-      <Link to="/">
-        <Logo src={logo} alt="Zaat" />
-      </Link>
+      <Link to="/">{React.createElement(Logo)}</Link>
       <MenuButton onClick={() => setMenuActive(!isMenuActive)}>
         <MenuButtonBar isActive={isMenuActive} />
         <MenuButtonBar shift isActive={isMenuActive} />
