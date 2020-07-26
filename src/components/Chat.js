@@ -6,7 +6,7 @@ import ChatHelper from './ChatHelper'
 import squareLogo from '../images/zaat_logo_square.png'
 
 const ChatContainer = styled(ChatBot)`
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
   right: 10rem;
   animation: toggle 0.1s ease-out forwards;
@@ -18,7 +18,7 @@ const ChatContainer = styled(ChatBot)`
     to {
       transform: scale(1);
     }
-  }
+  } */
 `
 
 const theme = {
@@ -189,6 +189,7 @@ const Chat = () => (
       botAvatar={squareLogo}
       botDelay={500}
       userDelay={500}
+      floating
     />
   </ThemeProvider>
 )
