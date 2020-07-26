@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Layout from '../components/layout'
-import Service from '../components/ServiceSection'
 
 import SEO from '../components/seo'
 import Chat from '../components/Chat'
@@ -17,7 +16,6 @@ const IndexPage = () => {
     <div>
       <Layout>
         <SEO title="Home" />
-        <Service />
         <Scroller />
         {toggleChat && (
           <WhatsAppButton width="30" iconColor="#ffffff" toggleChat href="https://wa.me/00972528072551">
