@@ -5,7 +5,7 @@ export const ServiceSection = styled.section`
   width: 100%;
   height: 100vh;
   min-height: 100vh;
-  padding-top:1rem;
+  padding-top: 1rem;
   background-color: ${colors.gray3};
 `
 export const ServiceCards = styled.div`
@@ -26,6 +26,13 @@ export const FlipCardFront = styled.div`
     width: 45px;
     height: 45px;
     margin-bottom: 0.5rem;
+  }
+  @media (min-width: 1000px) {
+    > svg {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 0.5rem;
+    }
   }
   @media (max-width: 900px) {
     backface-visibility: hidden;
