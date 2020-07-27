@@ -38,7 +38,7 @@ const Header = ({ handleScroll }) => {
     })),
   )
   return (
-    <Wrapper>
+    <Wrapper id="header">
       <TitlesContainer>
         <SingleTitleContainer>
           <TitleText>
