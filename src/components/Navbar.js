@@ -4,7 +4,8 @@ import { Nav, MenuButton, MenuButtonBar, Overlay, MenuLink } from './Navbar.styl
 import ZaatLogoSvg from '../static/ZaatLogo.svg'
 
 // eslint-disable-next-line react/prop-types
-const Navbar = ({ scrollFunc }) => {
+const Navbar = ({ handleScroll }) => {
+  console.log(handleScroll)
   const [isMenuActive, setMenuActive] = useState(false)
   return (
     <Nav>
@@ -19,7 +20,7 @@ const Navbar = ({ scrollFunc }) => {
       <Overlay isActive={isMenuActive}>
         <MenuLink
           onClick={() => {
-            scrollFunc(0)
+            handleScroll(0)
             setMenuActive(false)
           }}
         >
@@ -27,14 +28,29 @@ const Navbar = ({ scrollFunc }) => {
         </MenuLink>
         <MenuLink
           onClick={() => {
-            scrollFunc(1)
+            handleScroll(1)
+            setMenuActive(false)
+          }}
+        >
+          Portfolio
+        </MenuLink>
+        <MenuLink
+          onClick={() => {
+            handleScroll(2)
+            setMenuActive(false)
+          }}
+        >
+          Our Team
+        </MenuLink>
+
+        <MenuLink
+          onClick={() => {
+            handleScroll(3)
             setMenuActive(false)
           }}
         >
           Contact
         </MenuLink>
-        <MenuLink>Link 3</MenuLink>
-        <MenuLink>Link 4</MenuLink>
       </Overlay>
     </Nav>
   )
