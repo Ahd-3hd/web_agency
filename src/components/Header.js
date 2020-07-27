@@ -16,7 +16,7 @@ import LeafEmoji from '../static/LeafEmoji.svg'
 const emojis = [RocketEmoji, GearsEmoji, LeafEmoji]
 
 // eslint-disable-next-line react/prop-types
-const Header = ({ scrollFunc }) => {
+const Header = ({ handleScroll }) => {
   const titles = [
     'Building blazingly fast, smart apps',
     'Task automation so you focus on what matters',
@@ -53,7 +53,7 @@ const Header = ({ scrollFunc }) => {
           </SingleTitleContainer>
         ))}
       </TitlesContainer>
-      <RectButton onClick={() => scrollFunc(1)}>
+      <RectButton onClick={() => handleScroll(3)}>
         <ButtonText>Contact</ButtonText>
       </RectButton>
     </Wrapper>
