@@ -1,6 +1,5 @@
-import { Link } from 'gatsby'
 import React, { useState } from 'react'
-import { Nav, MenuButton, MenuButtonBar, Overlay, MenuLink } from './Navbar.style'
+import { Nav, MenuButton, MenuButtonBar, Overlay, MenuLink, LogoButton } from './Navbar.style'
 import ZaatLogoSvg from '../static/ZaatLogo.svg'
 
 // eslint-disable-next-line react/prop-types
@@ -45,9 +44,9 @@ const Navbar = ({ handleScroll }) => {
   )
   return (
     <Nav>
-      <Link to="/">
+      <LogoButton onClick={() => handleScroll(0)}>
         <ZaatLogoSvg />
-      </Link>
+      </LogoButton>
       <MenuButton onClick={() => setMenuActive(!isMenuActive)}>
         <MenuButtonBar isActive={isMenuActive} />
         <MenuButtonBar shift isActive={isMenuActive} />
