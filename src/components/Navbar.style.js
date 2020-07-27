@@ -112,3 +112,9 @@ export const MenuLinkMobile = styled.a`
     left: 0;
   }
 `
+export const LogoButton = styled.button`
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+`
