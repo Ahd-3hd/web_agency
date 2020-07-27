@@ -60,7 +60,7 @@ const Header = ({ handleScroll, refs }) => {
 }
 
 Header.propTypes = {
-  refs: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired,
+  refs: PropTypes.shape({ current: PropTypes.elementType }).isRequired,
   handleScroll: PropTypes.func.isRequired,
 }
 

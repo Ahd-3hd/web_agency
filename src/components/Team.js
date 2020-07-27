@@ -123,7 +123,7 @@ const Team = ({ refs }) => {
   )
 }
 Team.propTypes = {
-  refs: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired,
+  refs: PropTypes.shape({ current: PropTypes.elementType }).isRequired,
 }
 
 export default Team
