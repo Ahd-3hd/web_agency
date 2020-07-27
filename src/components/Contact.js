@@ -71,14 +71,14 @@ const Contact = ({ refs }) => {
       <InfoSection>
         <Title>Let&apos;s Talk</Title>
         <ContactParagraph>
-          Come prepared with your problems, challenges and vison.
+          Come prepared with your problems, challenges and vision.
           <br />
-          We will do whatever it takes to transform your vsion into relaity and your problems into fiction.
+          We will do whatever it takes to transform your vision into reality and your problems into fiction.
         </ContactParagraph>
         <DesktopOnlyContactParagraph>
-          Come prepared with your problems, challenges and vison.
+          Come prepared with your problems, challenges and vision.
           <br />
-          We will do whatever it takes to transform your vsion into relaity and your problems into fiction.
+          We will do whatever it takes to transform your vision into reality and your problems into fiction.
         </DesktopOnlyContactParagraph>
         <ContactInfoContainer>
           <NonSocialContactContainer>
