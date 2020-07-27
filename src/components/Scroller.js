@@ -1,14 +1,15 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import PropTypes from 'prop-types'
 
 import { FullPage, Slide } from 'react-full-page'
 // import { BrowserView, MobileView } from 'react-device-detect'
 
-const Scroller = ({ children }) => (
+const Scroller = ({ children, FullPageRef, handleScroll }) => (
   <>
-    <FullPage>
+    <FullPage ref={FullPageRef}>
       {children.map(child => (
-        <Slide>{child}</Slide>
+        <Slide>{child.type.name === 'Header' ? React.cloneElement(child, { handleScroll }) : child}</Slide>
       ))}
     </FullPage>
   </>
