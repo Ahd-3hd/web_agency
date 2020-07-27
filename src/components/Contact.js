@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+
 import {
   Wrapper,
   Title,
@@ -30,7 +32,7 @@ import FacebookIcon from '../static/FacebookIcon.svg'
 import TwitterIcon from '../static/TwitterIcon.svg'
 import InstagramIcon from '../static/InstagramIcon.svg'
 
-const Contact = () => {
+const Contact = ({ refs }) => {
   // keep track of whether a field is focused or not
   const [isNameFocused, setIsNameFocused] = useState(false)
   const [isEmailFocused, setIsEmailFocused] = useState(false)
@@ -65,7 +67,7 @@ const Contact = () => {
     setFormState('Failed!, try refreshing the page! ')
   }
   return (
-    <Wrapper id="contact">
+    <Wrapper ref={refs} id="contact">
       <InfoSection>
         <Title>Let&apos;s Talk</Title>
         <ContactParagraph>
@@ -200,6 +202,9 @@ const Contact = () => {
       </FormSection>
     </Wrapper>
   )
+}
+Contact.propTypes = {
+  refs: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired,
 }
 
 export default Contact

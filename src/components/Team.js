@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import PropTypes from 'prop-types'
 
 import { TeamCard } from './Card'
 import { TeamSection, JobTitle, SocialBox, Link, CardsContainer, Title } from '../styles/team'
@@ -9,7 +10,7 @@ import { H5 } from './typography'
 import GitHubIcon from '../static/GitHub.svg'
 import LinkedInIcon from '../static/LinkedIn.svg'
 
-const Team = () => {
+const Team = ({ refs }) => {
   const data = useStaticQuery(graphql`
     query {
       ghassanImage: file(relativePath: { eq: "ghassan.png" }) {
@@ -30,7 +31,7 @@ const Team = () => {
   `)
 
   return (
-    <TeamSection id="team">
+    <TeamSection ref={refs} id="team">
       <Title>Our Team</Title>
       <CardsContainer>
         <TeamCard>
@@ -120,6 +121,9 @@ const Team = () => {
       </CardsContainer>
     </TeamSection>
   )
+}
+Team.propTypes = {
+  refs: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired,
 }
 
 export default Team

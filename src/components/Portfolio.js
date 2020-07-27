@@ -3,6 +3,7 @@
 /* eslint-disable no-shadow */
 import React, { useState } from 'react'
 import { useTrail, config } from 'react-spring'
+import PropTypes from 'prop-types'
 
 import {
   Wrapper,
@@ -60,7 +61,7 @@ const AnimatedContainer = ({ distance }) => {
   ))
 }
 
-const Portfolio = () => {
+const Portfolio = ({ refs }) => {
   const [distance, setDistance] = useState(0)
   const [disableLeft, setDisableLeft] = useState(true)
   const [disableRight, setDisableRight] = useState(false)
@@ -83,7 +84,7 @@ const Portfolio = () => {
   }
 
   return (
-    <Wrapper id="portfolio">
+    <Wrapper ref={refs} id="portfolio">
       <Title>Our Portfolio</Title>
       <SliderContainer>
         <AnimatedContainer distance={distance} />
@@ -98,6 +99,9 @@ const Portfolio = () => {
       </SliderNavigatorContainer>
     </Wrapper>
   )
+}
+Portfolio.propTypes = {
+  refs: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired,
 }
 
 export default Portfolio

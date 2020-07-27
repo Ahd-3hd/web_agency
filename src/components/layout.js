@@ -6,17 +6,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import './layout.css'
 import GlobalStyles from './global'
 
 const Layout = ({ children }) => {
-  const FullPageRef = useRef(null)
-  const handleScroll = slide => {
-    FullPageRef.current.scrollToSlide(slide)
-  }
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -31,7 +27,7 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyles />
       <div>
-        <main>{children.map(child => React.cloneElement(child, { FullPageRef, handleScroll }))}</main>
+        <main>{children}</main>
         {/* <footer>
           {`© ${new Date().getFullYear()}, Built with`}
           <a href="https://zaat.dev">Zaat</a>

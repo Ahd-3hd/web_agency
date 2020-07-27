@@ -1,9 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-unused-vars */
-// import { Link } from 'gatsby'
-// import PropTypes from 'prop-types'
 import React from 'react'
 import { config, useSprings } from 'react-spring'
+import PropTypes from 'prop-types'
 import { Wrapper, TitlesContainer, SingleTitleContainer, TitleText } from './Header.style'
 import { RectButton } from './Buttons'
 import { ButtonText } from './typography'
@@ -16,7 +15,7 @@ import LeafEmoji from '../static/LeafEmoji.svg'
 const emojis = [RocketEmoji, GearsEmoji, LeafEmoji]
 
 // eslint-disable-next-line react/prop-types
-const Header = ({ handleScroll }) => {
+const Header = ({ handleScroll, refs }) => {
   const titles = [
     'Building blazingly fast, smart apps',
     'Task automation so you focus on what matters',
@@ -38,7 +37,7 @@ const Header = ({ handleScroll }) => {
     })),
   )
   return (
-    <Wrapper id="header">
+    <Wrapper ref={refs} id="header">
       <TitlesContainer>
         <SingleTitleContainer>
           <TitleText>
@@ -59,12 +58,10 @@ const Header = ({ handleScroll }) => {
     </Wrapper>
   )
 }
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
 
-// Header.defaultProps = {
-//   siteTitle: ``,
-// }
+Header.propTypes = {
+  refs: PropTypes.shape({ current: PropTypes.instanceOf(Element) }).isRequired,
+  handleScroll: PropTypes.func.isRequired,
+}
 
 export default Header
