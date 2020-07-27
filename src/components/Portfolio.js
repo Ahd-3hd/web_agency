@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-shadow */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useTrail, config } from 'react-spring'
 import PropTypes from 'prop-types'
 
@@ -63,25 +63,29 @@ const AnimatedContainer = ({ distance }) => {
 
 const Portfolio = ({ refs }) => {
   const [distance, setDistance] = useState(0)
-  const [disableLeft, setDisableLeft] = useState(true)
+  const [disableLeft, setDisableLeft] = useState(false)
   const [disableRight, setDisableRight] = useState(false)
   const handleSlide = d => {
-    if (distance === 0) {
-      setDisableLeft(true)
-    } else {
-      setDisableLeft(false)
-    }
-    if (distance <= -200) {
-      setDisableRight(true)
-    } else {
-      setDisableRight(false)
-    }
     if (d > 0 && distance < 0) {
       setDistance(distance + d)
     } else if (d < 0 && distance >= -100) {
       setDistance(distance + d)
     }
   }
+
+  useEffect(() => {
+    if (distance === -200) {
+      setDisableRight(true)
+    } else {
+      setDisableRight(false)
+    }
+
+    if (distance === 0) {
+      setDisableLeft(true)
+    } else {
+      setDisableLeft(false)
+    }
+  }, [distance, handleSlide])
 
   return (
     <Wrapper ref={refs} id="portfolio">
