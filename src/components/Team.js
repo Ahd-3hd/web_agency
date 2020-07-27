@@ -30,7 +30,7 @@ const Team = () => {
   `)
 
   return (
-    <TeamSection>
+    <TeamSection id="team">
       <Title>Our Team</Title>
       <CardsContainer>
         <TeamCard>
