@@ -83,7 +83,7 @@ const Portfolio = () => {
   }
 
   return (
-    <Wrapper>
+    <Wrapper id="portfolio">
       <Title>Our Portfolio</Title>
       <SliderContainer>
         <AnimatedContainer distance={distance} />
