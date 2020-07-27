@@ -65,7 +65,7 @@ const Contact = () => {
     setFormState('Failed!, try refreshing the page! ')
   }
   return (
-    <Wrapper>
+    <Wrapper id="contact">
       <InfoSection>
         <Title>Let&apos;s Talk</Title>
         <ContactParagraph>
