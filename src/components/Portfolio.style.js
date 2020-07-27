@@ -47,7 +47,7 @@ export const Wrapper = styled.section`
 `
 export const Title = styled(H2)`
   text-align: center;
-  font-size: 5vw;
+  font-size: 3rem;
   color: ${colors.gray};
   /* margin: 0; */
 `
