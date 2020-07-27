@@ -21,12 +21,14 @@ import {
   SliderButton,
   ExtendedButton,
 } from './Portfolio.style'
-import exampleImage from '../images/example.jpg'
 import { ButtonText } from './typography'
 import ArrowIcon from '../static/ArrowIcon.svg'
+import logoOne from '../images/logo.svg'
+import logoTwo from '../images/logo2.svg'
+import logoThree from '../images/logo_3.svg'
 
-const AnimatedContainer = ({ distance }) => {
-  const trail = useTrail(3, {
+const AnimatedContainer = ({ distance, projects }) => {
+  const trail = useTrail(projects.length, {
     config,
     x: distance,
     from: { x: 0 },
@@ -35,10 +37,10 @@ const AnimatedContainer = ({ distance }) => {
     <AnimatedCard style={{ ...rest, transform: x.interpolate(x => `translate3d(${x}%,0,0)`) }} key={index}>
       <ExtendedCard>
         <CardImageContainer>
-          <img src={exampleImage} alt="thumbnail" />
+          <img src={projects[index].logo} alt="thumbnail" />
         </CardImageContainer>
         <CardContentContainer>
-          <ExtendedH4>Project Title</ExtendedH4>
+          <ExtendedH4>{projects[index].title}</ExtendedH4>
           <TechsContainer>
             <ExtendedSpan>Techs: </ExtendedSpan>
             <ExtendedSpan>JavaScript</ExtendedSpan>
@@ -65,6 +67,20 @@ const Portfolio = ({ refs }) => {
   const [distance, setDistance] = useState(0)
   const [disableLeft, setDisableLeft] = useState(false)
   const [disableRight, setDisableRight] = useState(false)
+  const [projects] = useState([
+    {
+      logo: logoOne,
+      title: 'Masgaz',
+    },
+    {
+      logo: logoTwo,
+      title: 'Quiz App',
+    },
+    {
+      logo: logoThree,
+      title: 'GSG App',
+    },
+  ])
   const handleSlide = d => {
     if (d > 0 && distance < 0) {
       setDistance(distance + d)
@@ -91,7 +107,7 @@ const Portfolio = ({ refs }) => {
     <Wrapper ref={refs} id="portfolio">
       <Title>Our Portfolio</Title>
       <SliderContainer>
-        <AnimatedContainer distance={distance} />
+        <AnimatedContainer distance={distance} projects={projects} />
       </SliderContainer>
       <SliderNavigatorContainer>
         <SliderButton onClick={() => handleSlide(100)} left>
