@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components'
+import { colors } from '../utils'
 
 export const Card = styled.div`
   margin: 1rem;
@@ -37,14 +38,28 @@ export const ServiceCard = styled.div`
   width: 100%;
   flex: 1 1 29%;
   flex-direction: column;
+  cursor: pointer;
+
   @media (min-width: 900px) {
     margin: 0.8rem;
     min-height: 37vh;
+    cursor: default;
   }
   @media (max-width: 900px) {
     flex: 1 1 25%;
     height: 25vh;
     transition: transform 1s;
     transform-style: preserve-3d;
+  }
+  ::after {
+    content: '>';
+    font-size: 1.5rem;
+    color: ${colors.gray};
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem;
+    @media (min-width: 900px) {
+      display: none;
+    }
   }
 `
