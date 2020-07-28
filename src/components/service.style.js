@@ -1,12 +1,10 @@
 import styled from 'styled-components'
-import { colors } from '../utils'
 
 export const ServiceSection = styled.section`
   width: 100%;
   height: 100vh;
   min-height: 100vh;
   padding-top: 1rem;
-  background-color: ${colors.gray3};
 `
 export const ServiceCards = styled.div`
   max-width: 80%;
