@@ -52,7 +52,7 @@ const Header = ({ handleScroll, refs }) => {
           </SingleTitleContainer>
         ))}
       </TitlesContainer>
-      <RectButton onClick={() => handleScroll(3)}>
+      <RectButton onClick={() => handleScroll(4)}>
         <ButtonText>Contact</ButtonText>
       </RectButton>
     </Wrapper>
