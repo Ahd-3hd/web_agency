@@ -1,13 +1,11 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-unused-vars */
-// import { Link } from 'gatsby'
-// import PropTypes from 'prop-types'
 import React from 'react'
 import { config, useSprings } from 'react-spring'
+import PropTypes from 'prop-types'
 import { Wrapper, TitlesContainer, SingleTitleContainer, TitleText } from './Header.style'
 import { RectButton } from './Buttons'
 import { ButtonText } from './typography'
-import Navbar from './Navbar'
 
 import GearsEmoji from '../static/GearsEmoji.svg'
 import RocketEmoji from '../static/RocketEmoji.svg'
@@ -17,7 +15,7 @@ import LeafEmoji from '../static/LeafEmoji.svg'
 const emojis = [RocketEmoji, GearsEmoji, LeafEmoji]
 
 // eslint-disable-next-line react/prop-types
-const Header = ({ scrollFunc }) => {
+const Header = ({ handleScroll, refs }) => {
   const titles = [
     'Building blazingly fast, smart apps',
     'Task automation so you focus on what matters',
@@ -39,8 +37,7 @@ const Header = ({ scrollFunc }) => {
     })),
   )
   return (
-    <Wrapper>
-      <Navbar scrollFunc={scrollFunc} />
+    <Wrapper ref={refs} id="header">
       <TitlesContainer>
         <SingleTitleContainer>
           <TitleText>
@@ -55,18 +52,16 @@ const Header = ({ scrollFunc }) => {
           </SingleTitleContainer>
         ))}
       </TitlesContainer>
-      <RectButton onClick={() => scrollFunc(1)}>
+      <RectButton onClick={() => handleScroll(3)}>
         <ButtonText>Contact</ButtonText>
       </RectButton>
     </Wrapper>
   )
 }
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
 
-// Header.defaultProps = {
-//   siteTitle: ``,
-// }
+Header.propTypes = {
+  refs: PropTypes.shape({ current: PropTypes.elementType }).isRequired,
+  handleScroll: PropTypes.func.isRequired,
+}
 
 export default Header

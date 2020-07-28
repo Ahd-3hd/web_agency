@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+
 import {
   Wrapper,
   Title,
@@ -30,7 +32,7 @@ import FacebookIcon from '../static/FacebookIcon.svg'
 import TwitterIcon from '../static/TwitterIcon.svg'
 import InstagramIcon from '../static/InstagramIcon.svg'
 
-const Contact = () => {
+const Contact = ({ refs }) => {
   // keep track of whether a field is focused or not
   const [isNameFocused, setIsNameFocused] = useState(false)
   const [isEmailFocused, setIsEmailFocused] = useState(false)
@@ -65,18 +67,18 @@ const Contact = () => {
     setFormState('Failed!, try refreshing the page! ')
   }
   return (
-    <Wrapper>
+    <Wrapper ref={refs} id="contact">
       <InfoSection>
         <Title>Let&apos;s Talk</Title>
         <ContactParagraph>
-          Come prepared with your problems, challenges and vison.
+          Come prepared with your problems, challenges and vision.
           <br />
-          We will do whatever it takes to transform your vsion into relaity and your problems into fiction.
+          We will do whatever it takes to transform your vision into reality and your problems into fiction.
         </ContactParagraph>
         <DesktopOnlyContactParagraph>
-          Come prepared with your problems, challenges and vison.
+          Come prepared with your problems, challenges and vision.
           <br />
-          We will do whatever it takes to transform your vsion into relaity and your problems into fiction.
+          We will do whatever it takes to transform your vision into reality and your problems into fiction.
         </DesktopOnlyContactParagraph>
         <ContactInfoContainer>
           <NonSocialContactContainer>
@@ -200,6 +202,9 @@ const Contact = () => {
       </FormSection>
     </Wrapper>
   )
+}
+Contact.propTypes = {
+  refs: PropTypes.shape({ current: PropTypes.elementType }).isRequired,
 }
 
 export default Contact

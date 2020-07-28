@@ -6,7 +6,7 @@ import ChatHelper from './ChatHelper'
 import squareLogo from '../images/zaat_logo_square.png'
 
 const ChatContainer = styled(ChatBot)`
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
   right: 10rem;
   animation: toggle 0.1s ease-out forwards;
@@ -18,7 +18,7 @@ const ChatContainer = styled(ChatBot)`
     to {
       transform: scale(1);
     }
-  }
+  } */
 `
 
 const theme = {
@@ -38,7 +38,7 @@ const emailReg = new RegExp('[^@]+@[^@]+\\.[^@]+')
 const ChatSteps = [
   {
     id: 1,
-    message: "Hey, I am Zaat's bot, Can you tell me your name",
+    message: "Hey, I am Zaat's bot, What's your name?",
     trigger: 'name',
   },
   {
@@ -49,7 +49,7 @@ const ChatSteps = [
   },
   {
     id: 3,
-    message: 'Nice to e-meet you {previousValue}, Please choose why you are intrested to contact us',
+    message: 'Nice to e-meet you {previousValue}. Could you tell me what are you interested in ? ',
     trigger: 'interest',
   },
   {
@@ -57,15 +57,15 @@ const ChatSteps = [
     options: [
       {
         value: 'webapp',
-        label: 'Building a Web App|Site',
+        label: 'Building a Web App | Site',
         trigger: 4,
       },
       {
         value: 'automation-ai',
-        label: 'Automation|AI solution',
+        label: 'Automation | AI solution',
         trigger: 4,
       },
-      { value: 'inquiry', label: 'General inquiry', trigger: 4 },
+      { value: 'inquiry', label: 'General Inquiry', trigger: 4 },
       { value: 'consultation', label: 'Consultation', trigger: 4 },
     ],
   },
@@ -82,7 +82,7 @@ const ChatSteps = [
   },
   {
     id: 5,
-    message: 'Anything else you would like to say',
+    message: 'Anything else you would like to add',
     trigger: 6,
   },
   {
@@ -165,7 +165,7 @@ const ChatSteps = [
 
   {
     id: 'end-message',
-    message: 'Thanks! Your data was submitted successfully!',
+    message: 'Thanks! Your form was submitted successfully!',
     end: true,
   },
 ]
@@ -189,6 +189,7 @@ const Chat = () => (
       botAvatar={squareLogo}
       botDelay={500}
       userDelay={500}
+      floating
     />
   </ThemeProvider>
 )

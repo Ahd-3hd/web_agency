@@ -56,7 +56,7 @@ const SvgWrapper = styled.svg`
 `
 
 const ZaatLogoSvg = () => (
-  <SvgWrapper id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2581.86 441.27">
+  <SvgWrapper width="100" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2581.86 441.27">
     <defs>
       <linearGradient id="linear-gradient" x1="376.72" y1="283.93" x2="697.45" y2="283.93" gradientUnits="userSpaceOnUse">
         <stop offset="0" stopColor="#2ab640" />

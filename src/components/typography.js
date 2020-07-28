@@ -59,3 +59,7 @@ export const Td = styled.td`
   background: #2ab640;
   color: #fff;
 `
+export const ListItem = styled.span`
+  font-size: 1rem;
+  font-weight: ${({ selected }) => (selected ? 800 : 400)};
+`

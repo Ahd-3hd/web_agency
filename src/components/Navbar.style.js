@@ -9,7 +9,7 @@ export const Nav = styled.nav`
   top: 0;
   width: 100%;
   z-index: 99;
-  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 1rem;
 `
 export const MenuButtonBar = styled.div`
   width: 100%;
@@ -33,11 +33,6 @@ export const MenuButton = styled.button`
   margin: 0.5rem 1rem;
   z-index: 98;
   cursor: pointer;
-`
-
-export const Logo = styled.img`
-  max-width: 100px;
-  margin: 0.5rem 1rem;
 `
 
 export const Overlay = styled.div`
@@ -69,6 +64,7 @@ export const MenuLink = styled.button`
   cursor: pointer;
   position: relative;
   overflow: hidden;
+
   ::after {
     content: '';
     width: 100%;
@@ -83,4 +79,42 @@ export const MenuLink = styled.button`
   :hover ::after {
     left: 0;
   }
+`
+
+export const MenuLinkMobile = styled.a`
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  margin: 1rem 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: ${colors.white};
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  ::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    border: 2px solid ${colors.white};
+    position: absolute;
+    bottom: -2px;
+    left: -70%;
+    transition: left 0.4s;
+    z-index: -1;
+  }
+  :hover ::after {
+    left: 0;
+  }
+`
+export const LogoButton = styled.button`
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 `
