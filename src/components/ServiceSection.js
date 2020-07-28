@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { css } from 'styled-components'
+import PropTypes from 'prop-types'
 import { ServiceSection, Details, ServiceCards, FlipCardFront, FlipCardBack } from './service.style'
 import { H5, Body2, Span } from './typography'
 import { ServiceCard } from './Card'
@@ -14,7 +15,7 @@ import Responsives from '../static/Responsives.svg'
 import data from '../data'
 
 const images = { Responsives, Conunsltation, TA, SML, SEO, Fast }
-const Service = () => {
+const Service = ({ refs }) => {
   const [styles, setStyle] = useState(new Array(6).fill({ flipped: false, style: {} }))
   const handleClick = i => {
     if (window.innerWidth < 900) {
@@ -40,7 +41,7 @@ const Service = () => {
     }
   }
   return (
-    <ServiceSection>
+    <ServiceSection ref={refs}>
       <H5
         css={css`
           text-align: center;
@@ -98,6 +99,10 @@ const Service = () => {
       </ServiceCards>
     </ServiceSection>
   )
+}
+
+Service.propTypes = {
+  refs: PropTypes.shape({ current: PropTypes.elementType }).isRequired,
 }
 
 export default Service
