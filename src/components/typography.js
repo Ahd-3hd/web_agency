@@ -38,11 +38,11 @@ export const H4 = styled.h4`
   ${({ center }) => (center ? 'text-align: center' : null)}
 `
 export const H5 = styled.h5`
-  text-align: center;
   margin: 0;
   padding-bottom: 1rem;
   font-size: 3rem;
   color: ${({ color }) => color};
+  ${({ center }) => (center ? 'text-align: center' : null)}
 `
 export const Body1 = styled.p`
   font-size: 1.2rem;
