@@ -38,6 +38,14 @@ const Navbar = ({ handleScroll }) => {
           setMenuActive(false)
         }}
       >
+        Services
+      </MenuLink>
+      <MenuLink
+        onClick={() => {
+          handleScroll(4)
+          setMenuActive(false)
+        }}
+      >
         Contact
       </MenuLink>
     </>
