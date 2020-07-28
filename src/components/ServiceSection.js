@@ -40,7 +40,9 @@ const Service = ({ refs }) => {
   }
   return (
     <ServiceSection ref={refs}>
-      <H5 color={colors.gray}>Our Services</H5>
+      <H5 color={colors.gray} center>
+        Our Services
+      </H5>
       <Span color={colors.gray}>Design develop websites and webapps</Span>
 
       <ServiceCards style>

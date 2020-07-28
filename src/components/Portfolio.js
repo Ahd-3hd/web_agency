@@ -102,7 +102,9 @@ const Portfolio = ({ refs }) => {
 
   return (
     <Wrapper ref={refs} id="portfolio">
-      <H5 color={colors.gray}>Our Portfolio</H5>
+      <H5 color={colors.gray} center>
+        Our Portfolio
+      </H5>
       <SliderContainer>
         <AnimatedContainer distance={distance} projects={projects} />
       </SliderContainer>
