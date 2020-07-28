@@ -33,6 +33,8 @@ export const H4 = styled.h4`
   font-weight: 700;
   font-size: 1.5rem;
   color: ${({ color }) => color};
+  margin: 0;
+  margin-bottom: 0.5rem;
 `
 export const H5 = styled.h5`
   text-align: center;
@@ -50,7 +52,7 @@ export const Body2 = styled.p`
   font-weight: 400;
   font-size: 0.9rem;
   line-height: normal;
-  margin: 0;
+  margin: 0.7rem 0;
   color: ${({ color }) => color};
 `
 export const Subtitle = styled.p`
