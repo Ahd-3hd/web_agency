@@ -2,9 +2,11 @@ import styled from 'styled-components'
 
 export const ServiceSection = styled.section`
   width: 100%;
-  height: 100vh;
-  min-height: 100vh;
+  height: 100%;
   padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 export const ServiceCards = styled.div`
   max-width: 80%;
@@ -46,6 +48,7 @@ export const FlipCardBack = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   @media (max-width: 900px) {
     left: 0%;
     top: 6%;
