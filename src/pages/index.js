@@ -4,6 +4,7 @@ import { useSpring } from 'react-spring'
 import { FullPage, Slide } from 'react-full-page'
 
 import Layout from '../components/layout'
+
 import SEO from '../components/seo'
 import Chat from '../components/Chat'
 import Header from '../components/Header'
