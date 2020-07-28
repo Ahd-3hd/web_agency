@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 import {
   Wrapper,
-  Title,
   InfoSection,
   FormSection,
   ContactParagraph,
@@ -20,7 +19,7 @@ import {
   SocialLink,
   DesktopOnlyContactParagraph,
 } from './Contact.style'
-import { ButtonText } from './typography'
+import { ButtonText, H5 } from './typography'
 import { InputContainer, InputLabel, Input, TextField, SelectInput } from './InputFields'
 import { RectButton } from './Buttons'
 import { colors, formHandler } from '../utils'
@@ -69,7 +68,7 @@ const Contact = ({ refs }) => {
   return (
     <Wrapper ref={refs} id="contact">
       <InfoSection>
-        <Title>Let&apos;s Talk</Title>
+        <H5 color={colors.gray}>Let&apos;s Talk</H5>
         <ContactParagraph>
           Come prepared with your problems, challenges and vision.
           <br />
