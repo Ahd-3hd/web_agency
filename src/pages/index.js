@@ -12,9 +12,10 @@ import Contact from '../components/Contact'
 import Portfolio from '../components/Portfolio'
 import Team from '../components/Team'
 import Navbar from '../components/Navbar'
+import ServiceSection from '../components/ServiceSection'
 
 const IndexPage = () => {
-  const sections = [Header, Portfolio, Team, Contact]
+  const sections = [Header, Portfolio, Team, ServiceSection, Contact]
   const sectionsRefs = sections.map(() => useRef(null))
   const [, setY] = useSpring(() => ({ y: 0 }))
 
