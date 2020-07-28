@@ -35,6 +35,7 @@ export const H4 = styled.h4`
   color: ${({ color }) => color};
   margin: 0;
   margin-bottom: 0.5rem;
+  ${({ center }) => (center ? 'text-align: center' : null)}
 `
 export const H5 = styled.h5`
   text-align: center;
