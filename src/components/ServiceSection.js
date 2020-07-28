@@ -11,7 +11,6 @@ import Conunsltation from '../static/Conunsltation.svg'
 import SML from '../static/SML.svg'
 import TA from '../static/TA.svg'
 import Responsives from '../static/Responsives.svg'
-
 import data from '../data'
 
 const images = { Responsives, Conunsltation, TA, SML, SEO, Fast }
@@ -47,7 +46,8 @@ const Service = ({ refs }) => {
           text-align: center;
           margin: 0;
           padding-bottom: 1rem;
-          color: ${colors.primary};
+          color: ${colors.gray};
+          font-size: 3rem;
         `}
       >
         Our Services
@@ -56,6 +56,7 @@ const Service = ({ refs }) => {
         css={css`
           text-align: center;
           margin: 0;
+          color: ${colors.gray};
         `}
       >
         Design develop websites and webapps
@@ -73,6 +74,7 @@ const Service = ({ refs }) => {
                   css={css`
                     margin: 0;
                     text-align: center;
+                    color: ${colors.gray2};
                   `}
                 >
                   {name}
