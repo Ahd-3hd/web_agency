@@ -12,20 +12,17 @@ import {
   CardContentContainer,
   ExtendedCard,
   TechsContainer,
-  ExtendedH4,
-  ExtendedBody2,
-  ExtendedSpan,
   AnimatedCard,
-  Title,
   SliderNavigatorContainer,
   SliderButton,
-  ExtendedButton,
 } from './Portfolio.style'
-import { ButtonText } from './typography'
+import { ButtonText, H4, Span, Body2, H5 } from './typography'
+import { RectButton } from './Buttons'
 import ArrowIcon from '../static/ArrowIcon.svg'
 import logoOne from '../images/logo.svg'
 import logoTwo from '../images/logo2.svg'
 import logoThree from '../images/logo_3.svg'
+import { colors } from '../utils'
 
 const AnimatedContainer = ({ distance, projects }) => {
   const trail = useTrail(projects.length, {
@@ -40,23 +37,23 @@ const AnimatedContainer = ({ distance, projects }) => {
           <img src={projects[index].logo} alt="thumbnail" />
         </CardImageContainer>
         <CardContentContainer>
-          <ExtendedH4>{projects[index].title}</ExtendedH4>
+          <H4 color={colors.gray}>{projects[index].title}</H4>
           <TechsContainer>
-            <ExtendedSpan>Techs: </ExtendedSpan>
-            <ExtendedSpan>JavaScript</ExtendedSpan>
-            <ExtendedSpan>JavaScript</ExtendedSpan>
-            <ExtendedSpan>JavaScript</ExtendedSpan>
-            <ExtendedSpan>JavaScript</ExtendedSpan>
-            <ExtendedSpan>JavaScript</ExtendedSpan>
-            <ExtendedSpan>JavaScript</ExtendedSpan>
+            <Span color={colors.gray}>Techs: </Span>
+            <Span color={colors.gray2}>JavaScript</Span>
+            <Span color={colors.gray2}>JavaScript</Span>
+            <Span color={colors.gray2}>JavaScript</Span>
+            <Span color={colors.gray2}>JavaScript</Span>
+            <Span color={colors.gray2}>JavaScript</Span>
+            <Span color={colors.gray2}>JavaScript</Span>
           </TechsContainer>
-          <ExtendedBody2>
+          <Body2 color={colors.gray}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa elementum, iaculis et, et. Aliquam nisl amet lorem quisque eu
             commodo leo.
-          </ExtendedBody2>
-          <ExtendedButton>
+          </Body2>
+          <RectButton margin="0">
             <ButtonText>View</ButtonText>
-          </ExtendedButton>
+          </RectButton>
         </CardContentContainer>
       </ExtendedCard>
     </AnimatedCard>
@@ -105,7 +102,7 @@ const Portfolio = ({ refs }) => {
 
   return (
     <Wrapper ref={refs} id="portfolio">
-      <Title>Our Portfolio</Title>
+      <H5 color={colors.gray}>Our Portfolio</H5>
       <SliderContainer>
         <AnimatedContainer distance={distance} projects={projects} />
       </SliderContainer>
