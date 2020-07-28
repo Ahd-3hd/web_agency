@@ -11,8 +11,22 @@ export const H2 = styled.h2`
   color: ${({ color }) => color};
 `
 export const H3 = styled.h3`
-  font-weight: 700;
+  margin: 0;
   font-size: 2rem;
+  display: flex;
+  align-items: center;
+  @media (max-width: 900px) {
+    font-size: 1rem;
+  }
+  > svg {
+    width: 1rem;
+    min-width: 1rem;
+    margin-right: 0.5rem;
+    @media (min-width: 900px) {
+      width: 2.5rem;
+      min-width: 50px;
+    }
+  }
   color: ${({ color }) => color};
 `
 export const H4 = styled.h4`
