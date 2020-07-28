@@ -21,7 +21,7 @@ const Navbar = ({ handleScroll }) => {
           setMenuActive(false)
         }}
       >
-        Portfolio
+        Services
       </MenuLink>
       <MenuLink
         onClick={() => {
@@ -29,12 +29,20 @@ const Navbar = ({ handleScroll }) => {
           setMenuActive(false)
         }}
       >
-        Our Team
+        Portfolio
       </MenuLink>
 
       <MenuLink
         onClick={() => {
           handleScroll(3)
+          setMenuActive(false)
+        }}
+      >
+        Team
+      </MenuLink>
+      <MenuLink
+        onClick={() => {
+          handleScroll(4)
           setMenuActive(false)
         }}
       >

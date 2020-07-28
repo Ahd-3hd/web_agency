@@ -27,6 +27,20 @@ const Team = ({ refs }) => {
           }
         }
       }
+      ahdImage: file(relativePath: { eq: "ahd.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      amanImage: file(relativePath: { eq: "aman.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -56,7 +70,7 @@ const Team = ({ refs }) => {
           </SocialBox>
         </TeamCard>
         <TeamCard>
-          <Img fluid={data.ghassanImage.childImageSharp.fluid} />
+          <Img fluid={data.yosefImage.childImageSharp.fluid} />
           <H5
             css={css`
               text-align: center;
@@ -64,7 +78,7 @@ const Team = ({ refs }) => {
               margin-bottom: 0.5rem;
             `}
           >
-            Ghassan
+            Yosef
           </H5>
           <JobTitle>Team Lead</JobTitle>
           <SocialBox>
@@ -77,7 +91,7 @@ const Team = ({ refs }) => {
           </SocialBox>
         </TeamCard>
         <TeamCard>
-          <Img fluid={data.ghassanImage.childImageSharp.fluid} />
+          <Img fluid={data.amanImage.childImageSharp.fluid} />
           <H5
             css={css`
               text-align: center;
@@ -85,7 +99,7 @@ const Team = ({ refs }) => {
               margin-bottom: 0.5rem;
             `}
           >
-            Ghassan
+            Aman
           </H5>
           <JobTitle>Team Lead</JobTitle>
           <SocialBox>
@@ -98,7 +112,7 @@ const Team = ({ refs }) => {
           </SocialBox>
         </TeamCard>
         <TeamCard>
-          <Img fluid={data.ghassanImage.childImageSharp.fluid} />
+          <Img fluid={data.ahdImage.childImageSharp.fluid} />
           <H5
             css={css`
               text-align: center;
@@ -106,7 +120,7 @@ const Team = ({ refs }) => {
               margin-bottom: 0.5rem;
             `}
           >
-            Ghassan
+            Ahd
           </H5>
           <JobTitle>Team Lead</JobTitle>
           <SocialBox>

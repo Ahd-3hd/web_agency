@@ -1,3 +1,5 @@
+/* eslint react/prop-types: 0 */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
@@ -64,12 +66,15 @@ const ReviewAndSubmit = ({ steps }) => {
   )
 }
 ReviewAndSubmit.propTypes = {
+  /* eslint react/forbid-prop-types: 0 */
+
   steps: PropTypes.shape({
     name: PropTypes.object,
     email: PropTypes.object,
     interest: PropTypes.object,
     message: PropTypes.object,
   }),
+  /* eslint react/forbid-prop-types: 0 */
 }
 ReviewAndSubmit.defaultProps = {
   steps: undefined,

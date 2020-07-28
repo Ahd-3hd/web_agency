@@ -4,6 +4,7 @@ import { useSpring } from 'react-spring'
 import { FullPage, Slide } from 'react-full-page'
 
 import Layout from '../components/layout'
+
 import SEO from '../components/seo'
 import Chat from '../components/Chat'
 import Header from '../components/Header'
@@ -11,9 +12,10 @@ import Contact from '../components/Contact'
 import Portfolio from '../components/Portfolio'
 import Team from '../components/Team'
 import Navbar from '../components/Navbar'
+import ServiceSection from '../components/ServiceSection'
 
 const IndexPage = () => {
-  const sections = [Header, Portfolio, Team, Contact]
+  const sections = [Header, ServiceSection, Portfolio, Team, Contact]
   const sectionsRefs = sections.map(() => useRef(null))
   const [, setY] = useSpring(() => ({ y: 0 }))
 
