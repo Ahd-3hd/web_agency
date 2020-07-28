@@ -35,8 +35,10 @@ export const H4 = styled.h4`
   color: ${({ color }) => color};
 `
 export const H5 = styled.h5`
-  font-weight: 700;
-  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 1rem;
+  font-size: 3rem;
   color: ${({ color }) => color};
 `
 export const Body1 = styled.p`
@@ -45,8 +47,10 @@ export const Body1 = styled.p`
   font-weight: 400;
 `
 export const Body2 = styled.p`
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: normal;
+  margin: 0;
   color: ${({ color }) => color};
 `
 export const Subtitle = styled.p`
@@ -57,7 +61,9 @@ export const Subtitle = styled.p`
 export const Span = styled.p`
   font-size: 0.85rem;
   color: ${({ color }) => color};
-  font-weight: 600;
+  font-weight: ${({ bold }) => (bold ? '700' : '400')};
+  text-align: center;
+  margin: 0;
 `
 export const ButtonText = styled.p`
   font-size: 1rem;
