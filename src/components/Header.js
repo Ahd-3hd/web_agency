@@ -27,10 +27,10 @@ const Header = ({ handleScroll, refs }) => {
     titles.length,
     titles.map((item, i) => ({
       from: {
-        transform: 'translateX(110vw)',
+        transform: 'translateX(300%)',
       },
       to: {
-        transform: 'translateX(0vw)',
+        transform: 'translateX(0%)',
       },
       config: config.gentle,
       delay: 1000 * i + 1,
