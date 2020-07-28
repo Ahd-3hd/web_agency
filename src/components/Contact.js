@@ -97,13 +97,13 @@ const Contact = ({ refs }) => {
           </NonSocialContactContainer>
           <SocialContainer>
             <SocialIconsContainer>
-              <SocialLink target="_blank" href="https://www.facebook.com/zaatdev">
+              <SocialLink target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/zaatdev">
                 <FacebookIcon />
               </SocialLink>
-              <SocialLink target="_blank" href="https://twitter.com/zaatdev">
+              <SocialLink target="_blank" rel="noopener noreferrer" href="https://twitter.com/zaatdev">
                 <TwitterIcon />
               </SocialLink>
-              <SocialLink target="_blank" href="https://www.instagram.com/zaatdev/">
+              <SocialLink target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/zaatdev/">
                 <InstagramIcon />
               </SocialLink>
             </SocialIconsContainer>
