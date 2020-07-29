@@ -167,7 +167,7 @@ const Contact = ({ refs }) => {
                 onChange={e => setInterest(e.target.value)}
               >
                 <option hidden value="">
-                  Why do you to contact Zaat
+                  Why do you want to contact Zaat?
                 </option>
                 <option value="webapp">Building a Web App|Site</option>
                 <option value="automation-ai">Automation|AI solution</option>
