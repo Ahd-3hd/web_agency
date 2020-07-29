@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import { ServiceSection, Details, ServiceCards, FlipCardFront, FlipCardBack } from './service.style'
-import { H5, Body2, Span } from './typography'
+import { H2, Body2, Span } from './typography'
 import { ServiceCard } from './Card'
 import { colors } from '../utils'
 import Fast from '../static/Fast.svg'
@@ -41,27 +40,9 @@ const Service = ({ refs }) => {
   }
   return (
     <ServiceSection ref={refs}>
-      <H5
-        css={css`
-          text-align: center;
-          margin: 0;
-          padding-bottom: 1rem;
-          color: ${colors.gray};
-          font-size: 3rem;
-        `}
-      >
+      <H2 color={colors.gray} center>
         Our Services
-      </H5>
-      <Span
-        css={css`
-          text-align: center;
-          margin: 0;
-          color: ${colors.gray};
-        `}
-      >
-        Design develop websites and webapps
-      </Span>
-
+      </H2>
       <ServiceCards style>
         {data.map(({ name, summary, image }, i) => {
           const ServiceIcon = images[image]
@@ -70,27 +51,11 @@ const Service = ({ refs }) => {
             <ServiceCard style={styles[i].style} onClick={() => handleClick(i)}>
               <FlipCardFront>
                 <ServiceIcon />
-                <Span
-                  css={css`
-                    margin: 0;
-                    text-align: center;
-                    color: ${colors.gray2};
-                  `}
-                >
-                  {name}
-                </Span>
+                <Span bold>{name}</Span>
               </FlipCardFront>
               <FlipCardBack>
                 <Details>
-                  <Body2
-                    css={css`
-                      font-weight: 400;
-                      font-size: 14px;
-                      line-height: normal;
-                      margin: 0;
-                    `}
-                    color={colors.gray2}
-                  >
+                  <Body2 color={colors.gray2} center>
                     {summary}
                   </Body2>
                 </Details>

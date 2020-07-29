@@ -55,7 +55,7 @@ const Navbar = ({ handleScroll }) => {
       <LogoButton onClick={() => handleScroll(0)}>
         <ZaatLogoSvg />
       </LogoButton>
-      <MenuButton onClick={() => setMenuActive(!isMenuActive)}>
+      <MenuButton onClick={() => setMenuActive(!isMenuActive)} aria-label="menu">
         <MenuButtonBar isActive={isMenuActive} />
         <MenuButtonBar shift isActive={isMenuActive} />
         <MenuButtonBar isActive={isMenuActive} />
