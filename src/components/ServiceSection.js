@@ -55,7 +55,9 @@ const Service = ({ refs }) => {
               </FlipCardFront>
               <FlipCardBack>
                 <Details>
-                  <Body2 color={colors.gray2}>{summary}</Body2>
+                  <Body2 color={colors.gray2} center>
+                    {summary}
+                  </Body2>
                 </Details>
               </FlipCardBack>
             </ServiceCard>
