@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Zaat.dev`,
-    description: `Zaat.dev For developing digital soultion, developing webapps, tasks autmation, SEO fast website, creating state of the art (AI) smart soultion and more `,
+    title: `Zaat.dev For Developing Fast and Smart Apps`,
+    description: `Zaat.dev For developing digital solution, developing webapps, tasks automation, SEO fast website, creating state of the art (AI) smart solution and more `,
     author: `@zaatdev`,
   },
   plugins: [
