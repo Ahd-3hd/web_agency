@@ -10,7 +10,11 @@ export const TeamSection = styled.section`
   background-size: cover;
   padding: 2rem 0;
 `
-
+export const TeamLink = styled.a`
+  text-decoration: none;
+  color: #0077b5;
+  font-size: 14px;
+`
 export const CardsContainer = styled.div`
   width: 100%;
   display: grid;
