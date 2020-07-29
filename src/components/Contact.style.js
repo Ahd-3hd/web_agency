@@ -112,6 +112,9 @@ export const SingleContactInfo = styled.a`
 `
 export const SocialLink = styled.a`
   margin: 0 1rem;
+  > svg {
+    height: 25px;
+  }
 `
 export const SocialText = styled.p`
   margin: 0;
@@ -139,9 +142,7 @@ export const Form = styled.form`
 `
 export const NameEmailContainer = styled.div`
   display: flex;
-  @media (min-width: 1024px) {
-    flex-direction: column;
-  }
+  flex-direction: column;
 `
 export const FormTitle = styled(Body2)`
   margin: 0 0.3rem;

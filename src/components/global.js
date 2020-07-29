@@ -20,6 +20,7 @@ export default createGlobalStyle`
   }
 
   .rsc{
+    font-family:${fonts.primary};
     @media (max-width:600px){
       left:0;
       width:80%;

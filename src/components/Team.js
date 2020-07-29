@@ -2,12 +2,58 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
+
 import { TeamCard } from './Card'
-import { TeamSection, SocialBox, Link, CardsContainer, TeamLink } from '../styles/team'
-import { H5, H4, Span } from './typography'
+import { TeamSection, SocialBox, Link, CardsContainer } from '../styles/team'
+import { H2, H5, Span } from './typography'
 import GitHubIcon from '../static/GitHub.svg'
 import LinkedInIcon from '../static/LinkedIn.svg'
 import { colors } from '../utils'
+
+function shuffleArray(array) {
+  // eslint-disable-next-line no-plusplus
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    // eslint-disable-next-line no-param-reassign
+    ;[array[i], array[j]] = [array[j], array[i]]
+  }
+  return array
+}
+
+const members = [
+  {
+    name: 'Ghassan',
+    img: 'ghassanImage',
+    title: 'Team Lead',
+    github: 'ghassanmas',
+    linkdin: 'Ghassan',
+    fullname: 'Ghassan Maslamani',
+  },
+  {
+    name: 'Yosef',
+    img: 'yosefImage',
+    title: 'Full-stack Developer',
+    github: 'yosefanajjar',
+    linkdin: 'yosefanajjar',
+    fullname: 'Yousef Alnajjar',
+  },
+  {
+    name: 'Aman Shawar',
+    img: 'amanImage',
+    title: 'Desinger & Fron-end Developer',
+    github: 'amanshawar',
+    linkdin: 'aman-shawar-27a15a168',
+    fullname: 'Aman Shawar',
+  },
+  {
+    name: 'Ahd',
+    img: 'ahdImage',
+    title: 'Mobile Developer',
+    github: 'Zeus3hd',
+    linkdin: 'ahdradwan',
+    fullname: 'Ahd Radwan',
+  },
+]
 
 const Team = ({ refs }) => {
   const data = useStaticQuery(graphql`
@@ -45,86 +91,32 @@ const Team = ({ refs }) => {
 
   return (
     <TeamSection ref={refs} id="team">
-      <H5 color={colors.gray}>Our Team</H5>
+      <H2 color={colors.gray}>Our Team</H2>
       <CardsContainer>
-        <TeamCard>
-          <Img fluid={data.ghassanImage.childImageSharp.fluid} />
-          <H4 color={colors.gray} center>
-            Ghassan
-          </H4>
-          <Span color={colors.gray}>Team Lead</Span>
-          <SocialBox>
-            <GitHubIcon />
-            <TeamLink target="_blank" rel="noopener noreferrer" href="https:\\github.com/ghassanmas">
-              @ghassanmas
-            </TeamLink>
-          </SocialBox>
-          <SocialBox>
-            <LinkedInIcon />
-            <TeamLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ghassanmas/">
-              Ghassan Maslamani
-            </TeamLink>
-          </SocialBox>
-        </TeamCard>
-        <TeamCard>
-          <Img fluid={data.yosefImage.childImageSharp.fluid} />
-          <H4 color={colors.gray} center>
-            Yosef
-          </H4>
-          <Span color={colors.gray}>Full Stack Developer</Span>
-          <SocialBox>
-            <GitHubIcon />
-            <TeamLink target="_blank" rel="noopener noreferrer" href="https://github.com/yosefanajjar">
-              @yosefanajjar
-            </TeamLink>
-          </SocialBox>
-          <SocialBox>
-            <LinkedInIcon />
-            <TeamLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/yosefanajjar/">
-              Yosef Alnajjar
-            </TeamLink>
-          </SocialBox>
-        </TeamCard>
-        <TeamCard>
-          <Img fluid={data.amanImage.childImageSharp.fluid} />
-          <H4 color={colors.gray} center>
-            Aman
-          </H4>
-          <Span color={colors.gray}>Fron-End Developer and Desiger</Span>
-          <SocialBox>
-            <GitHubIcon />
-            <TeamLink target="_blank" rel="noopener noreferrer" href="https://github.com/amanshawar">
-              @amanshawar
-            </TeamLink>
-          </SocialBox>
-          <SocialBox>
-            <LinkedInIcon />
-            <TeamLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aman-shawar-27a15a168/">
-              Aman Shawar
-            </TeamLink>
-          </SocialBox>
-        </TeamCard>
-        <TeamCard>
-          <Img fluid={data.ahdImage.childImageSharp.fluid} />
-          <H4 color={colors.gray} center>
-            Ahd
-          </H4>
-          <Span color={colors.gray}>Mobile Developer</Span>
-          <SocialBox>
-            <GitHubIcon />
-            <TeamLink target="_blank" rel="noopener noreferrer" href="https://github.com//Zeus3hd">
-              @Zeus3hd
-            </TeamLink>
-          </SocialBox>
-          <SocialBox>
-            <LinkedInIcon />
-            <Link href="github.com">@ghassan</Link>
-          </SocialBox>
-        </TeamCard>
+        {shuffleArray(members).map(({ name, img, title, github, linkdin, fullname }) => (
+          <TeamCard>
+            <Img fluid={data[img].childImageSharp.fluid} />
+            <H5 center>{name}</H5>
+            <Span>{title}</Span>
+            <SocialBox>
+              <GitHubIcon />
+              <Link target="_blank" rel="noopener noreferrer" href={`https:\\github.com/${github}`}>
+                {`@${github}`}
+              </Link>
+            </SocialBox>
+            <SocialBox>
+              <LinkedInIcon />
+              <Link target="_blank" rel="noopener noreferrer" href={`https://github.com/in/${linkdin}`}>
+                {fullname}
+              </Link>
+            </SocialBox>
+          </TeamCard>
+        ))}
       </CardsContainer>
     </TeamSection>
   )
 }
+
 Team.propTypes = {
   refs: PropTypes.shape({ current: PropTypes.elementType }).isRequired,
 }

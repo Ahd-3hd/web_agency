@@ -5,7 +5,7 @@ import { config, useSprings } from 'react-spring'
 import PropTypes from 'prop-types'
 import { Wrapper, TitlesContainer, SingleTitleContainer } from './Header.style'
 import { RectButton } from './Buttons'
-import { ButtonText, H3 } from './typography'
+import { ButtonText, HeaderPhrases, H1 } from './typography'
 import { colors } from '../utils'
 import GearsEmoji from '../static/GearsEmoji.svg'
 import RocketEmoji from '../static/RocketEmoji.svg'
@@ -39,15 +39,15 @@ const Header = ({ handleScroll, refs }) => {
     <Wrapper ref={refs} id="header">
       <TitlesContainer>
         <SingleTitleContainer>
-          <H3 color={colors.primary}>
+          <H1 color={colors.primary}>
             <ZaatSquareLogo />
             is for Zaat and Zaat is for:
-          </H3>
+          </H1>
         </SingleTitleContainer>
         {springs.map((props, i) => (
           <SingleTitleContainer style={props} key={i}>
             {React.createElement(emojis[i])}
-            <H3 color={colors.primary}>{titles[i]}</H3>
+            <HeaderPhrases color={colors.primary}>{titles[i]}</HeaderPhrases>
           </SingleTitleContainer>
         ))}
       </TitlesContainer>

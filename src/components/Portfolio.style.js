@@ -9,7 +9,7 @@ export const Wrapper = styled.section`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
 `
 
 export const SliderContainer = styled.div`
@@ -39,9 +39,8 @@ export const ExtendedCard = styled(Card)`
 `
 export const CardImageContainer = styled.div`
   > img {
-    width: 100%;
-    min-width: 250px;
-    max-width: 300px;
+    max-width: 260px;
+    min-width: 160px;
     margin: 0;
   }
 `

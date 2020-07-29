@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { H2 } from '../components/typography'
+import { colors } from '../utils'
 
 export const TeamSection = styled.section`
   min-height: 100vh;
@@ -44,4 +46,14 @@ export const Link = styled.a`
   font-size: 14px;
   color: #0077b5;
   text-decoration: none;
+`
+export const JobTitle = styled.div`
+  font-size: 16px;
+  text-align: center;
+  text-transform: capitalize;
+  color: rgba(36, 36, 36, 0.8);
+  margin-bottom: 1.5rem;
+`
+export const Title = styled(H2)`
+  color: ${colors.gray};
 `
