@@ -28,6 +28,9 @@ module.exports = {
         icon: `src/images/zaat_logo_square.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-loadable-components-ssr`,
+    `gatsby-plugin-preact`,
+    `gatsby-plugin-preload-fonts`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -3,10 +3,10 @@
 import React from 'react'
 import { config, useSprings } from 'react-spring'
 import PropTypes from 'prop-types'
-import { Wrapper, TitlesContainer, SingleTitleContainer, TitleText } from './Header.style'
+import { Wrapper, TitlesContainer, SingleTitleContainer } from './Header.style'
 import { RectButton } from './Buttons'
-import { ButtonText } from './typography'
-
+import { ButtonText, H3 } from './typography'
+import { colors } from '../utils'
 import GearsEmoji from '../static/GearsEmoji.svg'
 import RocketEmoji from '../static/RocketEmoji.svg'
 import ZaatSquareLogo from '../static/ZaatSquareLogo.svg'
@@ -27,28 +27,27 @@ const Header = ({ handleScroll, refs }) => {
     titles.length,
     titles.map((item, i) => ({
       from: {
-        transform: 'translateX(110vw)',
+        transform: 'translateX(300%)',
       },
       to: {
-        transform: 'translateX(0vw)',
+        transform: 'translateX(0%)',
       },
-      config: config.gentle,
-      delay: 1000 * i + 1,
+      delay: 700 * i + 1,
     })),
   )
   return (
     <Wrapper ref={refs} id="header">
       <TitlesContainer>
         <SingleTitleContainer>
-          <TitleText>
+          <H3 color={colors.primary}>
             <ZaatSquareLogo />
             is for Zaat and Zaat is for:
-          </TitleText>
+          </H3>
         </SingleTitleContainer>
         {springs.map((props, i) => (
           <SingleTitleContainer style={props} key={i}>
             {React.createElement(emojis[i])}
-            <TitleText>{titles[i]}</TitleText>
+            <H3 color={colors.primary}>{titles[i]}</H3>
           </SingleTitleContainer>
         ))}
       </TitlesContainer>
