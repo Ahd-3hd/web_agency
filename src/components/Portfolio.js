@@ -16,12 +16,12 @@ import {
   SliderNavigatorContainer,
   SliderButton,
 } from './Portfolio.style'
-import { ButtonText, H5, Span, Body2, H2 } from './typography'
-import { RectButton } from './Buttons'
+import { H5, Span, Body2, H2 } from './typography'
+import { AnchorButton } from './Buttons'
 import ArrowIcon from '../static/ArrowIcon.svg'
 import logoOne from '../images/logo.svg'
 import logoTwo from '../images/truefalse.png'
-import logoThree from '../images/logo_3.svg'
+import logoThree from '../images/gsgnewlogo.png'
 import { colors } from '../utils'
 
 const AnimatedContainer = ({ distance, projects }) => {
@@ -46,11 +46,9 @@ const AnimatedContainer = ({ distance, projects }) => {
           </TechsContainer>
           <Body2 color={colors.gray}>{projects[index].description}</Body2>
           {projects[index].link && (
-            <a target="_blank" rel="noopener noreferrer" href={projects[index].link}>
-              <RectButton margin="0">
-                <ButtonText>View</ButtonText>
-              </RectButton>
-            </a>
+            <AnchorButton margin="0" target="_blank" rel="noopener noreferrer" href={projects[index].link}>
+              View
+            </AnchorButton>
           )}
         </CardContentContainer>
       </ExtendedCard>
@@ -77,7 +75,7 @@ const Portfolio = ({ refs }) => {
       description:
         "This project is an intitivate developed by Zaat's for responding COVID-19 crisis, Our soultion tackles the issue of false news or rumors spreading around. By creating a machine learning model that recognize similar texts and extartc entites.",
       techs: ['TensorFlow', 'ReactJS', 'AWS', 'Flask'],
-      link: '',
+      link: 'https:\\masgaz.com',
     },
     {
       logo: logoThree,
