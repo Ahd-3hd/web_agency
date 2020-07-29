@@ -12,7 +12,7 @@ module.exports = {
       trackingIds: [
           "UA-173974064-1", // Google Analytics / GA
       ]
-    }
+    },
   },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,

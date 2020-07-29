@@ -14,6 +14,9 @@ import Team from '../components/Team'
 import Navbar from '../components/Navbar'
 import ServiceSection from '../components/ServiceSection'
 
+import Head from "../components/Head"
+
+
 const IndexPage = () => {
   const sections = [Header, ServiceSection, Portfolio, Team, Contact]
   const sectionsRefs = sections.map(() => useRef(null))
@@ -50,6 +53,7 @@ const IndexPage = () => {
     <div>
       <Layout>
         <SEO title="Home" />
+        <Head/>
         <Navbar handleScroll={handleScroll} />
         {renderSections()}
         <Chat />
