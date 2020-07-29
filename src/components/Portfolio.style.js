@@ -40,7 +40,7 @@ export const ExtendedCard = styled(Card)`
 export const CardImageContainer = styled.div`
   > img {
     width: 100%;
-    min-width: 250px;
+    min-width: 150px;
     max-width: 300px;
     margin: 0;
   }
