@@ -10,7 +10,11 @@ export const TeamSection = styled.section`
   background-size: cover;
   padding: 2rem 0;
 `
-
+export const TeamLink = styled.a`
+  text-decoration: none;
+  color: #0077b5;
+  font-size: 14px;
+`
 export const CardsContainer = styled.div`
   width: 100%;
   display: grid;
@@ -28,10 +32,12 @@ export const CardWrapper = styled.div`
 
 export const SocialBox = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  width: 65%;
   margin: 1rem auto;
+  > svg {
+    margin-right: 1rem;
+  }
 `
 
 export const Link = styled.a`

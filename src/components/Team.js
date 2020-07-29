@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import { TeamCard } from './Card'
-import { TeamSection, SocialBox, Link, CardsContainer } from '../styles/team'
+import { TeamSection, SocialBox, Link, CardsContainer, TeamLink } from '../styles/team'
 import { H5, H4, Span } from './typography'
 import GitHubIcon from '../static/GitHub.svg'
 import LinkedInIcon from '../static/LinkedIn.svg'
@@ -55,11 +55,15 @@ const Team = ({ refs }) => {
           <Span color={colors.gray}>Team Lead</Span>
           <SocialBox>
             <GitHubIcon />
-            <Link href="github.com">@ghassan</Link>
+            <TeamLink target="_blank" rel="noopener noreferrer" href="https:\\github.com/ghassanmas">
+              @ghassanmas
+            </TeamLink>
           </SocialBox>
           <SocialBox>
             <LinkedInIcon />
-            <Link href="github.com">@ghassan</Link>
+            <TeamLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ghassanmas/">
+              Ghassan Maslamani
+            </TeamLink>
           </SocialBox>
         </TeamCard>
         <TeamCard>
@@ -67,14 +71,18 @@ const Team = ({ refs }) => {
           <H4 color={colors.gray} center>
             Yosef
           </H4>
-          <Span color={colors.gray}>Team Lead</Span>
+          <Span color={colors.gray}>Full Stack Developer</Span>
           <SocialBox>
             <GitHubIcon />
-            <Link href="github.com">@ghassan</Link>
+            <TeamLink target="_blank" rel="noopener noreferrer" href="https://github.com/yosefanajjar">
+              @yosefanajjar
+            </TeamLink>
           </SocialBox>
           <SocialBox>
             <LinkedInIcon />
-            <Link href="github.com">@ghassan</Link>
+            <TeamLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/yosefanajjar/">
+              Yosef Alnajjar
+            </TeamLink>
           </SocialBox>
         </TeamCard>
         <TeamCard>
@@ -82,14 +90,18 @@ const Team = ({ refs }) => {
           <H4 color={colors.gray} center>
             Aman
           </H4>
-          <Span color={colors.gray}>Team Lead</Span>
+          <Span color={colors.gray}>Fron-End Developer and Desiger</Span>
           <SocialBox>
             <GitHubIcon />
-            <Link href="github.com">@ghassan</Link>
+            <TeamLink target="_blank" rel="noopener noreferrer" href="https://github.com/amanshawar">
+              @amanshawar
+            </TeamLink>
           </SocialBox>
           <SocialBox>
             <LinkedInIcon />
-            <Link href="github.com">@ghassan</Link>
+            <TeamLink target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aman-shawar-27a15a168/">
+              Aman Shawar
+            </TeamLink>
           </SocialBox>
         </TeamCard>
         <TeamCard>
@@ -97,10 +109,12 @@ const Team = ({ refs }) => {
           <H4 color={colors.gray} center>
             Ahd
           </H4>
-          <Span color={colors.gray}>Team Lead</Span>
+          <Span color={colors.gray}>Mobile Developer</Span>
           <SocialBox>
             <GitHubIcon />
-            <Link href="github.com">@ghassan</Link>
+            <TeamLink target="_blank" rel="noopener noreferrer" href="https://github.com//Zeus3hd">
+              @Zeus3hd
+            </TeamLink>
           </SocialBox>
           <SocialBox>
             <LinkedInIcon />

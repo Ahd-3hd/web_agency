@@ -21,7 +21,7 @@ import { RectButton } from './Buttons'
 import ArrowIcon from '../static/ArrowIcon.svg'
 import logoOne from '../images/logo.svg'
 import logoTwo from '../images/logo2.svg'
-import logoThree from '../images/logo_3.svg'
+import logoThree from '../images/newgsgapplogo.png'
 import { colors } from '../utils'
 
 const AnimatedContainer = ({ distance, projects }) => {
@@ -40,20 +40,18 @@ const AnimatedContainer = ({ distance, projects }) => {
           <H4 color={colors.gray}>{projects[index].title}</H4>
           <TechsContainer>
             <Span color={colors.gray}>Techs: </Span>
-            <Span color={colors.gray2}>JavaScript</Span>
-            <Span color={colors.gray2}>JavaScript</Span>
-            <Span color={colors.gray2}>JavaScript</Span>
-            <Span color={colors.gray2}>JavaScript</Span>
-            <Span color={colors.gray2}>JavaScript</Span>
-            <Span color={colors.gray2}>JavaScript</Span>
+            {projects[index].techs.map(tech => (
+              <Span color={colors.gray2}>{tech}</Span>
+            ))}
           </TechsContainer>
-          <Body2 color={colors.gray}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa elementum, iaculis et, et. Aliquam nisl amet lorem quisque eu
-            commodo leo.
-          </Body2>
-          <RectButton margin="0">
-            <ButtonText>View</ButtonText>
-          </RectButton>
+          <Body2 color={colors.gray}>{projects[index].description}</Body2>
+          {projects[index].link && (
+            <a target="_blank" rel="noopener noreferrer" href={projects[index].link}>
+              <RectButton margin="0">
+                <ButtonText>View</ButtonText>
+              </RectButton>
+            </a>
+          )}
         </CardContentContainer>
       </ExtendedCard>
     </AnimatedCard>
@@ -67,15 +65,27 @@ const Portfolio = ({ refs }) => {
   const [projects] = useState([
     {
       logo: logoOne,
-      title: 'Masgaz',
+      title: 'Masgaz.com',
+      description:
+        'A multi language fast website, we created a CRM solution for the client, so they can easily add new content/items using (mobile), then automatically a new page that is fast, SEO optimized and multilingual will be generated!',
+      techs: ['nginx', 'ReactJS', 'GatsyJS', 'AWS'],
+      link: 'https:\\masgaz.com',
     },
     {
       logo: logoTwo,
-      title: 'Quiz App',
+      title: 'TrueOrFalse',
+      description:
+        "This project is an intitivate developed by Zaat's for responding COVID-19 crisis, Our soultion tackles the issue of false news or rumors spreading around. By creating a machine learning model that recognize similar texts and extartc entites.",
+      techs: ['TensorFlow', 'ReactJS', 'AWS', 'Flask'],
+      link: '',
     },
     {
       logo: logoThree,
-      title: 'GSG App',
+      title: 'gsgapp.io',
+      description:
+        'We created a platform for hosting apps that are developed by Code Academy students. Code Academy is a program of Gaza Sky Geeks where students learn by developing MVP product to simulate real working environments.',
+      techs: ['Nginx', 'AWS', 'NodeJS', 'DevOps'],
+      link: 'https://www.gsgapp.io/',
     },
   ])
   const handleSlide = d => {

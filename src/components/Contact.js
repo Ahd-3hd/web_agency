@@ -75,9 +75,9 @@ const Contact = ({ refs }) => {
           We will do whatever it takes to transform your vision into reality and your problems into fiction.
         </ContactParagraph>
         <DesktopOnlyContactParagraph>
-          Come prepared with your problems, challenges and vision.
+          Is it to have had contacting Zaat,
           <br />
-          We will do whatever it takes to transform your vision into reality and your problems into fiction.
+          better Than not having at all !?.
         </DesktopOnlyContactParagraph>
         <ContactInfoContainer>
           <NonSocialContactContainer>
