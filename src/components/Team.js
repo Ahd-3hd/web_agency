@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 
 import { TeamCard } from './Card'
-import { TeamSection, JobTitle, SocialBox, Link, CardsContainer, Title } from '../styles/team'
+import { TeamSection, JobTitle, SocialBox, CardsContainer, Title, TeamLink } from '../styles/team'
 import { H5 } from './typography'
 import GitHubIcon from '../static/GitHub.svg'
 import LinkedInIcon from '../static/LinkedIn.svg'
@@ -25,29 +25,32 @@ const members = [
     name: 'Ghassan',
     img: 'ghassanImage',
     title: 'Team Lead',
-    github: 'Ghassan',
+    github: 'ghassanmas',
     linkdin: 'Ghassan',
+    fullname: 'Ghassan Maslamani',
   },
   {
     name: 'Yosef',
     img: 'yosefImage',
-    title: 'Team Lead',
-    github: 'Yosef',
-    linkdin: 'Yosef',
+    title: 'Full-stack Developer',
+    github: 'yosefanajjar',
+    linkdin: 'yosefanajjar',
+    fullname: 'Yousef Alnajjar',
   },
   {
-    name: 'Aman',
+    name: 'Aman Shawar',
     img: 'amanImage',
-    title: 'Team Lead',
-    github: 'Aman',
-    linkdin: 'Aman',
+    title: 'Desinger & Fron-end Developer',
+    github: 'amanshawar',
+    linkdin: 'aman-shawar-27a15a168',
   },
   {
     name: 'Ahd',
     img: 'ahdImage',
-    title: 'Team Lead',
-    github: 'Ahd',
-    linkdin: 'Ahd',
+    title: 'Mobile Developer',
+    github: 'Zeus3hd',
+    linkdin: 'ahdradwan',
+    fullname: 'Ahd Radwan',
   },
 ]
 
@@ -89,7 +92,7 @@ const Team = ({ refs }) => {
     <TeamSection ref={refs} id="team">
       <Title>Our Team</Title>
       <CardsContainer>
-        {shuffleArray(members).map(({ name, img, title, github, linkdin }) => (
+        {shuffleArray(members).map(({ name, img, title, github, linkdin, fullname }) => (
           <TeamCard>
             <Img fluid={data[img].childImageSharp.fluid} />
             <H5
@@ -104,13 +107,15 @@ const Team = ({ refs }) => {
             <JobTitle>{title}</JobTitle>
             <SocialBox>
               <GitHubIcon />
-              {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-              <Link href={`https://github.com/${github}`}>@{github}</Link>
+              <TeamLink target="_blank" rel="noopener noreferrer" href={`https:\\github.com/${github}`}>
+                {`@${github}`}
+              </TeamLink>
             </SocialBox>
             <SocialBox>
               <LinkedInIcon />
-              {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-              <Link href={`https://github.com/${linkdin}`}>@{linkdin}</Link>
+              <TeamLink target="_blank" rel="noopener noreferrer" href={`https://github.com/in/${linkdin}`}>
+                {fullname}
+              </TeamLink>
             </SocialBox>
           </TeamCard>
         ))}

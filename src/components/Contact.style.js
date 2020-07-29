@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Card } from './Card'
-import { H2, Body2 } from './typography'
+import { Body2 } from './typography'
 import { colors } from '../utils'
 
 export const Wrapper = styled.div`
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
     align-items: center;
   }
   @media (min-width: 1440px) {
-    padding: 5vh 10vw;
+    padding: 10rem 5rem;
   }
   color: ${colors.gray};
   @media (max-width: 500px) {
@@ -25,18 +25,10 @@ export const Wrapper = styled.div`
 export const InfoSection = styled.div`
   padding: 0 0.8rem;
   @media (min-width: 1280px) {
-    padding: 0 5vw;
+    max-width: 60ch;
   }
 `
-export const Title = styled(H2)`
-  font-size: 1.5rem;
-  margin: 0;
-  margin-top: 1rem;
-  @media (min-width: 1024px) {
-    font-size: 3rem;
-    margin: 1rem 0;
-  }
-`
+
 export const ContactParagraph = styled(Body2)`
   font-size: 0.9rem;
   margin: 0;
