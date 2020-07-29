@@ -24,7 +24,7 @@ import {
 import { ButtonText } from './typography'
 import ArrowIcon from '../static/ArrowIcon.svg'
 import logoOne from '../images/logo.svg'
-import logoTwo from '../images/logo2.svg'
+import logoTwo from '../images/truefalse.png'
 import logoThree from '../images/logo_3.svg'
 
 const AnimatedContainer = ({ distance, projects }) => {
