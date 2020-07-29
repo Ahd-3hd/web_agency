@@ -28,13 +28,22 @@ export const AnimatedCard = styled(animated.div)`
   }
 `
 export const ExtendedCard = styled(Card)`
+  min-height: 300px;
+  max-height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
+
   @media (min-width: 768px) {
     flex-direction: row;
     text-align: left;
+  }
+  @media (max-width: 768px) {
+    min-height: 500px;
+    max-height: 500px;
+    justify-content: center;
   }
 `
 export const CardImageContainer = styled.div`
@@ -45,8 +54,15 @@ export const CardImageContainer = styled.div`
   }
 `
 export const CardContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
   @media (min-width: 768px) {
     padding-left: 2rem;
+  }
+  @media (max-width: 768px) {
+    align-items: center;
   }
 `
 export const TechsContainer = styled.div`
