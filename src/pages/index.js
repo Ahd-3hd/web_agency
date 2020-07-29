@@ -14,6 +14,9 @@ import Navbar from '../components/Navbar'
 import ServiceSection from '../components/ServiceSection'
 import './index.css'
 
+import Head from "../components/Head"
+
+
 const IndexPage = () => {
   const Scroller = loadable(() => import('../components/Scroller'))
   const [renderMob, setRenderMob] = useState(true)
@@ -53,6 +56,7 @@ const IndexPage = () => {
     <div>
       <Layout>
         <SEO title="Home" />
+        <Head/>
         <Navbar handleScroll={handleScroll} />
         {renderSections()}
         <Chat />
