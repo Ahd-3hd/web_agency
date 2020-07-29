@@ -1932,32 +1932,6 @@
     core-js "^3.4.1"
     regenerator-runtime "^0.13.3"
 
-<<<<<<< HEAD
-"@mdx-js/mdx@1.6.15":
-  version "1.6.15"
-  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.6.15.tgz#96e3db4e442008501ba7c4457382c02ff938f13a"
-  integrity sha512-jDp29ATBPliN8FlMpB11287x+MbpM/xj8uT5E7i1+2SoMgDNc/B1EqNd5eZLFYT0lyDk9IyKkcE0w0A0o616RA==
-  dependencies:
-    "@babel/core" "7.10.5"
-    "@babel/plugin-syntax-jsx" "7.10.4"
-    "@babel/plugin-syntax-object-rest-spread" "7.8.3"
-    "@mdx-js/util" "1.6.15"
-    babel-plugin-apply-mdx-type-prop "1.6.15"
-    babel-plugin-extract-import-names "1.6.15"
-    camelcase-css "2.0.1"
-    detab "2.0.3"
-    hast-util-raw "6.0.0"
-    lodash.uniq "4.5.0"
-    mdast-util-to-hast "9.1.0"
-    remark-footnotes "1.0.0"
-    remark-mdx "1.6.15"
-    remark-parse "8.0.3"
-    remark-squeeze-paragraphs "4.0.0"
-    style-to-object "0.3.0"
-    unified "9.1.0"
-    unist-builder "2.0.3"
-    unist-util-visit "2.0.3"
-=======
 "@loadable/babel-plugin@^5.12.0":
   version "5.13.0"
   resolved "https://registry.yarnpkg.com/@loadable/babel-plugin/-/babel-plugin-5.13.0.tgz#669b6f8cb0468800a1e59fc515030870b05aacb5"
@@ -1987,7 +1961,6 @@
   integrity sha512-MrMnpci590POKdmyTTaj/hv8A5BhGfG3Sg8WJ9M/HxEPnjoOFGWWSnV0yqBEi05etILE0Gl9xL5GSK/nZQbdOw==
   dependencies:
     make-dir "^3.0.2"
->>>>>>> b3013bdc7d88e4877d30699eddb05617ee3528ac
 
 "@mdx-js/mdx@^1.6.5", "@mdx-js/mdx@^1.6.6":
   version "1.6.6"
@@ -6949,6 +6922,7 @@ gatsby-page-utils@^0.2.11:
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
+
 gatsby-plugin-google-gtag@^2.1.10:
   version "2.1.10"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-2.1.10.tgz#0aee201d54da81af1d2566d4c0b393a8387bd625"
@@ -6956,6 +6930,7 @@ gatsby-plugin-google-gtag@^2.1.10:
   dependencies:
     "@babel/runtime" "^7.10.3"
     minimatch "^3.0.4"
+
 gatsby-plugin-loadable-components-ssr@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-loadable-components-ssr/-/gatsby-plugin-loadable-components-ssr-2.1.0.tgz#cafb98df82ec029d5380a2dcf4816fd572f52dfe"
