@@ -38,7 +38,7 @@ const members = [
     fullname: 'Yousef Alnajjar',
   },
   {
-    name: 'Aman Shawar',
+    name: 'Aman',
     img: 'amanImage',
     title: 'Desinger & Fron-end Developer',
     github: 'amanshawar',
