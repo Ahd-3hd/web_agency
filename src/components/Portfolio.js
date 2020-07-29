@@ -21,7 +21,7 @@ import { RectButton } from './Buttons'
 import ArrowIcon from '../static/ArrowIcon.svg'
 import logoOne from '../images/logo.svg'
 import logoTwo from '../images/logo2.svg'
-import logoThree from '../images/logo_3.svg'
+import logoThree from '../images/newgsgapplogo.png'
 import { colors } from '../utils'
 
 const AnimatedContainer = ({ distance, projects }) => {
