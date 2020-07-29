@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { ServiceSection, Details, ServiceCards, FlipCardFront, FlipCardBack } from './service.style'
-import { H5, Body2, Span } from './typography'
+import { H2, Body2, Span } from './typography'
 import { ServiceCard } from './Card'
 import { colors } from '../utils'
 import Fast from '../static/Fast.svg'
@@ -40,11 +40,9 @@ const Service = ({ refs }) => {
   }
   return (
     <ServiceSection ref={refs}>
-      <H5 color={colors.gray} center>
+      <H2 color={colors.gray} center>
         Our Services
-      </H5>
-      <Span color={colors.gray}>Design develop websites and webapps</Span>
-
+      </H2>
       <ServiceCards style>
         {data.map(({ name, summary, image }, i) => {
           const ServiceIcon = images[image]

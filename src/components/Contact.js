@@ -15,11 +15,10 @@ import {
   Form,
   NameEmailContainer,
   FormContainer,
-  FormTitle,
   SocialLink,
   DesktopOnlyContactParagraph,
 } from './Contact.style'
-import { ButtonText, H5 } from './typography'
+import { ButtonText, H2, H5 } from './typography'
 import { InputContainer, InputLabel, Input, TextField, SelectInput } from './InputFields'
 import { RectButton } from './Buttons'
 import { colors, formHandler } from '../utils'
@@ -68,7 +67,7 @@ const Contact = ({ refs }) => {
   return (
     <Wrapper ref={refs} id="contact">
       <InfoSection>
-        <H5 color={colors.gray}>Let&apos;s Talk</H5>
+        <H2 color={colors.gray}>Let&apos;s Talk</H2>
         <ContactParagraph>
           Come prepared with your problems, challenges and vision.
           <br />
@@ -112,7 +111,7 @@ const Contact = ({ refs }) => {
       </InfoSection>
       <FormSection>
         <FormContainer>
-          <FormTitle>Get in touch..</FormTitle>
+          <H5 color={colors.primary}>Get in touch..</H5>
           <Form onSubmit={HandleSubmit}>
             <NameEmailContainer>
               <InputContainer>
