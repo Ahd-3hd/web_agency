@@ -16,7 +16,7 @@ import {
   SliderNavigatorContainer,
   SliderButton,
 } from './Portfolio.style'
-import { ButtonText, H4, Span, Body2, H5 } from './typography'
+import { ButtonText, H5, Span, Body2, H2 } from './typography'
 import { RectButton } from './Buttons'
 import ArrowIcon from '../static/ArrowIcon.svg'
 import logoOne from '../images/logo.svg'
@@ -37,7 +37,7 @@ const AnimatedContainer = ({ distance, projects }) => {
           <img src={projects[index].logo} alt="thumbnail" />
         </CardImageContainer>
         <CardContentContainer>
-          <H4 color={colors.gray}>{projects[index].title}</H4>
+          <H5 color={colors.gray}>{projects[index].title}</H5>
           <TechsContainer>
             <Span color={colors.gray}>Techs: </Span>
             {projects[index].techs.map(tech => (
@@ -112,9 +112,9 @@ const Portfolio = ({ refs }) => {
 
   return (
     <Wrapper ref={refs} id="portfolio">
-      <H5 color={colors.gray} center>
+      <H2 color={colors.gray} center>
         Our Portfolio
-      </H5>
+      </H2>
       <SliderContainer>
         <AnimatedContainer distance={distance} projects={projects} />
       </SliderContainer>

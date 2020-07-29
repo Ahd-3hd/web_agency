@@ -1,14 +1,14 @@
 import React from 'react'
-import { css } from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 
 import { TeamCard } from './Card'
-import { TeamSection, JobTitle, SocialBox, CardsContainer, Title, TeamLink } from '../styles/team'
-import { H5 } from './typography'
+import { TeamSection, SocialBox, Link, CardsContainer } from '../styles/team'
+import { H2, H5, Span } from './typography'
 import GitHubIcon from '../static/GitHub.svg'
 import LinkedInIcon from '../static/LinkedIn.svg'
+import { colors } from '../utils'
 
 function shuffleArray(array) {
   // eslint-disable-next-line no-plusplus
@@ -43,6 +43,7 @@ const members = [
     title: 'Desinger & Fron-end Developer',
     github: 'amanshawar',
     linkdin: 'aman-shawar-27a15a168',
+    fullname: 'Aman Shawar',
   },
   {
     name: 'Ahd',
@@ -90,32 +91,24 @@ const Team = ({ refs }) => {
 
   return (
     <TeamSection ref={refs} id="team">
-      <Title>Our Team</Title>
+      <H2 color={colors.gray}>Our Team</H2>
       <CardsContainer>
         {shuffleArray(members).map(({ name, img, title, github, linkdin, fullname }) => (
           <TeamCard>
             <Img fluid={data[img].childImageSharp.fluid} />
-            <H5
-              css={css`
-                text-align: center;
-                margin-top: 1rem;
-                margin-bottom: 0.5rem;
-              `}
-            >
-              {name}
-            </H5>
-            <JobTitle>{title}</JobTitle>
+            <H5 center>{name}</H5>
+            <Span>{title}</Span>
             <SocialBox>
               <GitHubIcon />
-              <TeamLink target="_blank" rel="noopener noreferrer" href={`https:\\github.com/${github}`}>
+              <Link target="_blank" rel="noopener noreferrer" href={`https:\\github.com/${github}`}>
                 {`@${github}`}
-              </TeamLink>
+              </Link>
             </SocialBox>
             <SocialBox>
               <LinkedInIcon />
-              <TeamLink target="_blank" rel="noopener noreferrer" href={`https://github.com/in/${linkdin}`}>
+              <Link target="_blank" rel="noopener noreferrer" href={`https://github.com/in/${linkdin}`}>
                 {fullname}
-              </TeamLink>
+              </Link>
             </SocialBox>
           </TeamCard>
         ))}

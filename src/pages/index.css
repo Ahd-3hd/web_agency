@@ -18,6 +18,10 @@ body {
   }
 }
 
+.rsc * {
+  font-family: 'Poppins', sans-serif;
+}
+
 .full-page-controls {
   position: fixed;
   left: 1%;

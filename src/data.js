@@ -12,7 +12,7 @@ const data = [
   {
     name: 'SEO',
     image: 'SEO',
-    summary: "We continuously study and follow up with search engines guidelines bit by bit. Try googling 'zaatdev' to see our rank!",
+    summary: "We continuously study and follow search engines gulidlines bit by bit. Try googling 'zaatdev' to see our rank!",
   },
   {
     name: 'Support multi languages',
