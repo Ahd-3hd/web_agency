@@ -120,6 +120,9 @@ export const SingleContactInfo = styled.a`
 `
 export const SocialLink = styled.a`
   margin: 0 1rem;
+  > svg {
+    height: 25px;
+  }
 `
 export const SocialText = styled.p`
   margin: 0;
