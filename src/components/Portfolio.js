@@ -110,10 +110,10 @@ const Portfolio = ({ refs }) => {
         <AnimatedContainer distance={distance} projects={projects} />
       </SliderContainer>
       <SliderNavigatorContainer>
-        <SliderButton onClick={() => handleSlide(100)} left>
+        <SliderButton onClick={() => handleSlide(100)} left aria-label="left">
           {!disableLeft && <ArrowIcon />}
         </SliderButton>
-        <SliderButton onClick={() => handleSlide(-100)} right>
+        <SliderButton onClick={() => handleSlide(-100)} right aria-label="right">
           {!disableRight && <ArrowIcon />}
         </SliderButton>
       </SliderNavigatorContainer>
