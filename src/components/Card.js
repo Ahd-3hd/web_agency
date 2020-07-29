@@ -28,7 +28,6 @@ export const ServiceCard = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
-  margin: 1rem;
   padding: 1rem;
   background: #ffffff;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
