@@ -1,10 +1,9 @@
-import React, { useRef } from 'react'
-import { isMobile, MobileView } from 'react-device-detect'
+import React, { useRef, useState } from 'react'
+import { isMobile } from 'react-device-detect'
 import { useSpring } from 'react-spring'
-import { FullPage, Slide } from 'react-full-page'
+import loadable from '@loadable/component'
 
 import Layout from '../components/layout'
-
 import SEO from '../components/seo'
 import Chat from '../components/Chat'
 import Header from '../components/Header'
@@ -13,11 +12,14 @@ import Portfolio from '../components/Portfolio'
 import Team from '../components/Team'
 import Navbar from '../components/Navbar'
 import ServiceSection from '../components/ServiceSection'
+import './index.css'
 
 import Head from "../components/Head"
 
 
 const IndexPage = () => {
+  const Scroller = loadable(() => import('../components/Scroller'))
+  const [renderMob, setRenderMob] = useState(true)
   const sections = [Header, ServiceSection, Portfolio, Team, Contact]
   const sectionsRefs = sections.map(() => useRef(null))
   const [, setY] = useSpring(() => ({ y: 0 }))
@@ -39,14 +41,15 @@ const IndexPage = () => {
   const renderSection = (Section, i) => <Section handleScroll={i === 0 ? handleScroll : null} key={Section} refs={sectionsRefs[i]} />
 
   const renderSections = () => {
-    if (isMobile) return <MobileView>{sections.map((Section, i) => renderSection(Section, i))}</MobileView>
-    return (
-      <FullPage>
-        {sections.map((Section, i) => (
-          <Slide>{renderSection(Section, i)}</Slide>
-        ))}
-      </FullPage>
-    )
+    // async check
+    if (!isMobile) {
+      Scroller.load().then(() => {
+        setRenderMob(false)
+      })
+    }
+    // return render mobile by defualt
+    if (renderMob) return sections.map((Section, i) => renderSection(Section, i))
+    return <Scroller>{sections.map((Section, i) => renderSection(Section, i))}</Scroller>
   }
 
   return (

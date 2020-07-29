@@ -1,41 +1,7 @@
 import styled from 'styled-components'
 import { animated } from 'react-spring'
 import { Card } from './Card'
-import { H4, Body2, Span, H2 } from './typography'
 import { colors } from '../utils'
-import { RectButton } from './Buttons'
-
-export const ExtendedButton = styled(RectButton)`
-  @media (min-width: 768px) {
-    margin: 0;
-  }
-`
-
-export const ExtendedH4 = styled(H4)`
-  font-size: 1.2rem;
-  color: ${colors.gray};
-  margin: 0.5rem 0;
-`
-export const ExtendedBody2 = styled(Body2)`
-  font-size: 1rem;
-  font-weight: 400;
-  color: ${colors.gray};
-  display: none;
-  @media (min-width: 768px) {
-    display: block;
-  }
-  @media (min-width: 768px) {
-    margin: 0.5rem 0;
-  }
-`
-export const ExtendedSpan = styled(Span)`
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: #555555;
-  margin: 0;
-  line-height: 1.5rem;
-  color: ${colors.gray};
-`
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -43,14 +9,9 @@ export const Wrapper = styled.section`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
 `
-export const Title = styled(H2)`
-  text-align: center;
-  font-size: 3rem;
-  color: ${colors.gray};
-  /* margin: 0; */
-`
+
 export const SliderContainer = styled.div`
   display: flex;
   overflow: hidden;
@@ -60,33 +21,48 @@ export const AnimatedCard = styled(animated.div)`
   min-width: 100%;
   padding: 0 1rem;
   @media (min-width: 1024px) {
-    padding: 0 10vw;
+    padding: 0 10rem;
   }
   @media (min-width: 1440px) {
-    padding: 0 25vw;
+    padding: 0 17rem;
   }
 `
 export const ExtendedCard = styled(Card)`
+  min-height: 300px;
+  max-height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: center;
+
   @media (min-width: 768px) {
     flex-direction: row;
     text-align: left;
   }
+  @media (max-width: 768px) {
+    min-height: 500px;
+    max-height: 500px;
+    justify-content: center;
+  }
 `
 export const CardImageContainer = styled.div`
   > img {
-    width: 100%;
-    min-width: 250px;
-    max-width: 300px;
+    max-width: 260px;
+    min-width: 160px;
     margin: 0;
   }
 `
 export const CardContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
   @media (min-width: 768px) {
     padding-left: 2rem;
+  }
+  @media (max-width: 768px) {
+    align-items: center;
   }
 `
 export const TechsContainer = styled.div`

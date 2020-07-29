@@ -2,32 +2,32 @@ const data = [
   {
     name: 'Conunsltation',
     image: 'Conunsltation',
-    summary: 'Lorem ipsum dolor sit amet, conse ctetur adipiscing ',
+    summary: "It's always free to reach us, we will help you get insight about your problem or product",
   },
   {
     name: 'Fast',
     image: 'Fast',
-    summary: 'Lorem ipsum dolor sit amet, conse ctetur adipiscing  aman ',
+    summary: 'We implement the state of the art solutions to meet up with web technology ongoing changing standards',
   },
   {
     name: 'SEO',
     image: 'SEO',
-    summary: 'Lorem ipsum dolor sit amet, conse ctetur adipiscing ',
+    summary: "We continuously study and follow search engines gulidlines bit by bit. Try googling 'zaatdev' to see our rank!",
   },
   {
     name: 'Support multi languages',
     image: 'SML',
-    summary: 'Lorem ipsum dolor sit amet, conse ctetur adipiscing ',
+    summary: "Our solutions can support as many languages and regions as needed, so you can call it 'APPS without borders'",
   },
   {
     name: 'Responsives',
     image: 'Responsives',
-    summary: 'Lorem ipsum dolor sit amet, conse ctetur adipiscing ',
+    summary: 'We develop optimized reliable solutions to run on all platforms, mobile, tablets and desktop.',
   },
   {
-    name: 'Tasks automation',
+    name: 'Tasks Automation',
     image: 'TA',
-    summary: 'Lorem ipsum dolor sit amet, conse ctetur adipiscing ',
+    summary: 'Feed us with data, data and data, and we promise to build AI driven solution out of it',
   },
 ]
 

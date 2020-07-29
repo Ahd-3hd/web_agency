@@ -10,11 +10,18 @@ export const ServiceSection = styled.section`
 `
 export const ServiceCards = styled.div`
   max-width: 80%;
-  margin: 0rem auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `
 export const FlipCardFront = styled.div`
   display: flex;

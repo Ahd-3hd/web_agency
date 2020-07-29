@@ -18,6 +18,8 @@ export const TeamCard = styled.div`
   border: 1px solid #cccccc;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: 600px) {
     margin-right: 0;
@@ -28,7 +30,6 @@ export const ServiceCard = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
-  margin: 1rem;
   padding: 1rem;
   background: #ffffff;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
