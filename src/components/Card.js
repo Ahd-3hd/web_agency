@@ -18,6 +18,8 @@ export const TeamCard = styled.div`
   border: 1px solid #cccccc;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: 600px) {
     margin-right: 0;
