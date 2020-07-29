@@ -113,7 +113,7 @@ const Team = ({ refs }) => {
           <SocialBox>
             <GitHubIcon />
             <TeamLink target="_blank" rel="noopener noreferrer" href="https://github.com//Zeus3hd">
-              @gZeus3hd
+              @Zeus3hd
             </TeamLink>
           </SocialBox>
           <SocialBox>
