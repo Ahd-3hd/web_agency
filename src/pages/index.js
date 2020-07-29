@@ -12,6 +12,7 @@ import Portfolio from '../components/Portfolio'
 import Team from '../components/Team'
 import Navbar from '../components/Navbar'
 import ServiceSection from '../components/ServiceSection'
+import './index.css'
 
 const IndexPage = () => {
   const Scroller = loadable(() => import('../components/Scroller'))
