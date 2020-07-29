@@ -32,7 +32,6 @@ const Header = ({ handleScroll, refs }) => {
       to: {
         transform: 'translateX(0%)',
       },
-      config: config.gentle,
       delay: 700 * i + 1,
     })),
   )
