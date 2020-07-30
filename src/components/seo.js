@@ -57,6 +57,10 @@ function SEO({ description, lang, meta, title }) {
           content: `https://zaat.dev/`,
         },
         {
+          property: `fb:page_id`,
+          content: `1008893119554121`,
+        },
+        {
           property: 'og:image',
           content: 'https://d1svfprecff8lq.cloudfront.net/desktop77.png',
         },
