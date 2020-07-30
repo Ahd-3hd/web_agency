@@ -54,7 +54,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:url`,
-          content: `https://zaat.dev/'`,
+          content: `https://zaat.dev/`,
         },
         {
           property: 'og:image',
@@ -78,7 +78,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:url`,
-          content: 'https://zaat.dev/',
+          content: `https://zaat.dev/`,
         },
         {
           name: `twitter:description`,
