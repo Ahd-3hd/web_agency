@@ -1,6 +1,6 @@
 const data = [
   {
-    name: 'Conunsltation',
+    name: 'Consultation',
     image: 'Conunsltation',
     summary: "It's always free to reach us, we will help you get insight about your problem or product",
   },

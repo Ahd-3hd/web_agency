@@ -35,13 +35,14 @@ function SEO({ description, lang, meta, title }) {
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
+        { name: 'keywords', content: 'webapp,apps,machine laerning,AI, mobile, web, development, software, automation,bot, solutions' },
         {
           name: `description`,
           content: metaDescription,
         },
         {
           property: `og:title`,
-          content: title,
+          content: site.siteMetadata.title,
         },
         {
           property: `og:description`,
@@ -52,8 +53,24 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:url`,
+          content: `https://zaat.dev/`,
+        },
+        {
+          property: `fb:page_id`,
+          content: `1008893119554121`,
+        },
+        {
+          property: 'og:image',
+          content: 'https://d1svfprecff8lq.cloudfront.net/desktop77.png',
+        },
+        {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:image`,
+          content: 'https://d1svfprecff8lq.cloudfront.net/desktop77.png',
         },
         {
           name: `twitter:creator`,
@@ -61,7 +78,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: site.siteMetadata.title,
+        },
+        {
+          name: `twitter:url`,
+          content: `https://zaat.dev/`,
         },
         {
           name: `twitter:description`,

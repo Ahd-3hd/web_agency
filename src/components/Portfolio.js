@@ -67,7 +67,7 @@ const Portfolio = ({ refs }) => {
       description:
         'A multi language fast website, we created a CRM solution for the client, so they can easily add new content/items using (mobile), then automatically a new page that is fast, SEO optimized and multilingual will be generated!',
       techs: ['nginx', 'ReactJS', 'GatsyJS', 'AWS'],
-      link: 'https:\\masgaz.com',
+      link: 'https://masgaz.com',
     },
     {
       logo: logoTwo,
@@ -75,7 +75,7 @@ const Portfolio = ({ refs }) => {
       description:
         "This project is an intitivate developed by Zaat's for responding COVID-19 crisis, Our soultion tackles the issue of false news or rumors spreading around. By creating a machine learning model that recognize similar texts and extartc entites.",
       techs: ['TensorFlow', 'ReactJS', 'AWS', 'Flask'],
-      link: 'https:\\masgaz.com',
+      link: '',
     },
     {
       logo: logoThree,

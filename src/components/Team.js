@@ -26,7 +26,7 @@ const members = [
     img: 'ghassanImage',
     title: 'Team Lead',
     github: 'ghassanmas',
-    linkdin: 'Ghassan',
+    linkdin: 'ghassanmas',
     fullname: 'Ghassan Maslamani',
   },
   {
@@ -48,7 +48,7 @@ const members = [
   {
     name: 'Ahd',
     img: 'ahdImage',
-    title: 'Mobile Developer',
+    title: 'Software Engineer',
     github: 'Zeus3hd',
     linkdin: 'ahdradwan',
     fullname: 'Ahd Radwan',
@@ -100,13 +100,13 @@ const Team = ({ refs }) => {
             <Span>{title}</Span>
             <SocialBox>
               <GitHubIcon />
-              <Link target="_blank" rel="noopener noreferrer" href={`https:\\github.com/${github}`}>
+              <Link target="_blank" rel="noopener noreferrer" href={`https://github.com/${github}`}>
                 {`@${github}`}
               </Link>
             </SocialBox>
             <SocialBox>
               <LinkedInIcon />
-              <Link target="_blank" rel="noopener noreferrer" href={`https://github.com/in/${linkdin}`}>
+              <Link target="_blank" rel="noopener noreferrer" href={`https://linkedin.com/in/${linkdin}`}>
                 {fullname}
               </Link>
             </SocialBox>

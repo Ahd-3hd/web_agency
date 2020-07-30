@@ -1,10 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `Zaat.dev`,
-    description: `Zaat.dev For developing digital soultion, developing webapps, tasks autmation, SEO fast website, creating state of the art (AI) smart soultion and more `,
+    title: `Zaat.dev For Developing Fast and Smart Apps`,
+    description: `Zaat.dev For developing digital solution, developing webapps, tasks automation, SEO fast website, creating state of the art (AI) smart solution and more `,
     author: `@zaatdev`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          'UA-173974064-1', // Google Analytics / GA
+        ],
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
