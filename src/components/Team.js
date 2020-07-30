@@ -48,7 +48,7 @@ const members = [
   {
     name: 'Ahd',
     img: 'ahdImage',
-    title: 'Mobile Developer',
+    title: 'Software Engineer',
     github: 'Zeus3hd',
     linkdin: 'ahdradwan',
     fullname: 'Ahd Radwan',
