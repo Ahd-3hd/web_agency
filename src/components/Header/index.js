@@ -10,6 +10,8 @@ import {
   SocialLinksContainer,
   SocialLink,
   SocialText,
+  RightInnerContainer,
+  RightCard,
 } from './index.style'
 import FacebookIcon from '../../static/FacebookIcon.svg'
 import TwitterIcon from '../../static/TwitterIcon.svg'
@@ -36,7 +38,11 @@ const Header = () => (
         <SocialText>@zaatdev</SocialText>
       </SocialContainer>
     </LeftContainer>
-    <RightContainer>sdfsdf</RightContainer>
+    <RightContainer>
+      <RightInnerContainer>
+        <RightCard />
+      </RightInnerContainer>
+    </RightContainer>
   </Wrapper>
 )
 
