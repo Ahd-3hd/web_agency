@@ -13,7 +13,8 @@ const GlobalStyles = createGlobalStyle`
     margin:0;
     font-family:${fonts.primary};
     @media (min-width:1920px){
-      padding: 0 15vw;
+      width: 80vw;
+      margin:0 auto;
     }
     @media (min-width:1280px){
     background:url(${backgroundImage}) no-repeat;
