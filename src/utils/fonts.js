@@ -1,3 +1,3 @@
 export default {
-  primary: `Poppins, sans-serif`,
+  primary: `Lato, sans-serif`,
 }

@@ -9,8 +9,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import './layout.css'
-// import GlobalStyles from './global'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,14 +23,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* <GlobalStyles /> */}
-      <div>
-        <main>{children}</main>
-        {/* <footer>
-          {`© ${new Date().getFullYear()}, Built with`}
-          <a href="https://zaat.dev">Zaat</a>
-        </footer> */}
-      </div>
+      <main>{children}</main>
     </>
   )
 }
