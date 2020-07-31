@@ -22,9 +22,10 @@ export const MenuButton = styled.button`
   cursor: pointer;
   position: relative;
   z-index: 999;
-  > svg {
+  svg {
     height: 1rem;
-    fill: ${colors.grey};
+    transition: fill 0.3s;
+    fill: ${({ isMenuActive }) => (isMenuActive ? '#ffffff' : '#707070')};
     path:nth-child(2) {
       transform: translateX(-20%);
     }

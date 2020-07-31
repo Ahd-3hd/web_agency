@@ -8,7 +8,7 @@ const Navbar = () => {
     <Wrapper>
       <LogoContainer>ZAAT.DEV</LogoContainer>
       <MenuButton onClick={() => setIsMenuActive(!isMenuActive)}>
-        <MenuIcon />
+        <MenuIcon isMenuActive={isMenuActive} />
       </MenuButton>
       <Overlay isMenuActive={isMenuActive}>
         <MenuLink href="#" isMenuActive={isMenuActive} order={1}>
