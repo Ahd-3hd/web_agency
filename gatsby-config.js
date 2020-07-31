@@ -34,7 +34,7 @@ module.exports = {
         background_color: `#4FCC5D`,
         theme_color: `#4FCC5D`,
         display: `standalone`,
-        icon: `src/images/zaat_logo_square.png`, // This path is relative to the root of the site.
+        // icon: `src/images/zaat_logo_square.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-loadable-components-ssr`,
