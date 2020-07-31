@@ -23,6 +23,7 @@ const Header = () => {
   const [performance, setPerformance] = useState(0)
   const [seo, setSeo] = useState(0)
   const [quality, setQuality] = useState(0)
+  const [isBig, setIsBig] = useState(false)
   useEffect(() => {
     const timer = setTimeout(() => {
       performance > 100 ? setPerformance(0) : setPerformance(performance + 1)
@@ -41,6 +42,7 @@ const Header = () => {
     }, 10)
     return () => clearTimeout(timer)
   }, [quality])
+  useEffect(() => (window.innerWidth >= 1280 ? setIsBig(true) : setIsBig(false)))
   return (
     <Wrapper>
       <LeftContainer>
@@ -65,9 +67,9 @@ const Header = () => {
       <RightContainer>
         <RightInnerContainer>
           <RightCard />
-          <Gauge value={performance} label="PERFORMANCE" top="-60%" left="15%" />
-          <Gauge value={seo} label="SEO" top="-70%" left="60%" />
-          <Gauge value={quality} label="QUALITY" top="110%" left="25%" />
+          {isBig && <Gauge value={performance} label="PERFORMANCE" top="-60%" left="15%" />}
+          {isBig && <Gauge value={seo} label="SEO" top="-70%" left="60%" />}
+          {isBig && <Gauge value={quality} label="QUALITY" top="110%" left="25%" />}
         </RightInnerContainer>
       </RightContainer>
     </Wrapper>
