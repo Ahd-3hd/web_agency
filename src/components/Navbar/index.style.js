@@ -59,4 +59,7 @@ export const MenuLink = styled.a`
   transform: ${({ isMenuActive }) => (isMenuActive ? 'translateX(0)' : 'translateX(-100vw)')};
   transition: transform 0.3s ease-in-out;
   transition-delay: ${({ order }) => order * 0.1}s;
+  @media (min-width: 1280px) {
+    font-size: 2rem;
+  }
 `
