@@ -5,6 +5,7 @@ export const Wrapper = styled.header`
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 `
 
 export const LeftContainer = styled.div`
@@ -12,6 +13,11 @@ export const LeftContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (min-width: 1280px) {
+    flex: 1;
+    align-items: flex-start;
+    padding: 0 2rem;
+  }
 `
 export const Logo = styled.div`
   color: ${colors.black};
@@ -35,6 +41,22 @@ export const Title = styled.h1`
     left: 0;
     box-shadow: 0px 0px 3px #32cca1;
     border-radius: 1rem;
+    z-index: -1;
+  }
+  @media (min-width: 1280px) {
+    font-size: 3rem;
+    width: 20ch;
+    padding: 0;
+    margin: 2rem 0;
+    text-align: left;
+    ::after {
+      width: 50%;
+      height: 125%;
+      left: auto;
+      right: 0;
+      transform: translateY(-10%);
+      z-index: -1;
+    }
   }
 `
 export const Button = styled.button`
@@ -74,4 +96,8 @@ export const SocialText = styled.p`
 
 export const RightContainer = styled.div`
   display: none;
+  @media (min-width: 1280px) {
+    display: block;
+    flex: 1;
+  }
 `
