@@ -16,6 +16,7 @@ import {
 import FacebookIcon from '../../static/FacebookIcon.svg'
 import TwitterIcon from '../../static/TwitterIcon.svg'
 import InstagramIcon from '../../static/InstagramIcon.svg'
+import Gauge from '../Gauge'
 
 const Header = () => (
   <Wrapper>
@@ -41,6 +42,9 @@ const Header = () => (
     <RightContainer>
       <RightInnerContainer>
         <RightCard />
+        <Gauge value="70" label="PERFORMANCE" top="-60%" left="15%" />
+        <Gauge value="70" label="SEO" top="-70%" left="60%" />
+        <Gauge value="70" label="Quality" top="110%" left="25%" />
       </RightInnerContainer>
     </RightContainer>
   </Wrapper>
