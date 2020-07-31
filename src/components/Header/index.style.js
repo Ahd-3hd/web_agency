@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../utils'
+import headerRightImage from '../../images/header_right_image.png'
 
 export const Wrapper = styled.header`
   min-height: 100vh;
@@ -97,7 +98,20 @@ export const SocialText = styled.p`
 export const RightContainer = styled.div`
   display: none;
   @media (min-width: 1280px) {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex: 1;
   }
+`
+
+export const RightInnerContainer = styled.div``
+export const RightCard = styled.div`
+  background: #ffffff url(${headerRightImage}) no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 25vw;
+  height: 20vw;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 `
