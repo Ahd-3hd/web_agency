@@ -14,7 +14,11 @@ const GlobalStyles = createGlobalStyle`
     font-family:${fonts.primary};
     @media (min-width:1280px){
     background:url(${backgroundImage}) no-repeat;
+    background-size:contain;
+    background-position:center right ;
+    background-attachment:fixed;
     }
+    
   }
   *{
     box-sizing:border-box;
