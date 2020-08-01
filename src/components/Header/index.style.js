@@ -19,6 +19,9 @@ export const LeftContainer = styled.div`
     align-items: flex-start;
     padding: 0 2rem;
   }
+  @media (min-width: 1366px) {
+    padding-left: 10vw;
+  }
 `
 export const Logo = styled.div`
   color: ${colors.black};
