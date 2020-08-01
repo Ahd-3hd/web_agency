@@ -9,8 +9,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
+import styled from 'styled-components'
 import Navbar from '../Navbar'
 import Global from '../Global'
+import { colors } from '../../utils'
+
+const Footer = styled.footer`
+  padding: 0 1rem;
+`
+const FooterParagraph = styled.p`
+  color: ${colors.black};
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,6 +38,9 @@ const Layout = ({ children }) => {
       <Global />
       <Navbar />
       <main>{children}</main>
+      <Footer>
+        <FooterParagraph>Made By Zaat - All rights Reserved</FooterParagraph>
+      </Footer>
     </>
   )
 }
