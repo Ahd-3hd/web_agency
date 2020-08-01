@@ -103,7 +103,7 @@ const Team = () => (
       </Member>
     </TeamContainer>
     <TitleContainer>
-      <Title>Get to know us; we would love to get to know you</Title>
+      <Title>Get to know us; We would love to hear from you..</Title>
     </TitleContainer>
   </Wrapper>
 )

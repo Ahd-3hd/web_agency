@@ -13,7 +13,8 @@ export const Wrapper = styled.section`
 `
 export const TitleContainer = styled.div`
   @media (min-width: 1280px) {
-    flex: 1;
+    flex: 2;
+    align-self: flex-start;
   }
 `
 export const Title = styled.h2`
