@@ -5,6 +5,9 @@ import backgroundImageTransparent from '../images/backgroundtransparent.svg'
 import backgroundImage from '../images/background.svg'
 
 const GlobalStyles = createGlobalStyle`
+  html{
+  scroll-behavior: smooth;
+  }
   body{
     background:url(${backgroundImageTransparent}) no-repeat;
     background-size:contain;

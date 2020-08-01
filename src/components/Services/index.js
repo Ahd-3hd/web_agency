@@ -17,7 +17,7 @@ import aiIcon from '../../images/ai_icon.png'
 import langIcon from '../../images/ml_icon.png'
 
 const Services = () => (
-  <Wrapper>
+  <Wrapper id="services">
     <ServicesContainer>
       <Service>
         <ServiceImage bg={seoIcon} />

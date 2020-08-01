@@ -44,7 +44,7 @@ const Header = () => {
   }, [quality])
   useEffect(() => (window.innerWidth >= 1280 ? setIsBig(true) : setIsBig(false)))
   return (
-    <Wrapper>
+    <Wrapper id="home">
       <LeftContainer>
         <Logo>ZAAT.DEV</Logo>
         <Title>Keeping your customers engaged and happier than ever!</Title>

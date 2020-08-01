@@ -21,7 +21,7 @@ import masgazLogo from '../../images/masgaz_logo.svg'
 const Portfolio = () => {
   const [distance, setDistance] = useState(0)
   return (
-    <Wrapper>
+    <Wrapper id="portfolio">
       <Title>Explore Our Work - We strive for perfection</Title>
       <SliderContainer>
         <SliderInnerContainer distance={distance}>

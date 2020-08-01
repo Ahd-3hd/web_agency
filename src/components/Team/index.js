@@ -15,7 +15,7 @@ import {
 import GithubIcon from '../../static/GithubIcon.svg'
 
 const Team = () => (
-  <Wrapper>
+  <Wrapper id="team">
     <TeamContainer>
       <Member>
         <MemberImage src="https://i.pravatar.cc/300" />

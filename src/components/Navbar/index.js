@@ -11,19 +11,19 @@ const Navbar = () => {
         <MenuIcon isMenuActive={isMenuActive} />
       </MenuButton>
       <Overlay isMenuActive={isMenuActive}>
-        <MenuLink href="#" isMenuActive={isMenuActive} order={1}>
+        <MenuLink href="#home" isMenuActive={isMenuActive} order={1} onClick={() => setIsMenuActive(false)}>
           Home
         </MenuLink>
-        <MenuLink href="#" isMenuActive={isMenuActive} order={2}>
+        <MenuLink href="#portfolio" isMenuActive={isMenuActive} order={2} onClick={() => setIsMenuActive(false)}>
           Portfolio
         </MenuLink>
-        <MenuLink href="#" isMenuActive={isMenuActive} order={3}>
+        <MenuLink href="#services" isMenuActive={isMenuActive} order={3} onClick={() => setIsMenuActive(false)}>
           Services
         </MenuLink>
-        <MenuLink href="#" isMenuActive={isMenuActive} order={4}>
+        <MenuLink href="#contact" isMenuActive={isMenuActive} order={4} onClick={() => setIsMenuActive(false)}>
           Contact
         </MenuLink>
-        <MenuLink href="#" isMenuActive={isMenuActive} order={5}>
+        <MenuLink href="#team" isMenuActive={isMenuActive} order={5} onClick={() => setIsMenuActive(false)}>
           Team
         </MenuLink>
       </Overlay>

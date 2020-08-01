@@ -28,7 +28,7 @@ import TwitterIcon from '../../static/TwitterIcon.svg'
 import InstagramIcon from '../../static/InstagramIcon.svg'
 
 const Contact = () => (
-  <Wrapper>
+  <Wrapper id="contact">
     <Title>Let&apos;s Talk</Title>
     <Container>
       <FormContainer>
