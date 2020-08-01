@@ -45,7 +45,7 @@ export const Project = styled.div`
     padding: 0 3vw;
   }
   @media (min-width: 1280px) {
-    padding: 0 13vw;
+    padding: 0 25vw;
   }
 `
 export const LogoTitleContainer = styled.div`

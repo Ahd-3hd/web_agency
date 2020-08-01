@@ -5,13 +5,13 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  @media (min-width: 1440px) {
+  @media (min-width: 1360px) {
     flex-direction: row;
   }
 `
 export const TitleContainer = styled.div`
-  @media (min-width: 1440px) {
-    flex: 1;
+  @media (min-width: 1360px) {
+    flex: 2;
   }
 `
 export const Title = styled.h2`
@@ -20,13 +20,14 @@ export const Title = styled.h2`
   font-size: 2rem;
   text-align: center;
   max-width: 20ch;
-  @media (min-width: 1440px) {
-    font-size: 7vw;
+  @media (min-width: 1360px) {
+    font-size: 5vw;
     text-align: left;
+    margin-right: 2rem;
   }
 `
 export const ServicesContainer = styled.div`
-  @media (min-width: 1440px) {
+  @media (min-width: 1360px) {
     flex: 2;
     padding-left: 5vw;
   }
@@ -42,24 +43,26 @@ export const Service = styled.div`
     align-items: center;
     justify-content: space-between;
   }
-  @media (min-width: 1440px) {
+  /* @media (min-width: 1360px) {
     max-width: 90ch;
-  }
+  } */
+  max-width: 600px;
 `
 export const ServiceImage = styled.div`
   background: ${colors.purple} url(${({ bg }) => bg}) no-repeat;
-  background-size: 80%;
+  background-size: 60%;
   background-position: center;
-  width: 40vw;
-  height: 40vw;
+  width: 30vw;
+  height: 30vw;
   border-radius: 1rem;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 200px;
+  max-height: 200px;
   @media (min-width: 768px) {
     width: 200px;
-    height: 150px;
-  }
-  @media (min-width: 1440px) {
-    background-size: 60%;
+    height: 100px;
   }
 `
 export const ServiceContent = styled.div`

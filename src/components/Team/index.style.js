@@ -22,9 +22,10 @@ export const Title = styled.h2`
   font-size: 2rem;
   text-align: center;
   max-width: 20ch;
-  @media (min-width: 1280px) {
-    font-size: 6vw;
+  @media (min-width: 1360px) {
+    font-size: 5vw;
     text-align: left;
+    margin-right: 2rem;
   }
 `
 export const TeamContainer = styled.div`
@@ -39,6 +40,10 @@ export const Member = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
+  background: #ffffff;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px ${colors.grey.concat('55')};
+  border-radius: 0.6rem;
   @media (min-width: 1024px) {
     flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
   }
