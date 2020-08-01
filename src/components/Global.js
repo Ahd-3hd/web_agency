@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
     background-attachment:fixed;
     margin:0;
     font-family:${fonts.primary};
-    @media (min-width:1920px){
+    @media (min-width:2300px){
       padding: 0 10vw;
     }
     @media (min-width:1280px){
