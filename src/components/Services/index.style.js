@@ -28,6 +28,7 @@ export const Title = styled.h2`
 export const ServicesContainer = styled.div`
   @media (min-width: 1440px) {
     flex: 2;
+    padding-left: 5vw;
   }
 `
 export const Service = styled.div`
