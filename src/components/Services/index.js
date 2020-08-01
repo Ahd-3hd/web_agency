@@ -13,6 +13,8 @@ import {
 } from './index.style'
 import seoIcon from '../../images/seo_icon.png'
 import rocketIcon from '../../images/rocket_icon.png'
+import aiIcon from '../../images/ai_icon.png'
+import langIcon from '../../images/ml_icon.png'
 
 const Services = () => (
   <Wrapper>
@@ -38,9 +40,19 @@ const Services = () => (
         </ServiceContent>
       </Service>
       <Service>
-        <ServiceImage bg={rocketIcon} />
+        <ServiceImage bg={aiIcon} />
         <ServiceContent>
           <ServiceTitle>Speed & Performance</ServiceTitle>
+          <ServiceDescription>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper sem nec justo vehicula, sit amet fermentum ante ornare.
+          </ServiceDescription>
+          <ServiceLink>Read More..</ServiceLink>
+        </ServiceContent>
+      </Service>
+      <Service>
+        <ServiceImage bg={langIcon} />
+        <ServiceContent>
+          <ServiceTitle>Localization & Language</ServiceTitle>
           <ServiceDescription>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper sem nec justo vehicula, sit amet fermentum ante ornare.
           </ServiceDescription>
