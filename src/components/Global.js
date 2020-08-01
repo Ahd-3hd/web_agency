@@ -12,10 +12,10 @@ const GlobalStyles = createGlobalStyle`
     background-attachment:fixed;
     margin:0;
     font-family:${fonts.primary};
-    @media (min-width:1920px){
+    /* @media (min-width:1920px){
       width: 80vw;
       margin:0 auto;
-    }
+    } */
     @media (min-width:1280px){
     background:url(${backgroundImage}) no-repeat;
     background-size:contain;

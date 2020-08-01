@@ -4,6 +4,7 @@ import SEO from '../components/Seo'
 import Header from '../components/Header'
 import Services from '../components/Services'
 import Portfolio from '../components/Portfolio'
+import Team from '../components/Team'
 
 const IndexPage = () => (
   <>
@@ -12,6 +13,7 @@ const IndexPage = () => (
       <Header />
       <Services />
       <Portfolio />
+      <Team />
     </Layout>
   </>
 )
