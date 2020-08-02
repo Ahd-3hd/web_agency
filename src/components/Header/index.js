@@ -20,10 +20,12 @@ import InstagramIcon from '../../static/InstagramIcon.svg'
 import Gauge from '../Gauge'
 
 const Header = () => {
+  const [shouldAnimate, setShouldAnimate] = useState(false)
   const [performance, setPerformance] = useState(0)
   const [seo, setSeo] = useState(0)
   const [quality, setQuality] = useState(0)
   const [isBig, setIsBig] = useState(false)
+  useEffect(() => setShouldAnimate(true))
   useEffect(() => {
     const timer = setTimeout(() => {
       performance > 100 ? setPerformance(0) : setPerformance(performance + 1)
@@ -47,7 +49,7 @@ const Header = () => {
     <Wrapper id="home">
       <LeftContainer>
         <Logo>ZAAT.DEV</Logo>
-        <Title>Keeping your customers engaged and happier than ever!</Title>
+        <Title shouldAnimate={shouldAnimate}>Keeping your customers engaged and happier than ever!</Title>
         <Button href="#contact">CONTACT</Button>
         <SocialContainer>
           <SocialLinksContainer>
@@ -66,7 +68,7 @@ const Header = () => {
       </LeftContainer>
       <RightContainer>
         <RightInnerContainer>
-          <RightCard />
+          <RightCard shouldAnimate={shouldAnimate} />
           {isBig && <Gauge value={performance} label="PERFORMANCE" top="-60%" left="15%" />}
           {isBig && <Gauge value={seo} label="SEO" top="-70%" left="60%" />}
           {isBig && <Gauge value={quality} label="QUALITY" top="110%" left="25%" />}

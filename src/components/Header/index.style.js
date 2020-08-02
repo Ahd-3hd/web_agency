@@ -7,6 +7,7 @@ export const Wrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `
 
 export const LeftContainer = styled.div`
@@ -58,8 +59,13 @@ export const Title = styled.h1`
       height: 125%;
       left: auto;
       right: 0;
-      transform: translateY(-10%);
+      /* transform: translateY(-10%); */
       z-index: -1;
+      transition: transform 0.5s;
+      transform: ${({ shouldAnimate }) =>
+        shouldAnimate
+          ? 'translateY(-10%) rotate(0deg) translateX(0) scale(1)'
+          : 'translateY(-10%) rotate(-90deg) translateX(-100%) scale(1.5)'};
     }
   }
 `
@@ -102,6 +108,7 @@ export const SocialText = styled.p`
 
 export const RightContainer = styled.div`
   display: none;
+
   @media (min-width: 1280px) {
     display: flex;
     align-items: center;
@@ -120,4 +127,6 @@ export const RightCard = styled.div`
   height: 20vw;
   border-radius: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 1s;
+  transform: translateX(${({ shouldAnimate }) => (shouldAnimate ? '0' : '100%')});
 `
