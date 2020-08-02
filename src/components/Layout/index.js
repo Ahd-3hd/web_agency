@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
       <Navbar />
       <main>{children}</main>
       <Footer>
-        <FooterParagraph>Made By Zaat - All rights Reserved</FooterParagraph>
+        <FooterParagraph>Made By Ahd Hani - All rights Reserved</FooterParagraph>
       </Footer>
       <Chat />
     </>

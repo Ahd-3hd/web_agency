@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `AHDEV For Developing Fast and Smart Apps`,
+    title: `AHD3V - Beautify The Web`,
     description: `We create experiences that connect on a human “difference-making” level to make a true impression. We create and discover new techonologies to be utilized in your growth.`,
     author: `@ahdev`,
   },
