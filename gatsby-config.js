@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Zaat.dev For Developing Fast and Smart Apps`,
-    description: `Zaat.dev For developing digital solution, developing webapps, tasks automation, SEO fast website, creating state of the art (AI) smart solution and more `,
-    author: `@zaatdev`,
+    title: `AHDEV For Developing Fast and Smart Apps`,
+    description: `AHDEV For developing digital solution, developing webapps, tasks automation, SEO fast website, creating state of the art (AI) smart solution and more `,
+    author: `@ahdev`,
   },
   plugins: [
     {
@@ -28,8 +28,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Zaat.dev`,
-        short_name: `Zaat`,
+        name: `ahdev`,
+        short_name: `ahd`,
         start_url: `/`,
         background_color: `#4FCC5D`,
         theme_color: `#4FCC5D`,
