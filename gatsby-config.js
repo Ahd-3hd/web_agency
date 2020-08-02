@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `AHDEV For Developing Fast and Smart Apps`,
-    description: `AHDEV For developing digital solution, developing webapps, tasks automation, SEO fast website, creating state of the art (AI) smart solution and more `,
+    description: `We create experiences that connect on a human “difference-making” level to make a true impression. We create and discover new techonologies to be utilized in your growth.`,
     author: `@ahdev`,
   },
   plugins: [
