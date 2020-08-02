@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Navbar from '../Navbar'
 import Global from '../Global'
+import Chat from '../Chat'
 import { colors } from '../../utils'
 
 const Footer = styled.footer`
@@ -41,6 +42,7 @@ const Layout = ({ children }) => {
       <Footer>
         <FooterParagraph>Made By Zaat - All rights Reserved</FooterParagraph>
       </Footer>
+      <Chat />
     </>
   )
 }
