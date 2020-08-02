@@ -55,23 +55,22 @@ const Contact = () => (
       <ContentContainer>
         <TextContainer>
           <Paragraph>
-            Come prepared with your problems, challenges and vision. We will do whatever it takes to transform your vision into reality and
-            your problems into fiction.
+            We solve problems; We are committed to utilizing technology to improve the quality of peoples lives and businesses.
           </Paragraph>
-          <Paragraph>Is it to have had contacting Zaat, better Than not having at all !?.</Paragraph>
+          <Paragraph>Reduce your costs, increase security and availability in one, smart move.</Paragraph>
         </TextContainer>
         <ContactDetailsContainer>
           <ContactLink href="#">
             <MapIcon />
-            Esaaf Alnashashibi St 2, Sheikh Jarrah, Jerusalem
+            Istanbul - Turkey
           </ContactLink>
           <ContactLink href="#">
             <EmailIcon />
-            info@zaat.dev
+            ahdhani0@gmail.com
           </ContactLink>
           <ContactLink href="#">
             <CallIcon />
-            (972) 52 807 2551
+            (90) 531 900 65 30
           </ContactLink>
           <SocialContainer>
             <SocialLinksContainer>
@@ -85,7 +84,7 @@ const Contact = () => (
                 <InstagramIcon />
               </SocialLink>
             </SocialLinksContainer>
-            <SocialText>@zaatdev</SocialText>
+            <SocialText>@ahdev</SocialText>
           </SocialContainer>
         </ContactDetailsContainer>
       </ContentContainer>

@@ -13,7 +13,7 @@ const Navbar = () => {
   )
   return (
     <Wrapper isScrolled={isScrolled}>
-      <LogoContainer>ZAAT.DEV</LogoContainer>
+      <LogoContainer>AHDEV</LogoContainer>
       <MenuButton onClick={() => setIsMenuActive(!isMenuActive)}>
         <MenuIcon isMenuActive={isMenuActive} />
       </MenuButton>

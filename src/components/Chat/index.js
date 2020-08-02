@@ -37,7 +37,7 @@ const ChatSteps = [
 
 const Chat = () => (
   <ThemeProvider theme={theme}>
-    <ChatBot steps={ChatSteps} headerTitle="Zaat's Bot" hideUserAvatar botDelay={500} userDelay={500} floating />
+    <ChatBot steps={ChatSteps} headerTitle="D3V" hideUserAvatar botDelay={500} userDelay={500} floating />
   </ThemeProvider>
 )
 

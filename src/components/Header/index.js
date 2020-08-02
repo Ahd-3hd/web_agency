@@ -48,8 +48,8 @@ const Header = () => {
   return (
     <Wrapper id="home">
       <LeftContainer>
-        <Logo>ZAAT.DEV</Logo>
-        <Title shouldAnimate={shouldAnimate}>Keeping your customers engaged and happier than ever!</Title>
+        <Logo>AHDEV</Logo>
+        <Title shouldAnimate={shouldAnimate}>WE&apos;VE GOT THE TOOLS AND WE KNOW HOW TO USE THEM</Title>
         <Button href="#contact">CONTACT</Button>
         <SocialContainer>
           <SocialLinksContainer>
@@ -63,7 +63,7 @@ const Header = () => {
               <InstagramIcon />
             </SocialLink>
           </SocialLinksContainer>
-          <SocialText>@zaatdev</SocialText>
+          <SocialText>@ahdev</SocialText>
         </SocialContainer>
       </LeftContainer>
       <RightContainer>
