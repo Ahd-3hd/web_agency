@@ -2,13 +2,17 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-shadow */
 /* eslint-disable no-use-before-define */
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { arc } from 'd3-shape'
 import { scaleLinear } from 'd3-scale'
 import { format } from 'd3-format'
 import { css } from 'styled-components'
 
 const Gauge = ({ value = 50, min = 0, max = 100, label, units, top, left }) => {
+  const [shouldScale, setShouldScale] = useState(false)
+  useEffect(() => {
+    setShouldScale(true)
+  })
   const backgroundArc = arc()
     .innerRadius(0.65)
     .outerRadius(1)
@@ -50,6 +54,8 @@ const Gauge = ({ value = 50, min = 0, max = 100, label, units, top, left }) => {
         position: absolute;
         top: ${top};
         left: ${left};
+        transition: transform 0.4s ease-in;
+        transform: scale(${shouldScale ? 1 : 0});
       `}
     >
       <svg style={{ overflow: 'visible' }} width="5rem" viewBox={[-1, -1, 2, 1].join(' ')}>
