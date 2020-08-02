@@ -11,6 +11,9 @@ export const Wrapper = styled.nav`
   align-items: center;
   padding: 0.7rem 1rem;
   z-index: 999;
+  box-shadow: ${({ isScrolled }) => (isScrolled ? '0px 0px 10px rgba(0,0,0,0.15)' : '0px 0px 10px rgba(0,0,0,0)')};
+  background: ${({ isScrolled }) => (isScrolled ? '#ffffff' : 'transparent')};
+  transition: 0.4s;
 `
 
 export const MenuButton = styled.button`

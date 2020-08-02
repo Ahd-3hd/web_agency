@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Wrapper, MenuButton, LogoContainer, Overlay, MenuLink } from './index.style'
 import MenuIcon from '../../static/MenuIcon.svg'
 
 const Navbar = () => {
   const [isMenuActive, setIsMenuActive] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  useEffect(() =>
+    window.addEventListener('scroll', () => {
+      // eslint-disable-next-line no-unused-expressions
+      window.pageYOffset >= 150 ? setIsScrolled(true) : setIsScrolled(false)
+    }),
+  )
   return (
-    <Wrapper>
+    <Wrapper isScrolled={isScrolled}>
       <LogoContainer>ZAAT.DEV</LogoContainer>
       <MenuButton onClick={() => setIsMenuActive(!isMenuActive)}>
         <MenuIcon isMenuActive={isMenuActive} />
