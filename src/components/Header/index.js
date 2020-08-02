@@ -48,7 +48,7 @@ const Header = () => {
       <LeftContainer>
         <Logo>ZAAT.DEV</Logo>
         <Title>Keeping your customers engaged and happier than ever!</Title>
-        <Button>CONTACT</Button>
+        <Button href="#contact">CONTACT</Button>
         <SocialContainer>
           <SocialLinksContainer>
             <SocialLink href="#">

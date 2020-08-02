@@ -10,10 +10,13 @@ export const Wrapper = styled.section`
   @media (min-width: 1280px) {
     flex-direction: row;
   }
+  @media (min-width: 1360px) {
+    padding: 0 5vw;
+  }
 `
 export const TitleContainer = styled.div`
   @media (min-width: 1280px) {
-    flex: 2;
+    flex: 1;
     align-self: flex-start;
   }
 `
@@ -30,6 +33,9 @@ export const Title = styled.h2`
   }
 `
 export const TeamContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (min-width: 1280px) {
     flex: 2;
     padding: 0 3vw;

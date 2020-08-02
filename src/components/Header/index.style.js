@@ -63,7 +63,7 @@ export const Title = styled.h1`
     }
   }
 `
-export const Button = styled.button`
+export const Button = styled.a`
   border: none;
   color: #ffffff;
   font-size: 1.3rem;
@@ -71,6 +71,8 @@ export const Button = styled.button`
   background: #32cca1;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   padding: 0.7rem 1rem;
+  text-decoration: none;
+  cursor: pointer;
 `
 
 export const SocialContainer = styled.div`

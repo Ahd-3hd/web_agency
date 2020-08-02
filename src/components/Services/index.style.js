@@ -27,6 +27,9 @@ export const Title = styled.h2`
   }
 `
 export const ServicesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (min-width: 1360px) {
     flex: 2;
     padding-left: 5vw;

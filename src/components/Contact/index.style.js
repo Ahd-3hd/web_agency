@@ -4,7 +4,7 @@ import portfolioBlob from '../../images/portfolio_blob.png'
 
 export const Wrapper = styled.section`
   padding-bottom: 1rem;
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -122,7 +122,7 @@ export const Paragraph = styled.p`
   color: ${colors.black};
   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
   @media (min-width: 1366px) {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
   }
 `
 export const ContactDetailsContainer = styled.div`
