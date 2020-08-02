@@ -54,7 +54,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: `og:url`,
-          content: `https://zaat.dev/`,
+          content: `https://vibrant-bhaskara-66a476.netlify.app/`,
         },
         {
           property: `fb:page_id`,
@@ -62,7 +62,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: 'og:image',
-          content: 'https://d1svfprecff8lq.cloudfront.net/desktop77.png',
+          content: 'https://res.cloudinary.com/ahd3hd/image/upload/v1596316468/112233.png',
         },
         {
           name: `twitter:card`,
@@ -70,7 +70,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           name: `twitter:image`,
-          content: 'https://d1svfprecff8lq.cloudfront.net/desktop77.png',
+          content: 'https://res.cloudinary.com/ahd3hd/image/upload/v1596316468/112233.png',
         },
         {
           name: `twitter:creator`,
@@ -82,7 +82,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           name: `twitter:url`,
-          content: `https://zaat.dev/`,
+          content: `https://vibrant-bhaskara-66a476.netlify.app/`,
         },
         {
           name: `twitter:description`,
